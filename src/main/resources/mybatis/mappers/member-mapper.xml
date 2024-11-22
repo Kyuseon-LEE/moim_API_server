@@ -7,4 +7,9 @@
         INSERT INTO TBL_MEMBER(m_name, m_id, m_pw, m_mail, m_phone, m_nickname, m_gender, m_age, m_address)
         VALUES (#{m_name}, #{m_id}, #{m_pw}, #{m_mail}, #{m_phone}, #{m_nickname}, #{m_gender}, #{m_age}, #{m_address})
     </insert>
+
+    <select id="selectMemberForLogin" parameterType="String">
+        SELECT * FROM TBL_MEMBER WHERE M_ID = #{m_id}
+    </select>
+
 </mapper>
