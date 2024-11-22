@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moim.moimapiserver.group.GroupMapper">
+    <insert id="insertNewGroup" parameterType="com.moim.moimapiserver.group.GroupDto">
+        INSERT INTO TBL_GROUP (
+            G_NAME,
+            G_INFO,
+            G_CATEGORY,
+            G_IMG_NAME,
+            G_LOCATION,
+            G_CONFIRM,
+            G_MAX_NUMBER
+        ) VALUES (
+            #{g_name},
+            #{g_info},
+            #{g_category},
+            #{g_img_name},
+            #{g_location},
+            #{g_confirm},
+            #{g_max_number}
+        )
+    </insert>
+</mapper>
+

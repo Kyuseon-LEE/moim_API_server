@@ -32,7 +32,7 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable())
                 .authorizeRequests(auth -> auth
-                        .requestMatchers("/member/signup_confirm").permitAll()
+                        .requestMatchers("/member/signup_confirm", "/group/create_group").permitAll() // 인증 필요 없음
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -52,4 +52,5 @@ public class SecurityConfig {
 
         return http.build();
     }
+
 }
