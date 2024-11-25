@@ -4,6 +4,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+import java.util.HashMap;
 import java.util.Map;
 
 @Log4j2
@@ -28,6 +30,29 @@ public class MemberController {
     }
 
 
+    @PostMapping("/getMemberInfo")
+    @ResponseBody
+    public Object getMemberInfo(@RequestBody MemberDto memberDto) {
+        log.info("getMemberInfo()");
+
+        String m_id = memberDto.getM_id();
+        log.info("Authenticated m_id: " + m_id);
+
+        memberDto.setM_id(m_id);
+
+        Map<String, Object> resultMap = memberService.getMemberInfo(m_id);
+
+        return resultMap;
+    }
+
+    @PostMapping("/updateNickname")
+    @ResponseBody
+    public Object updateNickname(@RequestBody MemberDto memberDto) {
+        log.info("updateNickname()");
+        String new_nickname = (String) memberService.updateNickname(memberDto);
+
+        return new_nickname;
+    }
 
 }
 

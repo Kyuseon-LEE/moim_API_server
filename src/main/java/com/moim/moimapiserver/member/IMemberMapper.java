@@ -7,4 +7,8 @@ public interface IMemberMapper {
     int insertNewMember(MemberDto memberDto);
 
     MemberDto selectMemberForLogin(String m_id);
+
+    MemberDto getMemberInfo(String m_id);
+
+    String updateNickname(MemberDto memberDto);
 }

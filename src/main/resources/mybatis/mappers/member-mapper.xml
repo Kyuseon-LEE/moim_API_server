@@ -12,4 +12,14 @@
         SELECT * FROM TBL_MEMBER WHERE M_ID = #{m_id}
     </select>
 
+    <select id="getMemberInfo" parameterType="String">
+        SELECT * FROM TBL_MEMBER WHERE M_ID = #{m_id}
+    </select>
+
+    <update id="updateNickname" parameterType="com.moim.moimapiserver.member.MemberDto">
+        UPDATE TBL_MEMBER
+        SET m_nickname = #{m_nickname}
+        WHERE m_id = #{m_id}
+    </update>
+
 </mapper>

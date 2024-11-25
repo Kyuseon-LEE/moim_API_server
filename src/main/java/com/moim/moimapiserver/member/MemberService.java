@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Member;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,8 @@ public class MemberService {
     public static int SIGNUP_FAIL           = 1;
     public static int LOGIN_SUCCESS         = 1;
     public static int LOGIN_FAIL            = 2;
+    public static int FAIL_MEMBER_INFO      = 3;
+
 
     private final IMemberMapper iMemberMapper;
     private final PasswordEncoder passwordEncoder;
@@ -44,6 +47,32 @@ public class MemberService {
             resultMap.put("result", SIGNUP_FAIL);
             return resultMap;
         }
+
+    }
+
+
+    public Map<String, Object> getMemberInfo(String m_id) {
+        log.info("[MemberService] getMemberInfo");
+
+        Map<String, Object> resultMap = new HashMap<>();
+
+        MemberDto memberDtos = iMemberMapper.getMemberInfo(m_id);
+
+        if(memberDtos != null) {
+            log.info("[MemberService] getMemberInfo successful");
+            resultMap.put("memberDtos", memberDtos);
+            return resultMap;
+        } else {
+            log.info("[MemberService] getMemberInfo failed");
+            resultMap.put("result", FAIL_MEMBER_INFO);
+            return resultMap;
+        }
+    }
+
+    public Object updateNickname(MemberDto memberDto) {
+        String new_Nickname = (String) iMemberMapper.updateNickname(memberDto);
+
+        return new_Nickname;
 
     }
 }
