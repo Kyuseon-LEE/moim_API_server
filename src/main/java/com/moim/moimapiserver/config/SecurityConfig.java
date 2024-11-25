@@ -26,7 +26,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    PasswordEncoder passwordEncoder() {
+    PasswordEncoder passwordEncoder() {	
         log.info("passwordEncoder()");
         return new BCryptPasswordEncoder();
     }
@@ -38,6 +38,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeRequests(auth -> auth
                         .requestMatchers( "/**").permitAll()
+                        .requestMatchers( "/group/**", "/member/**", "/uploads/**", "/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(login -> login

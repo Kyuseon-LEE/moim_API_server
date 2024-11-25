@@ -1,24 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.moim.moimapiserver.group.GroupMapper">
+
+    <!-- m_id로 m_no 조회 -->
+    <select id="findMNoByMId" parameterType="string" resultType="int">
+        SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id}
+    </select>
+
+    <!-- 그룹 생성 -->
     <insert id="insertNewGroup" parameterType="com.moim.moimapiserver.group.GroupDto">
         INSERT INTO TBL_GROUP (
-            G_NAME,
-            G_INFO,
-            G_CATEGORY,
-            G_IMG_NAME,
-            G_LOCATION,
-            G_CONFIRM,
-            G_MAX_NUMBER
+            G_NAME, G_INFO, G_CATEGORY, G_MASTER_ID, G_IMG_NAME, G_LOCATION, G_CONFIRM, G_MAX_NUMBER
         ) VALUES (
-            #{g_name},
-            #{g_info},
-            #{g_category},
-            #{g_img_name},
-            #{g_location},
-            #{g_confirm},
-            #{g_max_number}
+            #{g_name}, #{g_info}, #{g_category}, #{g_master_id}, #{g_img_name}, #{g_location}, #{g_confirm}, #{g_max_number}
         )
     </insert>
-</mapper>
 
+    <!-- 마지막으로 삽입된 그룹 ID 조회 -->
+    <select id="findLastInsertedGroupNo" resultType="int">
+        SELECT LAST_INSERT_ID()
+    </select>
+
+    <!-- 그룹 멤버 추가 -->
+    <insert id="insertGroupMember">
+        INSERT INTO TBL_GROUP_MEMBER (G_NO, M_NO, G_M_ROLE)
+        VALUES (#{gNo}, #{mNo}, #{gMRole})
+    </insert>
+
+    <!-- 특정 m_id가 포함된 그룹 리스트 가져오기 -->
+	<select id="findGroupsByUserId" parameterType="string" resultType="com.moim.moimapiserver.group.GroupDto">
+	    SELECT 
+	        g.G_NO AS g_no, 
+	        g.G_NAME AS g_name, 
+	        g.G_IMG_NAME AS g_img_name, 
+	        (SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO) AS memberCount
+	    FROM TBL_GROUP g
+	    WHERE g.G_NO IN (
+	        SELECT gm.G_NO 
+	        FROM TBL_GROUP_MEMBER gm 
+	        WHERE gm.M_NO = (SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id})
+	    );
+	</select>
+	
+	<select id="findGroupByNo" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
+	    SELECT 
+	        G_NO, G_NAME, G_INFO, G_CATEGORY, G_MASTER_ID, G_IMG_NAME, 
+	        G_MAX_NUMBER, G_LOCATION, G_GOOD, G_PUBLIC, G_CONFIRM, 
+	        G_REGIST, G_REG_DATE, G_MOD_DATE
+	    FROM TBL_GROUP
+	    WHERE G_NO = #{g_no}
+	</select>
+	
+	
+
+
+
+</mapper>
