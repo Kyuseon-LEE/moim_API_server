@@ -54,19 +54,24 @@ public class GroupController {
     }
     
     @GetMapping("/{g_no}")
-    public ResponseEntity<?> getGroupByNo(@PathVariable("g_no") int gNo) {
-        log.info("Fetching group for g_no: {}", gNo);
+    public ResponseEntity<GroupDto> getGroupByGNo(@PathVariable("g_no") int gNo) {
+        log.info("Fetching group with g_no: {}", gNo);
         try {
-            GroupDto group = groupService.getGroupByNo(gNo);
-            if (group == null) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Group not found");
+            GroupDto group = groupService.getGroupByGNo(gNo);
+            if (group != null) {
+                return ResponseEntity.ok(group);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
-            return ResponseEntity.ok(group);
         } catch (Exception e) {
-            log.error("Error fetching group for g_no: {}", gNo, e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error fetching group data.");
+            log.error("Error fetching group with g_no: {}", gNo, e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+    
+
+    
+
 
 
 }

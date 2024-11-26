@@ -33,6 +33,17 @@
 	        g.G_NO AS g_no, 
 	        g.G_NAME AS g_name, 
 	        g.G_IMG_NAME AS g_img_name, 
+	        g.G_INFO AS g_info,
+	        g.G_CATEGORY AS g_category,
+	        g.G_MASTER_ID AS g_master_id,
+	        g.G_MAX_NUMBER AS g_max_number,
+	        g.G_LOCATION AS g_location,
+	        g.G_GOOD AS g_good,
+	        g.G_PUBLIC AS g_public,
+	        g.G_CONFIRM AS g_confirm,
+	        g.G_REGIST AS g_regist,
+	        g.G_REG_DATE AS g_reg_date,
+	        g.G_MOD_DATE AS g_mod_date,
 	        (SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO) AS memberCount
 	    FROM TBL_GROUP g
 	    WHERE g.G_NO IN (
@@ -42,17 +53,32 @@
 	    );
 	</select>
 	
-	<select id="findGroupByNo" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
+	<select id="findGroupByGNo" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
 	    SELECT 
-	        G_NO, G_NAME, G_INFO, G_CATEGORY, G_MASTER_ID, G_IMG_NAME, 
-	        G_MAX_NUMBER, G_LOCATION, G_GOOD, G_PUBLIC, G_CONFIRM, 
-	        G_REGIST, G_REG_DATE, G_MOD_DATE
-	    FROM TBL_GROUP
-	    WHERE G_NO = #{g_no}
+	        g.G_NO AS g_no, 
+	        g.G_NAME AS g_name, 
+	        g.G_INFO AS g_info,
+	        g.G_CATEGORY AS g_category,
+	        g.G_LOCATION AS g_location,
+	        g.G_IMG_NAME AS g_img_name,
+	        g.G_CONFIRM AS g_confirm,
+	        g.G_MAX_NUMBER AS g_max_number,
+	        g.G_REG_DATE AS g_reg_date,
+	        g.G_CONFIRM AS g_confirm,
+	        g.G_PUBLIC AS g_public,
+	        (SELECT COUNT(*) FROM TBL_GROUP_MEMBER WHERE G_NO = g.G_NO) AS memberCount,
+	        g.G_MASTER_ID AS g_master_id,
+	        m.M_NICKNAME AS g_master_nickname
+	    FROM 
+	        TBL_GROUP g
+	    LEFT JOIN 
+	        TBL_MEMBER m
+	    ON 
+	        g.G_MASTER_ID = m.M_NO
+	    WHERE 
+	        g.G_NO = #{gNo}
 	</select>
 	
+
 	
-
-
-
 </mapper>
