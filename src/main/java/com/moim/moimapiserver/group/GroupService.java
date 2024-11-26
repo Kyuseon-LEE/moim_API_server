@@ -73,19 +73,12 @@ public class GroupService {
         }
     }
 
-    public GroupDto getGroupByNo(int gNo) {
-        try {
-            GroupDto group = groupMapper.findGroupByNo(gNo); // GroupMapper 호출
-            if (group == null) {
-                log.warn("No group found for g_no: {}", gNo);
-                return null;
-            }
-            return group;
-        } catch (Exception e) {
-            log.error("Error fetching group for g_no: {}", gNo, e);
-            throw new RuntimeException("Error fetching group data");
-        }
+    public GroupDto getGroupByGNo(int gNo) {
+        return groupMapper.findGroupByGNo(gNo);
     }
+
+
+
 
 
 

@@ -19,5 +19,7 @@ public class GroupDto {
     private String g_reg_date;
     private String g_mod_date;
     private String m_id;
+    
+    private String g_master_nickname;
     private int memberCount; 
 }

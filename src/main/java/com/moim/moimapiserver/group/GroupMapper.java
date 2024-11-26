@@ -18,5 +18,6 @@ public interface GroupMapper {
 
 	List<GroupDto> findGroupsByUserId(String mId);
 
-	GroupDto findGroupByNo(@Param("g_no") int gNo);
+	GroupDto findGroupByGNo(int gNo);
+
 }
