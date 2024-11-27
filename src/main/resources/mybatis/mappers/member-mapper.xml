@@ -4,8 +4,8 @@
 
     <insert id="insertNewMember"
             parameterType="com.moim.moimapiserver.member.MemberDto">
-        INSERT INTO TBL_MEMBER(m_name, m_id, m_pw, m_mail, m_phone, m_nickname, m_gender, m_age, m_address)
-        VALUES (#{m_name}, #{m_id}, #{m_pw}, #{m_mail}, #{m_phone}, #{m_nickname}, #{m_gender}, #{m_age}, #{m_address})
+        INSERT INTO TBL_MEMBER(m_name, m_id, m_pw, m_mail, m_phone, m_nickname, m_gender, m_age, m_address, m_profile_img)
+        VALUES (#{m_name}, #{m_id}, #{m_pw}, #{m_mail}, #{m_phone}, #{m_nickname}, #{m_gender}, #{m_age}, #{m_address}, #{m_profile_img})
     </insert>
 
     <select id="selectMemberForLogin" parameterType="String">
