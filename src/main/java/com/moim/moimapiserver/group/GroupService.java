@@ -77,10 +77,52 @@ public class GroupService {
         return groupMapper.findGroupByGNo(gNo);
     }
 
+    public boolean isGroupMember(int gNo, int mNo) {
+        log.info("isGroupMember Service 호출: gNo={}, mNo={}", gNo, mNo);
+        int count = groupMapper.isGroupMember(gNo, mNo);
+        log.info("isGroupMember 쿼리 결과: {}", count);
+        return count > 0;
+    }
 
+	public void createPost(PostDto postDto) {
+		groupMapper.insertPost(postDto);
+		
+	}
 
+	 public List<PostDto> getPostsByGroup(int gNo) {
+		 return groupMapper.findPostsByGroup(gNo);
+	 }
 
+	 public int getGroupConfirmStatus(int gNo) {
+        try {
+            log.info("Fetching G_CONFIRM for gNo={}", gNo);
+            return groupMapper.findGroupConfirmStatus(gNo);
+        } catch (Exception e) {
+            log.error("Error Fetching G_CONFIRM for gNo={}", gNo, e);
+            throw new RuntimeException("G_CONFIRM 상태를 가져오는 중 오류가 발생했습니다.", e);
+        }
+    }
 
+    public void addGroupMember(int gNo, int mNo, int gMRole) {
+        try {
+            log.info("Inserting Group Member: gNo={}, mNo={}, gMRole={}", gNo, mNo, gMRole);
+            groupMapper.insertGroupMember(gNo, mNo, gMRole);
+        } catch (Exception e) {
+            log.error("Error Adding Group Member: gNo={}, mNo={}, gMRole={}", gNo, mNo, gMRole, e);
+            throw new RuntimeException("TBL_GROUP_MEMBER에 회원 추가 중 오류가 발생했습니다.", e);
+        }
+    }
+
+    public Integer getGroupMemberRole(int gNo, int mNo) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("gNo", gNo);
+        params.put("mNo", mNo);
+        return groupMapper.findGroupMemberRole(params);
+    }
+
+    public List<GroupMemberDto> getGroupMembers(int gNo) {
+        return groupMapper.findMembersByGroupNo(gNo);
+    }
 
 }
 

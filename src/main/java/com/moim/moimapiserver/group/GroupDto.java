@@ -1,5 +1,7 @@
 package com.moim.moimapiserver.group;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -20,6 +22,10 @@ public class GroupDto {
     private String g_mod_date;
     private String m_id;
     
+    // 추가 내용
     private String g_master_nickname;
-    private int memberCount; 
+    private int memberCount;
+    private int g_m_role; 
+    
+    private List<GroupMemberDto> members;
 }

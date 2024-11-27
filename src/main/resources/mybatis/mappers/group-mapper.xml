@@ -44,14 +44,23 @@
 	        g.G_REGIST AS g_regist,
 	        g.G_REG_DATE AS g_reg_date,
 	        g.G_MOD_DATE AS g_mod_date,
-	        (SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO) AS memberCount
+	        (
+	            SELECT COUNT(*)
+	            FROM TBL_GROUP_MEMBER gm
+	            WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0
+	        ) AS memberCount,
+	        gm.G_M_ROLE AS g_m_role -- 회원 역할 정보 추가
 	    FROM TBL_GROUP g
+	    JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO -- TBL_GROUP_MEMBER와 조인
 	    WHERE g.G_NO IN (
 	        SELECT gm.G_NO 
 	        FROM TBL_GROUP_MEMBER gm 
 	        WHERE gm.M_NO = (SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id})
-	    );
+	    )
+	    AND gm.M_NO = (SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id}); 
 	</select>
+
+
 	
 	<select id="findGroupByGNo" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
 	    SELECT 
@@ -65,8 +74,13 @@
 	        g.G_MAX_NUMBER AS g_max_number,
 	        g.G_REG_DATE AS g_reg_date,
 	        g.G_CONFIRM AS g_confirm,
+	        g.G_REGIST AS g_regist,
 	        g.G_PUBLIC AS g_public,
-	        (SELECT COUNT(*) FROM TBL_GROUP_MEMBER WHERE G_NO = g.G_NO) AS memberCount,
+	        (
+            SELECT COUNT(*)
+            FROM TBL_GROUP_MEMBER gm
+            WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0
+        	) AS memberCount,
 	        g.G_MASTER_ID AS g_master_id,
 	        m.M_NICKNAME AS g_master_nickname
 	    FROM 
@@ -79,6 +93,65 @@
 	        g.G_NO = #{gNo}
 	</select>
 	
+	<select id="isGroupMember" parameterType="map" resultType="int">
+        SELECT COUNT(*)
+        FROM TBL_GROUP_MEMBER
+        WHERE G_NO = #{gNo} AND M_NO = #{mNo}
+    </select>
+    
+    <insert id="insertPost" parameterType="com.moim.moimapiserver.group.PostDto">
+        INSERT INTO TBL_POST (G_NO, M_NO, P_TEXT, P_IMG, P_REG_DATE, P_MOD_DATE)
+        VALUES (#{g_no}, #{m_no}, #{p_text}, #{p_img}, NOW(), NOW())
+    </insert>
+    
+    <select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
+	    SELECT 
+	        p.P_NO,
+	        p.G_NO,
+	        p.M_NO,
+	        p.P_TEXT,
+	        p.P_IMG,
+	        p.P_REG_DATE,
+	        p.P_MOD_DATE,
+	        m.M_NICKNAME
+	    FROM 
+	        TBL_POST p
+	    JOIN 
+	        TBL_MEMBER m
+	    ON 
+	        p.M_NO = m.M_NO
+	    WHERE 
+	        p.G_NO = #{gNo}
+	    ORDER BY 
+	        p.P_REG_DATE DESC
+	</select>
+	
+	<select id="findGroupConfirmStatus" parameterType="int" resultType="int">
+	    SELECT G_CONFIRM
+	    FROM TBL_GROUP
+	    WHERE G_NO = #{gNo}
+	</select>
+	
+	<select id="findGroupMemberRole" parameterType="map" resultType="int">
+	    SELECT G_M_ROLE
+	    FROM TBL_GROUP_MEMBER
+	    WHERE G_NO = #{gNo} AND M_NO = #{mNo};
+	</select>
+	
+	<select id="findMembersByGroupNo" parameterType="int" resultType="com.moim.moimapiserver.group.GroupMemberDto">
+	    SELECT 
+	        gm.G_M_NO,
+	        gm.G_NO,
+	        gm.M_NO,
+	        gm.G_M_ROLE,
+	        gm.G_REG_DATE,
+	        gm.G_MOD_DATE,
+	        m.M_NICKNAME AS m_nickname,
+	        m.M_PROFILE_IMG AS m_profile_img
+	    FROM TBL_GROUP_MEMBER gm
+	    JOIN TBL_MEMBER m ON gm.M_NO = m.M_NO
+	    WHERE gm.G_NO = #{gNo};
+	</select>
 
 	
 </mapper>

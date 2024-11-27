@@ -1,0 +1,15 @@
+package com.moim.moimapiserver.group;
+
+import lombok.Data;
+
+@Data
+public class PostDto {
+	private int p_no;
+	private int g_no;
+	private int m_no;
+	private String p_text;
+	private String p_img;
+	private String p_reg_date;
+	private String p_mod_date;
+	private String m_nickname;
+}

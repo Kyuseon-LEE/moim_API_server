@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface GroupMapper {
@@ -20,4 +21,17 @@ public interface GroupMapper {
 
 	GroupDto findGroupByGNo(int gNo);
 
+	int isGroupMember(@Param("gNo") int gNo, @Param("mNo") int mNo);
+
+	void insertPost(PostDto postDto);
+
+	List<PostDto> findPostsByGroup(int gNo);
+
+	int findGroupConfirmStatus(int gNo);
+
+	Integer findGroupMemberRole(Map<String, Object> params);
+
+	List<GroupMemberDto> findMembersByGroupNo(int gNo);
+
 }
+	
