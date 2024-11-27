@@ -45,13 +45,13 @@ public class MemberController {
         return resultMap;
     }
 
-    @PostMapping("/updateNickname")
+    @PostMapping("/updateMemberInfo")
     @ResponseBody
-    public Object updateNickname(@RequestBody MemberDto memberDto) {
-        log.info("updateNickname()");
-        String new_nickname = (String) memberService.updateNickname(memberDto);
-
-        return new_nickname;
+    public Object updateMemberInfo(@RequestBody MemberDto memberDto) {
+        log.info("updateMemberInfo()");
+        int result = memberService.updateMemberInfo(memberDto);
+        log.info("memberDto", memberDto);
+        return result;
     }
 
 }

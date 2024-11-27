@@ -12,15 +12,16 @@ import java.util.Map;
 @Service
 public class MemberService {
 
-    public static int ALREADY_EXIST_ID      = -1;
-    public static int DATABASE_ERROR        = -2;
-    public static int AVAILABLE_ID          = -3;
-    public static int SIGNUP_SUCCESS        = 0;
-    public static int SIGNUP_FAIL           = 1;
-    public static int LOGIN_SUCCESS         = 1;
-    public static int LOGIN_FAIL            = 2;
-    public static int FAIL_MEMBER_INFO      = 3;
-
+    public static int ALREADY_EXIST_ID = -1;
+    public static int DATABASE_ERROR = -2;
+    public static int AVAILABLE_ID = -3;
+    public static int SIGNUP_SUCCESS = 0;
+    public static int SIGNUP_FAIL = 1;
+    public static int LOGIN_SUCCESS = 1;
+    public static int LOGIN_FAIL = 2;
+    public static int FAIL_MEMBER_INFO = 3;
+    public static int SUCCESS_MEMBER_UPDATE = 4;
+    public static int FAIL_MEMBER_UPDATE = 5;
 
     private final IMemberMapper iMemberMapper;
     private final PasswordEncoder passwordEncoder;
@@ -38,7 +39,7 @@ public class MemberService {
         memberDto.setM_pw(encodePassword);
 
         int result = iMemberMapper.insertNewMember(memberDto);
-        if(result > 0) {
+        if (result > 0) {
             log.info("[MemberService] signupConfirm successful");
             resultMap.put("result", SIGNUP_SUCCESS);
             return resultMap;
@@ -58,7 +59,7 @@ public class MemberService {
 
         MemberDto memberDtos = iMemberMapper.getMemberInfo(m_id);
 
-        if(memberDtos != null) {
+        if (memberDtos != null) {
             log.info("[MemberService] getMemberInfo successful");
             resultMap.put("memberDtos", memberDtos);
             return resultMap;
@@ -69,10 +70,18 @@ public class MemberService {
         }
     }
 
-    public Object updateNickname(MemberDto memberDto) {
-        String new_Nickname = (String) iMemberMapper.updateNickname(memberDto);
+    public int updateMemberInfo(MemberDto memberDto) {
 
-        return new_Nickname;
+        int result = iMemberMapper.updateMemberInfo(memberDto);
 
+        if (result > 0) {
+            log.info("[MemberService] updateMemberInfo successful");
+            return SUCCESS_MEMBER_UPDATE;
+        } else {
+            log.info("[MemberService] updateMemberInfo failed");
+            return FAIL_MEMBER_UPDATE;
+        }
     }
 }
+
+
