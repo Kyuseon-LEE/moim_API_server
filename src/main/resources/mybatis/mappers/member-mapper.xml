@@ -16,9 +16,9 @@
         SELECT * FROM TBL_MEMBER WHERE M_ID = #{m_id}
     </select>
 
-    <update id="updateNickname" parameterType="com.moim.moimapiserver.member.MemberDto">
+    <update id="updateMemberInfo" parameterType="com.moim.moimapiserver.member.MemberDto">
         UPDATE TBL_MEMBER
-        SET m_nickname = #{m_nickname}
+        SET m_nickname = #{m_nickname}, m_gender = #{m_gender}, m_phone = #{m_phone}, m_address = #{m_address}
         WHERE m_id = #{m_id}
     </update>
 
