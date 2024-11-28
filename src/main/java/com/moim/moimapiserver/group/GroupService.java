@@ -124,5 +124,13 @@ public class GroupService {
         return groupMapper.findMembersByGroupNo(gNo);
     }
 
+    public void addComment(CommentDto commentDto) {
+    	groupMapper.insertComment(commentDto);
+    }
+
+	public List<CommentDto> getCommentsByPost(int pNo) {
+		return groupMapper.findCommentsByPost(pNo);
+	}
+
 }
 
