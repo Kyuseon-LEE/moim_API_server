@@ -13,4 +13,6 @@ public interface IMemberMapper {
     String updateNickname(MemberDto memberDto);
 
     int updateMemberInfo(MemberDto memberDto);
+
+    int insertCategories(MemberDto memberDto);
 }

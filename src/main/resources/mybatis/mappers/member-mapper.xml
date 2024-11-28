@@ -22,4 +22,8 @@
         WHERE m_id = #{m_id}
     </update>
 
+    <update id="insertCategories" parameterType="com.moim.moimapiserver.member.IMemberMapper">
+        UPDATE TBL_MEMBER SET M_CATEGORY = #{m_category} WHERE M_ID = #{m_id}
+    </update>
+
 </mapper>

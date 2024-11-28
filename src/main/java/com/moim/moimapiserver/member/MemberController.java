@@ -54,5 +54,14 @@ public class MemberController {
         return result;
     }
 
+    @PostMapping("/insertCategories")
+    @ResponseBody
+    public Object insertCategories(@RequestBody MemberDto memberDto) {
+        log.info("insertCategories()");
+        int result = memberService.insertCategories(memberDto);
+
+        return result;
+    }
+
 }
 

@@ -22,6 +22,8 @@ public class MemberService {
     public static int FAIL_MEMBER_INFO = 3;
     public static int SUCCESS_MEMBER_UPDATE = 4;
     public static int FAIL_MEMBER_UPDATE = 5;
+    public static int SUCCESS_CATEGORY_INSERT = 6;
+    public static int FAIL_CATEGORY_INSERT = 7;
 
     private final IMemberMapper iMemberMapper;
     private final PasswordEncoder passwordEncoder;
@@ -81,6 +83,19 @@ public class MemberService {
             log.info("[MemberService] updateMemberInfo failed");
             return FAIL_MEMBER_UPDATE;
         }
+    }
+
+    public int insertCategories(MemberDto memberDto) {
+        log.info("[memberService] insertCategories]");
+
+        int result = iMemberMapper.insertCategories(memberDto);
+
+        if(result > 0) {
+            return SUCCESS_CATEGORY_INSERT;
+        } else {
+            return FAIL_CATEGORY_INSERT;
+        }
+
     }
 }
 
