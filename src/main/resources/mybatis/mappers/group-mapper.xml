@@ -104,7 +104,7 @@
         VALUES (#{g_no}, #{m_no}, #{p_text}, #{p_img}, NOW(), NOW())
     </insert>
     
-    <select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
+  <select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
 	    SELECT 
 	        p.P_NO,
 	        p.G_NO,
@@ -113,7 +113,8 @@
 	        p.P_IMG,
 	        p.P_REG_DATE,
 	        p.P_MOD_DATE,
-	        m.M_NICKNAME
+	        m.M_NICKNAME,
+	        m.M_PROFILE_IMG
 	    FROM 
 	        TBL_POST p
 	    JOIN 
@@ -125,6 +126,7 @@
 	    ORDER BY 
 	        p.P_REG_DATE DESC
 	</select>
+
 	
 	<select id="findGroupConfirmStatus" parameterType="int" resultType="int">
 	    SELECT G_CONFIRM

@@ -11,5 +11,7 @@ public class PostDto {
 	private String p_img;
 	private String p_reg_date;
 	private String p_mod_date;
+	
 	private String m_nickname;
+	private String m_profile_img;
 }
