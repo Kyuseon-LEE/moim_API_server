@@ -33,5 +33,9 @@ public interface GroupMapper {
 
 	List<GroupMemberDto> findMembersByGroupNo(int gNo);
 
+	void insertComment(CommentDto commentDto);
+
+	List<CommentDto> findCommentsByPost(int pNo);
+
 }
 	

@@ -161,6 +161,22 @@ public class GroupController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+    
+    @PostMapping("/comment")
+    public ResponseEntity<?> addComment(@RequestBody CommentDto commentDto) {
+        try {
+            groupService.addComment(commentDto); // 서비스 호출
+            return ResponseEntity.status(HttpStatus.CREATED).body("댓글 작성 성공");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("댓글 작성 실패: " + e.getMessage());
+        }
+    }
+    
+    @GetMapping("/post/{p_no}/comments")
+    public ResponseEntity<List<CommentDto>> getCommentsByPost(@PathVariable("p_no") int pNo) {
+        List<CommentDto> comments = groupService.getCommentsByPost(pNo);
+        return ResponseEntity.ok(comments);
+    }
 
 
 }

@@ -104,7 +104,7 @@
         VALUES (#{g_no}, #{m_no}, #{p_text}, #{p_img}, NOW(), NOW())
     </insert>
     
-    <select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
+  <select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
 	    SELECT 
 	        p.P_NO,
 	        p.G_NO,
@@ -113,7 +113,8 @@
 	        p.P_IMG,
 	        p.P_REG_DATE,
 	        p.P_MOD_DATE,
-	        m.M_NICKNAME
+	        m.M_NICKNAME,
+	        m.M_PROFILE_IMG
 	    FROM 
 	        TBL_POST p
 	    JOIN 
@@ -125,6 +126,7 @@
 	    ORDER BY 
 	        p.P_REG_DATE DESC
 	</select>
+
 	
 	<select id="findGroupConfirmStatus" parameterType="int" resultType="int">
 	    SELECT G_CONFIRM
@@ -152,6 +154,35 @@
 	    JOIN TBL_MEMBER m ON gm.M_NO = m.M_NO
 	    WHERE gm.G_NO = #{gNo};
 	</select>
+
+	<insert id="insertComment" parameterType="com.moim.moimapiserver.group.CommentDto">
+        INSERT INTO TBL_COMMENT (G_NO, P_NO, M_NO, CO_TEXT, CO_REG_DATE, CO_MOD_DATE)
+        VALUES (#{g_no}, #{p_no}, #{m_no}, #{co_text}, NOW(), NOW())
+    </insert>
+
+    <!-- 게시글별 댓글 조회 -->
+    <select id="findCommentsByPost" parameterType="int" resultType="com.moim.moimapiserver.group.CommentDto">
+	    SELECT 
+	        c.CO_NO AS co_no,
+	        c.G_NO AS g_no,
+	        c.P_NO AS p_no,
+	        c.M_NO AS m_no, -- 작성자 ID를 유지
+	        c.CO_TEXT AS co_text,
+	        c.CO_REG_DATE AS co_reg_date,
+	        c.CO_MOD_DATE AS co_mod_date,
+	        m.M_NICKNAME AS m_nickname -- 작성자 닉네임 추가
+	    FROM 
+	        TBL_COMMENT c
+	    JOIN 
+	        TBL_MEMBER m
+	    ON 
+	        c.M_NO = m.M_NO -- 댓글 작성자와 멤버 테이블 조인
+	    WHERE 
+	        c.P_NO = #{p_no}
+	    ORDER BY 
+	        c.CO_REG_DATE DESC
+	</select>
+
 
 	
 </mapper>
