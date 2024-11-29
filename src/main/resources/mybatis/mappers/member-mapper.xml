@@ -18,7 +18,7 @@
 
     <update id="updateMemberInfo" parameterType="com.moim.moimapiserver.member.MemberDto">
         UPDATE TBL_MEMBER
-        SET m_nickname = #{m_nickname}, m_gender = #{m_gender}, m_phone = #{m_phone}, m_address = #{m_address}, m_profile_img = #{m_profile_img}
+        SET m_nickname = #{m_nickname}, m_gender = #{m_gender}, m_phone = #{m_phone}, m_address = #{m_address}, m_profile_img = #{m_profile_img}, m_category = #{m_category}
         WHERE m_id = #{m_id}
     </update>
 
