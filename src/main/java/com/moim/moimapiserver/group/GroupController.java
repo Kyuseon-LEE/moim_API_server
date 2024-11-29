@@ -2,6 +2,7 @@ package com.moim.moimapiserver.group;
 
 import lombok.extern.log4j.Log4j2;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -177,6 +178,97 @@ public class GroupController {
         List<CommentDto> comments = groupService.getCommentsByPost(pNo);
         return ResponseEntity.ok(comments);
     }
+    
+    @PostMapping("/{gNo}/posts/{pNo}/delete")
+    public ResponseEntity<Map<String, Object>> deletePost(
+            @PathVariable("gNo") int gNo,
+            @PathVariable("pNo") int pNo,
+            @RequestBody Map<String, Object> requestBody) { // JSON 요청 본문
+        System.out.println("gNo: " + gNo);
+        System.out.println("pNo: " + pNo);
+        System.out.println("mNo: " + requestBody.get("m_no"));
+
+        int mNo = Integer.parseInt(requestBody.get("m_no").toString());
+        boolean isDeleted = groupService.deletePostWithPermissionCheck(gNo, pNo, mNo);
+        if (isDeleted) {
+            return ResponseEntity.ok(Map.of("success", true));
+        } else {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("success", false, "message", "삭제 권한이 없습니다."));
+        }
+    }
+
+    @GetMapping("/post/{pNo}/owner")
+    public ResponseEntity<Map<String, Object>> getPostOwner(@PathVariable("pNo") int pNo) {
+        try {
+            int owner = groupService.getPostOwner(pNo);
+            return ResponseEntity.ok(Map.of("success", true, "data", Map.of("m_no", owner)));
+        } catch (EmptyResultDataAccessException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                                 .body(Map.of("success", false, "message", "No owner found for the given post ID"));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(Map.of("success", false, "message", "An unexpected error occurred"));
+        }
+    }
+    
+    @PutMapping("/posts/{pNo}/edit")
+    public ResponseEntity<Map<String, Object>> editPost(
+    		@PathVariable("pNo") int pNo,
+            @RequestBody Map<String, String> requestBody) {
+        try {
+            String pText = requestBody.get("p_text");
+            String pImg = requestBody.get("p_img");
+
+            if (pText == null || pText.isEmpty()) {
+                return ResponseEntity.badRequest().body(Map.of("success", false, "message", "게시글 내용은 필수입니다."));
+            }
+
+            boolean isUpdated = groupService.editPost(pNo, pText, pImg);
+
+            if (isUpdated) {
+                return ResponseEntity.ok(Map.of("success", true, "message", "게시글이 수정되었습니다."));
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(Map.of("success", false, "message", "게시글을 찾을 수 없습니다."));
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("success", false, "message", "게시글 수정 중 오류가 발생했습니다.", "error", e.getMessage()));
+        }
+    }
+    
+    @DeleteMapping("/comment/{coNo}")
+    public ResponseEntity<Map<String, Object>> deleteComment(@PathVariable("coNo") int coNo) {
+        try {
+            boolean isDeleted = groupService.deleteComment(coNo);
+            if (isDeleted) {
+                return ResponseEntity.ok(Map.of("success", true, "message", "댓글이 삭제되었습니다."));
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body(Map.of("success", false, "message", "댓글 삭제 실패"));
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("success", false, "message", "댓글 삭제 중 오류가 발생했습니다."));
+        }
+    }
+
+    @GetMapping("/comment/{coNo}/owner")
+    public ResponseEntity<Map<String, Object>> getCommentOwner(@PathVariable("coNo") int coNo) {
+        try {
+            int owner = groupService.getCommentOwner(coNo);
+            return ResponseEntity.ok(Map.of("m_no", owner));
+        } catch (EmptyResultDataAccessException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("success", false, "message", "댓글 작성자를 찾을 수 없습니다."));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("success", false, "message", "댓글 작성자 조회 중 오류가 발생했습니다."));
+        }
+    }
+
+
 
 
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -131,6 +132,73 @@ public class GroupService {
 	public List<CommentDto> getCommentsByPost(int pNo) {
 		return groupMapper.findCommentsByPost(pNo);
 	}
+
+	@Transactional
+	public boolean deletePostWithPermissionCheck(int gNo, int pNo, int mNo) {
+	    System.out.println("deletePostWithPermissionCheck 호출");
+	    System.out.println("gNo: " + gNo + ", pNo: " + pNo + ", mNo: " + mNo);
+
+	    // 역할 확인
+	    int userRole = groupMapper.getUserRoleInGroup(gNo, mNo);
+	    System.out.println("userRole: " + userRole);
+
+	    // 모임장인 경우
+	    if (userRole == 3) {
+	        groupMapper.deleteCommentsByPost(pNo); // 댓글 삭제
+	        groupMapper.deletePost(gNo, pNo);     // 게시글 삭제
+	        return true;
+	    }
+
+	    // 작성자 확인
+	    Integer postOwner = groupMapper.getPostOwner(pNo);
+	    if (postOwner == null) {
+	        throw new IllegalArgumentException("해당 게시글의 작성자를 찾을 수 없습니다. pNo: " + pNo);
+	    }
+
+	    System.out.println("postOwner: " + postOwner);
+
+	    // 작성자가 본인인 경우
+	    if (postOwner == mNo) {
+	        groupMapper.deleteCommentsByPost(pNo); // 댓글 삭제
+	        groupMapper.deletePost(gNo, pNo);     // 게시글 삭제
+	        return true;
+	    }
+
+	    // 삭제 권한 없음
+	    return false;
+	}
+
+
+
+	public int getPostOwner(int pNo) {
+	    return groupMapper.getPostOwner(pNo);
+	}
+
+	 @Transactional
+	    public boolean editPost(int pNo, String pText, String pImg) {
+	        // 게시글 존재 여부 확인
+	        Integer postExists = groupMapper.checkPostExists(pNo);
+	        if (postExists == null || postExists == 0) {
+	            throw new IllegalArgumentException("수정하려는 게시글이 존재하지 않습니다.");
+	        }
+
+	        // 게시글 업데이트
+	        int rowsUpdated = groupMapper.updatePost(pNo, pText, pImg);
+	        return rowsUpdated > 0;
+	    }
+
+	@Transactional
+    public boolean deleteComment(int coNo) {
+        int rowsAffected = groupMapper.deleteComment(coNo);
+        return rowsAffected > 0;
+    }
+
+    public int getCommentOwner(int coNo) {
+        return groupMapper.getCommentOwner(coNo);
+    }
+
+
+
 
 }
 

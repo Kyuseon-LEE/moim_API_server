@@ -104,28 +104,34 @@
         VALUES (#{g_no}, #{m_no}, #{p_text}, #{p_img}, NOW(), NOW())
     </insert>
     
-  <select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
-	    SELECT 
-	        p.P_NO,
-	        p.G_NO,
-	        p.M_NO,
-	        p.P_TEXT,
-	        p.P_IMG,
-	        p.P_REG_DATE,
-	        p.P_MOD_DATE,
-	        m.M_NICKNAME,
-	        m.M_PROFILE_IMG
-	    FROM 
-	        TBL_POST p
-	    JOIN 
-	        TBL_MEMBER m
-	    ON 
-	        p.M_NO = m.M_NO
-	    WHERE 
-	        p.G_NO = #{gNo}
-	    ORDER BY 
-	        p.P_REG_DATE DESC
-	</select>
+		<select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
+		    SELECT 
+		        p.P_NO,
+		        p.G_NO,
+		        p.M_NO,
+		        p.P_TEXT,
+		        p.P_IMG,
+		        p.P_REG_DATE,
+		        p.P_MOD_DATE,
+		        m.M_NICKNAME,
+		        m.M_PROFILE_IMG,
+		        gm.G_M_ROLE -- g_m_role 추가
+		    FROM 
+		        TBL_POST p
+		    JOIN 
+		        TBL_MEMBER m
+		    ON 
+		        p.M_NO = m.M_NO
+		    JOIN
+		        TBL_GROUP_MEMBER gm
+		    ON
+		        p.G_NO = gm.G_NO AND p.M_NO = gm.M_NO -- TBL_POST와 TBL_GROUP_MEMBER 연결 조건
+		    WHERE 
+		        p.G_NO = #{gNo}
+		    ORDER BY 
+		        p.P_REG_DATE DESC
+		</select>
+
 
 	
 	<select id="findGroupConfirmStatus" parameterType="int" resultType="int">
@@ -161,28 +167,79 @@
     </insert>
 
     <!-- 게시글별 댓글 조회 -->
-    <select id="findCommentsByPost" parameterType="int" resultType="com.moim.moimapiserver.group.CommentDto">
+	<select id="findCommentsByPost" parameterType="int" resultType="com.moim.moimapiserver.group.CommentDto">
 	    SELECT 
 	        c.CO_NO AS co_no,
 	        c.G_NO AS g_no,
 	        c.P_NO AS p_no,
-	        c.M_NO AS m_no, -- 작성자 ID를 유지
+	        c.M_NO AS m_no,
 	        c.CO_TEXT AS co_text,
 	        c.CO_REG_DATE AS co_reg_date,
 	        c.CO_MOD_DATE AS co_mod_date,
-	        m.M_NICKNAME AS m_nickname -- 작성자 닉네임 추가
+	        m.M_NICKNAME AS m_nickname,
+	        m.M_PROFILE_IMG AS m_profile_img,
+	        gm.G_M_ROLE AS g_m_role
 	    FROM 
 	        TBL_COMMENT c
 	    JOIN 
 	        TBL_MEMBER m
 	    ON 
-	        c.M_NO = m.M_NO -- 댓글 작성자와 멤버 테이블 조인
+	        c.M_NO = m.M_NO
+	    LEFT JOIN 
+	        TBL_GROUP_MEMBER gm
+	    ON 
+	        c.G_NO = gm.G_NO AND c.M_NO = gm.M_NO
 	    WHERE 
 	        c.P_NO = #{p_no}
 	    ORDER BY 
 	        c.CO_REG_DATE DESC
 	</select>
+	
+	<select id="getUserRoleInGroup" parameterType="map" resultType="int">
+        SELECT G_M_ROLE
+        FROM TBL_GROUP_MEMBER
+        WHERE G_NO = #{gNo} AND M_NO = #{mNo}
+    </select>
 
+    <select id="getPostOwner" parameterType="int" resultType="int">
+        SELECT M_NO
+        FROM TBL_POST
+        WHERE P_NO = #{pNo}
+    </select>
 
+    <delete id="deleteCommentsByPost" parameterType="int">
+        DELETE FROM TBL_COMMENT
+        WHERE P_NO = #{pNo}
+    </delete>
+
+    <delete id="deletePost" parameterType="map">
+        DELETE FROM TBL_POST
+        WHERE G_NO = #{gNo} AND P_NO = #{pNo}
+    </delete>
+    
+    <select id="checkPostExists" parameterType="int" resultType="int">
+        SELECT COUNT(1)
+        FROM TBL_POST
+        WHERE P_NO = #{pNo}
+    </select>
+
+    <!-- 게시글 수정 -->
+    <update id="updatePost" parameterType="map">
+    UPDATE TBL_POST
+	    SET 
+	        P_TEXT = #{pText},
+	        P_IMG = CASE WHEN #{pImg} IS NULL THEN P_IMG ELSE #{pImg} END, 
+	        P_MOD_DATE = NOW()
+	    WHERE P_NO = #{pNo}
+	</update>
+	
+	<delete id="deleteComment" parameterType="int">
+	    DELETE FROM TBL_COMMENT WHERE CO_NO = #{coNo}
+	</delete>
+	
+	<select id="getCommentOwner" parameterType="int" resultType="int">
+	    SELECT M_NO FROM TBL_COMMENT WHERE CO_NO = #{coNo}
+	</select>
+	
 	
 </mapper>

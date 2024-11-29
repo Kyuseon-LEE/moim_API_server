@@ -14,4 +14,6 @@ public class CommentDto {
 	private String co_mod_date;
 	
 	private String m_nickname;
+	private String m_profile_img;
+	private int g_m_role;
 }

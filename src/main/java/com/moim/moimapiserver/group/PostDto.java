@@ -14,4 +14,5 @@ public class PostDto {
 	
 	private String m_nickname;
 	private String m_profile_img;
+	private int g_m_role;
 }

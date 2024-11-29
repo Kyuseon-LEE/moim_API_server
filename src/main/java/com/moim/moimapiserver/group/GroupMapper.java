@@ -37,5 +37,24 @@ public interface GroupMapper {
 
 	List<CommentDto> findCommentsByPost(int pNo);
 
+	int getUserRoleInGroup(@Param("gNo") int gNo, @Param("mNo") int mNo);
+
+	void deleteCommentsByPost(@Param("pNo") int pNo);
+
+	void deletePost(@Param("gNo") int gNo, @Param("pNo") int pNo);
+
+	int getPostOwner(@Param("pNo") int pNo);
+
+	Integer checkPostExists(@Param("pNo") int pNo);
+
+	int updatePost(@Param("pNo") int pNo, @Param("pText") String pText, @Param("pImg") String pImg);
+
+    int deleteComment(@Param("coNo") int coNo);
+
+    int getCommentOwner(@Param("coNo") int coNo);
+
+
+
+
 }
 	
