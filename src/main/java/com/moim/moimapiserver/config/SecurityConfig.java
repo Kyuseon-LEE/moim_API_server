@@ -1,16 +1,18 @@
 package com.moim.moimapiserver.config;
 
-import com.moim.moimapiserver.member.MemberDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.codec.Utf8;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.List;
 
 @Configuration
 @Log4j2
@@ -26,16 +28,17 @@ public class SecurityConfig {
     }
 
     @Bean
-    PasswordEncoder passwordEncoder() {	
+    PasswordEncoder passwordEncoder() {
         log.info("passwordEncoder()");
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        log.info("Configuring SecurityFilterChain");
+    public SecurityFilterChain userSecurityFilterChain(HttpSecurity http) throws Exception {
+        log.info("Configuring userSecurityFilterChain");
 
-        http.csrf(csrf -> csrf.disable())
+        http.securityMatcher("/member/**", "/group/**", "/uploads/**")
+                .csrf(csrf -> csrf.disable())
                 .authorizeRequests(auth -> auth
                         .requestMatchers( "/**").permitAll()
                         .requestMatchers( "/group/**", "/member/**", "/uploads/**", "/**").permitAll()
@@ -62,6 +65,31 @@ public class SecurityConfig {
                 );
 
         return http.build();
+    }
+
+    @Bean
+    public SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception {
+        http.securityMatcher("/admin/**", "/auth/**", "/ad/**")
+                .cors()
+                .configurationSource(corsConfigurationSource())
+                .and()
+                .csrf().disable()
+                .formLogin().disable();
+
+        return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of("http://localhost:4000"));
+        configuration.setAllowedMethods(List.of("GET", "POST"));
+        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 
 }

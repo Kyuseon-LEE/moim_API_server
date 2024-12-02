@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moim.moimapiserver.advertisement.AdvertisementMapper">
+    <insert id="insertNewAd" parameterType="com.moim.moimapiserver.dto.AdvertisementDto">
+        INSERT INTO
+            TBL_ADVERTISEMENT (
+                               AD_NAME,
+                               AD_IMG,
+                               AD_TYPE,
+                               AD_OWNER,
+                               AD_ADVERTISER,
+                               AD_LINK,
+                               AD_START_DATE,
+                               AD_END_DATE
+        ) VALUES (
+                  #{ad_name},
+                  #{ad_img},
+                  #{ad_type},
+                  #{ad_owner},
+                  #{ad_advertiser},
+                  #{ad_link},
+                  #{ad_start_date},
+                  #{ad_end_date}
+                         )
+    </insert>
+    <select id="selectAds" resultType="com.moim.moimapiserver.dto.AdvertisementDto">
+        SELECT
+            *
+        FROM
+            TBL_ADVERTISEMENT
+                LIMIT #{size} OFFSET #{offset}
+    </select>
+    <select id="selectAdCount">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_ADVERTISEMENT
+    </select>
+    <select id="selectAdStatus" resultType="com.moim.moimapiserver.dto.AdStatusDto">
+        SELECT
+            AST_NO,
+            AST_NAME
+        FROM
+            TBL_AD_STATUS
+    </select>
+
+    <select id="selectAdByAdStatus">
+        SELECT
+            AD_NAME,
+            AD_IMG,
+            AD_LINK
+        FROM
+            TBL_ADVERTISEMENT
+        WHERE
+            AD_STATUS = 3
+    </select>
+</mapper>
