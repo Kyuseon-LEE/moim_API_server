@@ -267,8 +267,31 @@ public class GroupController {
                     .body(Map.of("success", false, "message", "댓글 작성자 조회 중 오류가 발생했습니다."));
         }
     }
+    
+    @GetMapping("/{g_no}/messages")
+    public ResponseEntity<?> getMessagesByGroup(@PathVariable("g_no") int g_no) {
+        try {
+            List<ChatDto> messages = groupService.getMessagesByGroup(g_no);
+            return ResponseEntity.ok(messages);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to fetch messages");
+        }
+    }
 
+    @PostMapping("/{g_no}/message")
+    public ResponseEntity<?> createMessage(@PathVariable("g_no") int g_no, @RequestBody ChatDto chatDto) {
+        try {
+            chatDto.setG_no(g_no); // g_no 추가
+            System.out.println("Spring - 메시지 전송 데이터: " + chatDto);
+            groupService.createMessage(g_no, chatDto);
+            return ResponseEntity.ok("Message sent successfully");
+        } catch (Exception e) {
+            e.printStackTrace(); // 전체 스택 트레이스 출력
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to send message");
+        }
+    }
+    
+    
 
-
-
+    
 }

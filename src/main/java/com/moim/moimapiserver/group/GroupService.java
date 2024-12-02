@@ -197,6 +197,16 @@ public class GroupService {
         return groupMapper.getCommentOwner(coNo);
     }
 
+    public List<ChatDto> getMessagesByGroup(int g_no) {
+        return groupMapper.getMessagesByGroup(g_no);
+    }
+
+    public void createMessage(int g_no, ChatDto chatDto) {
+        chatDto.setG_no(g_no);
+        System.out.println("Spring - DB 저장 전 데이터: " + chatDto);
+        groupMapper.createMessage(chatDto);
+    }
+
 
 
 
