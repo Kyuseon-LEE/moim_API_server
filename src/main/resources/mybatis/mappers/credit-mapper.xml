@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moim.moimapiserver.credit.ICreditMapper">
+
+    <insert id="insertToPayment">
+        INSERT INTO TBL_PAYMENT(
+                                M_NO,
+                                PAY_PROD_NAME,
+                                PAY_PERIOD,
+                                PAY_AMOUNT,
+                                PAY_METHOD)
+        VALUES (#{m_no},
+                #{pay_prod_name},
+                #{pay_period},
+                #{pay_amount},
+                #{pay_method}
+               )
+    </insert>
+
+    <update id="upGradeMember" parameterType="com.moim.moimapiserver.credit.CreditDto">
+        CREATE TRIGGER trg_after_payment_insert
+            AFTER INSERT ON TBL_PAYMENT
+            FOR EACH ROW
+        BEGIN
+            UPDATE TBL_PAYMENT
+            SET PAY_EXPIRED_DATE = DATE_ADD(NEW.PAY_REG_DATE, INTERVAL NEW.PAY_PERIOD DAY)
+            WHERE PAY_NO = NEW.PAY_NO;
+
+            -- 회원 등급을 1로 업데이트
+            UPDATE TBL_MEMBER
+            SET M_GRADE = 1
+            WHERE M_NO = NEW.M_NO;
+        END;
+
+    </update>
+
+</mapper>
