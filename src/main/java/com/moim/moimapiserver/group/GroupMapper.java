@@ -53,6 +53,11 @@ public interface GroupMapper {
 
     int getCommentOwner(@Param("coNo") int coNo);
 
+	List<ChatDto> getMessagesByGroup(int g_no);
+
+	void createMessage(ChatDto chatDto);
+
+
 
 
 

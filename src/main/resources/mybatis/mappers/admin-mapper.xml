@@ -1,4 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.moim.moimapiserver.admin.AdminMapper">
+
+    <select id="selectAdminPart" resultType="com.moim.moimapiserver.dto.AdminPartDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN_PART
+    </select>
+
+    <select id="selectAdminPosition" resultType="com.moim.moimapiserver.dto.AdminPositionDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN_POSITION
+    </select>
+
+    <insert id="insertNewAdmin" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        INSERT INTO
+            TBL_ADMIN(
+                      A_ID,
+                      A_PW,
+                      A_NAME,
+                      A_MAIL,
+                      A_PHONE,
+                      A_PART,
+                      A_POSITION
+        ) VALUES(
+            #{a_id},
+            #{a_pw},
+            #{a_name},
+            #{a_mail},
+            #{a_phone},
+            #{a_part},
+            #{a_position}
+        )
+    </insert>
+    <select id="selectAdminByAId" parameterType="String" resultType="com.moim.moimapiserver.dto.AdminDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN
+        WHERE
+            A_ID = #{a_id}
+    </select>
+
+    <select id="adminDuplicateCheck" parameterType="String">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_ADMIN
+        WHERE
+            A_ID = #{a_id}
+    </select>
+
+    <select id="selectAdmins" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN
+                LIMIT #{size} OFFSET #{offset}
+
+    </select>
+    <select id="selectUsers" parameterType="com.moim.moimapiserver.dto.MemberDto">
+        SELECT
+            *
+        FROM
+            TBL_MEMBER
+                LIMIT #{size} OFFSET #{offset}
+
+    </select>
+    <select id="selectAdminCount">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_ADMIN
+    </select>
+
+    <select id="selectAdminsByApproval">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN
+        WHERE
+            A_APPROVAL = 0
+            LIMIT #{size} OFFSET #{offset};
+    </select>
+
+    <update id="updateAdminApprovalByANo" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        UPDATE
+            TBL_ADMIN
+        SET
+            A_APPROVAL = ${a_approval},
+            A_MOD_DATE = NOW(),
+            A_APPROVAL_DATE = NOW()
+        WHERE
+            A_NO = ${a_no}
+    </update>
+
+    <delete id="deleteAdminByANo" parameterType="int">
+        DELETE
+            FROM
+                TBL_ADMIN
+        WHERE
+            A_NO = #{a_no}
+    </delete>
+
+    <update id="updateAdminPartByANo" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        UPDATE
+            TBL_ADMIN
+        SET
+            A_PART = #{a_part},
+            A_MOD_DATE = NOW()
+        WHERE
+            A_NO = #{a_no}
+    </update>
+
+    <update id="updateAdminPositionByANo" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        UPDATE
+            TBL_ADMIN
+        SET
+            A_POSITION = #{a_position},
+            A_MOD_DATE = NOW()
+        WHERE
+            A_NO = #{a_no}
+    </update>
+
+    <update id="updateAdminAuthorityByANo" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        UPDATE
+            TBL_ADMIN
+        SET
+            A_AUTHORITY = #{a_authority},
+            A_MOD_DATE = NOW(),
+            A_AUTHORITY_DATE = NOW()
+        WHERE
+            A_NO = #{a_no}
+    </update>
+
+    <update id="updateAdminActiveByANo" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        UPDATE
+            TBL_ADMIN
+        SET
+            A_IS_ACTIVE = #{a_is_active},
+            A_MOD_DATE = NOW(),
+            A_IS_ACTIVE_DATE = NOW()
+        WHERE
+            A_NO = #{a_no}
+    </update>
+
+    <select id="selectAdminPartByOffset" parameterType="int" resultType="com.moim.moimapiserver.dto.AdminPartDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN_PART
+                LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <select id="selectAdminPartCount">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_ADMIN_PART
+    </select>
+
+    <select id="selectAdminCountByApproval">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_ADMIN
+        WHERE
+            A_APPROVAL = 0
+    </select>
+
+    <delete id="deleteAdminPartItem">
+        DELETE
+            FROM
+                TBL_ADMIN_PART
+        WHERE
+            APT_NO = #{apt_no}
+    </delete>
+
+    <insert id="insertNewAdminPart" parameterType="com.moim.moimapiserver.dto.AdminPartDto">
+        INSERT INTO
+            TBL_ADMIN_PART(APT_NAME) VALUES (#{apt_name})
+
+    </insert>
+
+    <update id="updateAdminPart" parameterType="com.moim.moimapiserver.dto.AdminPartDto">
+        UPDATE
+            TBL_ADMIN_PART
+        SET
+            APT_NAME = #{apt_name},
+            APT_MOD_DATE = NOW()
+        WHERE
+            APT_NO = #{apt_no}
+    </update>
+
+    <select id="selectAdminPositionCount">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_ADMIN_POSITION
+
+    </select>
+
+    <select id="selectAdminPositionByOffset" resultType="com.moim.moimapiserver.dto.AdminPositionDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN_POSITION
+            LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <insert id="insertNewAdminPosition" parameterType="com.moim.moimapiserver.dto.AdminPositionDto">
+        INSERT INTO
+            TBL_ADMIN_POSITION(APS_NAME) VALUES (#{aps_name})
+
+    </insert>
+
+    <update id="updateAdminPosition" parameterType="com.moim.moimapiserver.dto.AdminPositionDto">
+        UPDATE
+            TBL_ADMIN_POSITION
+            SET
+                APS_NAME = #{aps_name},
+                APS_MOD_DATE = NOW()
+            WHERE
+                APS_NO = #{aps_no}
+    </update>
+    <delete id="deleteAdminPosition" parameterType="com.moim.moimapiserver.dto.AdminPositionDto">
+        DELETE
+            FROM
+                TBL_ADMIN_POSITION
+            WHERE
+                APS_NO = #{aps_no}
+    </delete>
+
+    <select id="selectAdminByAid" parameterType="com.moim.moimapiserver.dto.AdminDto" resultType="com.moim.moimapiserver.dto.AdminDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN
+        WHERE
+            A_ID = #{a_id}
+    </select>
+
+    <update id="updateAdminByAid" parameterType="com.moim.moimapiserver.dto.AdminDto">
+        UPDATE
+            TBL_ADMIN
+        SET
+            A_MAIL = #{a_mail},
+            A_PHONE = #{a_phone},
+            A_PART= #{a_part},
+            A_POSITION = #{a_position},
+            A_MOD_DATE = NOW()
+        WHERE
+            A_NO = #{a_no}
+    </update>
+
+    <select id="selectUserCount">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_MEMBER
+    </select>
 </mapper>

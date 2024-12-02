@@ -241,5 +241,33 @@
 	    SELECT M_NO FROM TBL_COMMENT WHERE CO_NO = #{coNo}
 	</select>
 	
+
+	<insert id="createMessage">
+	    INSERT INTO TBL_CHATTING (G_NO, M_NO, C_CONTENT, C_REG_DATE)
+	    SELECT 
+	        #{g_no}, 
+	        #{m_no}, 
+	        #{c_content}, 
+	        NOW()
+	    FROM TBL_MEMBER 
+	    WHERE M_NO = #{m_no}
+	</insert>
+	
+	<select id="getMessagesByGroup" resultType="com.moim.moimapiserver.group.ChatDto">
+	    SELECT 
+	        c.G_NO, 
+	        c.M_NO, 
+	        c.C_CONTENT, 
+	        c.C_REG_DATE, 
+	        m.M_NICKNAME
+	    FROM TBL_CHATTING c
+	    JOIN TBL_MEMBER m ON c.M_NO = m.M_NO
+	    WHERE c.G_NO = #{g_no}
+	    ORDER BY c.C_REG_DATE ASC
+	</select>
+	
+
+	
+	
 	
 </mapper>
