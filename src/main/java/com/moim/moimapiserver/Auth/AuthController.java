@@ -5,10 +5,9 @@ import com.moim.moimapiserver.dto.ResponseWrapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @Log4j2
 @RestController
@@ -66,6 +65,19 @@ public class AuthController {
         log.info("refreshTokenRequest: {}", refreshTokenDto);
 
         ResponseWrapper<Object> response = authService.confirmRefreshTokenDelete(refreshTokenDto);
+
+        return switch (response.getStatus()) {
+            case "SUCCESS", "FAIL" -> ResponseEntity.ok(response);
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        };
+    }
+
+    @PostMapping("/getRefreshToken")
+    public ResponseEntity<ResponseWrapper<Object>> getRefreshToken(@RequestBody Map<String, String> body) {
+        log.info("getRefreshToken()");
+        String a_id = body.get("a_id");
+        log.info("getRefreshToken() with a_id: {}", a_id);
+        ResponseWrapper<Object> response = authService.getRefreshTokenByAid(a_id);
 
         return switch (response.getStatus()) {
             case "SUCCESS", "FAIL" -> ResponseEntity.ok(response);

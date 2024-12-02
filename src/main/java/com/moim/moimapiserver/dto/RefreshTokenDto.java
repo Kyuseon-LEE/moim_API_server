@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class RefreshTokenDto {
     private int rt_no;
     private String a_id;
-    private String refreshToken;
+    private String refresh_token;
     private LocalDateTime expires_at;
     private LocalDateTime created_at;
 }

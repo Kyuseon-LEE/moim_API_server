@@ -14,4 +14,5 @@ public interface AuthMapper {
     int deleteRefreshTokenByAid(RefreshTokenDto refreshTokenDto);
 
 
+    RefreshTokenDto selectRefreshTokenByAid(String a_id);
 }

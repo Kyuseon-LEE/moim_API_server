@@ -55,7 +55,7 @@ public class AuthService {
         log.info("confirmRefreshTokenCheck()");
         try {
             RefreshTokenDto selectedRefreshToken = authMapper.selectRefreshToken(refreshTokenDto);
-            if (!Objects.equals(selectedRefreshToken.getRefreshToken(), refreshTokenDto.getRefreshToken())) {
+            if (!Objects.equals(selectedRefreshToken.getRefresh_token(), refreshTokenDto.getRefresh_token())) {
                 log.info("리프래시 토큰 불일치");
                 return responseWrapper(AdminStatusConfig.FAIL_STATUS, "REFRESH TOKEN MATCH FAIL", null);
             } else {
@@ -121,4 +121,26 @@ public class AuthService {
     }
 
 
+    public ResponseWrapper<Object> getRefreshTokenByAid(String a_id) {
+        log.info("getRefreshTokenByAid()");
+        try {
+            RefreshTokenDto refreshTokenDto = authMapper.selectRefreshTokenByAid(a_id);
+            if (refreshTokenDto != null) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "TOKEN GET SUCCESS", refreshTokenDto);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "TOKEN GET FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
 }

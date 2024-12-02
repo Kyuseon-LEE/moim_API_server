@@ -10,7 +10,7 @@
         )
         VALUES (
                 #{a_id},
-                #{refreshToken},
+                #{refresh_token},
                 #{expires_at}
                )
 
@@ -21,14 +21,14 @@
         FROM
             TBL_ADMIN_REFRESH_TOKENS
         WHERE
-            REFRESH_TOKEN = #{refreshToken}
+            REFRESH_TOKEN = #{refresh_token}
     </select>
 
     <update id="updateRefreshTokenByAid" parameterType="com.moim.moimapiserver.dto.RefreshTokenDto">
         UPDATE
             TBL_ADMIN_REFRESH_TOKENS
         SET
-            REFRESH_TOKEN = #{refreshToken},
+            REFRESH_TOKEN = #{refresh_token},
             EXPIRES_AT = #{expires_at},
             CREATED_AT = NOW()
         WHERE
@@ -42,4 +42,13 @@
         WHERE
             A_ID = #{a_id}
     </delete>
+
+    <select id="selectRefreshTokenByAid" parameterType="com.moim.moimapiserver.dto.RefreshTokenDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN_REFRESH_TOKENS
+        WHERE
+            A_ID = #{a_id}
+    </select>
 </mapper>
