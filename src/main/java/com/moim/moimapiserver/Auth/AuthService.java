@@ -101,7 +101,7 @@ public class AuthService {
         log.info("confirmRefreshTokenDelete()");
         try {
             int result = authMapper.deleteRefreshTokenByAid(refreshTokenDto);
-            if (result > 0) {
+            if (result >= 0) {
                 return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE SUCCESS", null);
 
             } else {
