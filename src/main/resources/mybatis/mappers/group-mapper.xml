@@ -243,11 +243,12 @@
 	
 
 	<insert id="createMessage">
-	    INSERT INTO TBL_CHATTING (G_NO, M_NO, C_CONTENT, C_REG_DATE)
+	    INSERT INTO TBL_CHATTING (G_NO, M_NO, C_CONTENT, C_IMG_URL, C_REG_DATE)
 	    SELECT 
 	        #{g_no}, 
 	        #{m_no}, 
-	        #{c_content}, 
+	        #{c_content},
+	        #{c_img_url},
 	        NOW()
 	    FROM TBL_MEMBER 
 	    WHERE M_NO = #{m_no}
@@ -258,13 +259,30 @@
 	        c.G_NO, 
 	        c.M_NO, 
 	        c.C_CONTENT, 
-	        c.C_REG_DATE, 
-	        m.M_NICKNAME
+	        c.C_REG_DATE,
+	        c.C_IMG_URL, 
+	        m.M_NICKNAME,
+	        m.M_PROFILE_IMG
 	    FROM TBL_CHATTING c
 	    JOIN TBL_MEMBER m ON c.M_NO = m.M_NO
 	    WHERE c.G_NO = #{g_no}
 	    ORDER BY c.C_REG_DATE ASC
 	</select>
+	
+	<update id="updateGroup" parameterType="map">
+	    UPDATE TBL_GROUP
+	    SET 
+	        G_NAME = #{updatedGroupData.g_name},
+	        G_INFO = #{updatedGroupData.g_info},
+	        G_CATEGORY = #{updatedGroupData.g_category},
+	        G_MAX_NUMBER = #{updatedGroupData.g_max_number},
+	        G_PUBLIC = #{updatedGroupData.g_public},
+	        G_REGIST = #{updatedGroupData.g_regist},
+	        G_IMG_NAME = #{updatedGroupData.g_img_name}
+	    WHERE G_NO = #{gNo}
+	</update>
+	
+	
 	
 
 	

@@ -17,6 +17,7 @@ public class ChatDto {
     private int em_no;
     
     private String m_nickname;
+    private String m_profile_img;
     
     @Override
     public String toString() {

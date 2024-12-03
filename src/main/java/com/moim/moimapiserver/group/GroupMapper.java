@@ -57,6 +57,8 @@ public interface GroupMapper {
 
 	void createMessage(ChatDto chatDto);
 
+	int updateGroup(@Param("gNo") int gNo, @Param("updatedGroupData") GroupDto updatedGroupData);
+
 
 
 

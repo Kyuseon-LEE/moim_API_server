@@ -291,6 +291,21 @@ public class GroupController {
         }
     }
     
+    @PutMapping("/{g_no}/update")
+    public ResponseEntity<?> updateGroup(@PathVariable("g_no") int gNo, @RequestBody GroupDto updatedGroupData) {
+        try {
+            boolean isUpdated = groupService.updateGroup(gNo, updatedGroupData);
+            if (isUpdated) {
+                return ResponseEntity.ok("그룹 정보가 성공적으로 업데이트되었습니다.");
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("그룹 정보 업데이트 실패");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("서버 오류로 인해 그룹 정보를 업데이트할 수 없습니다.");
+        }
+    }
+    
     
 
     
