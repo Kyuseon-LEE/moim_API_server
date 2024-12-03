@@ -17,21 +17,16 @@
                )
     </insert>
 
-    <update id="upGradeMember" parameterType="com.moim.moimapiserver.credit.CreditDto">
-        CREATE TRIGGER trg_after_payment_insert
-            AFTER INSERT ON TBL_PAYMENT
-            FOR EACH ROW
-        BEGIN
-            UPDATE TBL_PAYMENT
-            SET PAY_EXPIRED_DATE = DATE_ADD(NEW.PAY_REG_DATE, INTERVAL NEW.PAY_PERIOD DAY)
-            WHERE PAY_NO = NEW.PAY_NO;
+    <select id="getExpiredMembers" resultType="com.moim.moimapiserver.credit.CreditDto">
+        SELECT m_no
+        FROM TBL_PAYMENT WHERE DATE(pay_expired_date) = CURRENT_DATE()
+    </select>
 
-            -- 회원 등급을 1로 업데이트
-            UPDATE TBL_MEMBER
-            SET M_GRADE = 1
-            WHERE M_NO = NEW.M_NO;
-        END;
-
+    <update id="updateMemberStatusToExpired">
+        UPDATE TBL_MEMBER M
+            JOIN TBL_PAYMENT P ON M.m_no = P.m_no
+            SET M.M_GRADE = 0
+        WHERE DATE(P.PAY_EXPIRED_DATE) = CURRENT_DATE();
     </update>
 
 </mapper>

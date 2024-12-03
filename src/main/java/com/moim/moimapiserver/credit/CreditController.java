@@ -26,11 +26,5 @@ public class CreditController {
         return result;
     }
 
-    @PostMapping("/upGradeMember")
-    @ResponseBody
-    public void  upGradeMember(@RequestBody CreditDto creditDto) {
-        log.info("[creditController]upGradeMember creditDto: {}", creditDto);
-        creditService.upGradeMember(creditDto);
-    }
 
 }
