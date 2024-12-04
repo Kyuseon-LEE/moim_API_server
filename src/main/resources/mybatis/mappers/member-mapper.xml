@@ -23,7 +23,30 @@
     </update>
 
     <update id="insertCategories" parameterType="com.moim.moimapiserver.member.IMemberMapper">
-        UPDATE TBL_MEMBER SET M_CATEGORY = #{m_category} WHERE M_ID = #{m_id}
+        UPDATE TBL_MEMBER
+        SET M_CATEGORY = #{m_category}
+        <where>
+            <!-- m_id가 존재하면 m_id 사용, m_id가 없으면 m_social_id 사용 -->
+            <choose>
+                <when test="m_id != null">
+                    AND M_ID = #{m_id}
+                </when>
+                <when test="m_social_id != null">
+                    AND M_SOCIAL_ID = #{m_social_id}
+                </when>
+            </choose>
+        </where>
     </update>
+
+    <insert id="socialSignup" parameterType="com.moim.moimapiserver.member.MemberDto">
+        INSERT INTO TBL_MEMBER(m_social_id, m_social_type, m_name, m_mail, m_phone, m_nickname, m_gender, m_age, m_address, m_profile_img)
+        VALUES(#{m_social_id}, #{m_social_type}, #{m_name}, #{m_mail}, #{m_phone}, #{m_nickname}, #{m_gender}, #{m_age}, #{m_address}, #{m_profile_img})
+    </insert>
+
+    <select id="existMember" parameterType="String" resultType="int">
+        SELECT CASE WHEN EXISTS (
+            SELECT 1 FROM TBL_MEMBER WHERE M_SOCIAL_ID = #{m_social_id}
+        ) THEN 1 ELSE 0 END
+    </select>
 
 </mapper>

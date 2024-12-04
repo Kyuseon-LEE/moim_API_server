@@ -63,5 +63,26 @@ public class MemberController {
         return result;
     }
 
+    @PostMapping("/socialSignup")
+    @ResponseBody
+    public Object socialSignup(@RequestBody MemberDto memberDto) {
+        log.info("socialSignup()");
+
+        Map<String, Object> resultMap = memberService.socialSignup(memberDto);
+
+        return resultMap;
+    }
+
+    @PostMapping("/existMember")
+    @ResponseBody
+    public int existMember(@RequestBody Map<String, String> request) {
+        log.info("[memberController]existMember()");
+        String m_social_id = request.get("m_social_id");
+        log.info("받은 m_social_id: {}", m_social_id);
+
+        int result = memberService.existMember(m_social_id);
+        return result;
+    }
+
 }
 

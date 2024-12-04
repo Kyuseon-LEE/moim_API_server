@@ -24,6 +24,11 @@ public class MemberService {
     public static int FAIL_MEMBER_UPDATE = 5;
     public static int SUCCESS_CATEGORY_INSERT = 6;
     public static int FAIL_CATEGORY_INSERT = 7;
+    public static int SUCCESS_SOCIAL_SIGNUP = 8;
+    public static int FAIL_SOCIAL_SIGNUP = 9;
+    public static int NOT_EXIST_SOCIAL_MEMBER = 10;
+    public static int EXIST_SOCIAL_MEMBER = 11;
+
 
     private final IMemberMapper iMemberMapper;
     private final PasswordEncoder passwordEncoder;
@@ -96,6 +101,34 @@ public class MemberService {
             return FAIL_CATEGORY_INSERT;
         }
 
+    }
+
+
+    public Map<String, Object> socialSignup(MemberDto memberDto) {
+        log.info("[memberService] socialSignup");
+        Map<String, Object> resultMap = new HashMap<>();
+        int result = iMemberMapper.socialSignup(memberDto);
+
+        if(result > 0) {
+            resultMap.put("result", SUCCESS_SOCIAL_SIGNUP);
+            return resultMap;
+        } else {
+            resultMap.put("result", FAIL_SOCIAL_SIGNUP);
+            return resultMap;
+        }
+    }
+
+
+    public int existMember(String m_social_id) {
+        log.info("[memberService] existMember()");
+
+        int result = iMemberMapper.existMember(m_social_id);
+        log.info("result ---> {}", result);
+        if(result > 0) {
+            return EXIST_SOCIAL_MEMBER;
+        } else {
+            return NOT_EXIST_SOCIAL_MEMBER;
+        }
     }
 }
 

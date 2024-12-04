@@ -15,4 +15,8 @@ public interface IMemberMapper {
     int updateMemberInfo(MemberDto memberDto);
 
     int insertCategories(MemberDto memberDto);
+
+    int socialSignup(MemberDto memberDto);
+
+    int existMember(String m_social_id);
 }

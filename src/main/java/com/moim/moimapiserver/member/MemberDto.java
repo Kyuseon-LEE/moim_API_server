@@ -11,8 +11,8 @@ import java.util.List;
 @Data
 public class MemberDto implements UserDetails {
     private int m_no;
-    private String m_kakao_id;
-    private String m_google_id;
+    private String m_social_id;
+    private String m_social_type;
     private String m_profile_img;
     private String m_id;
     private String m_pw;

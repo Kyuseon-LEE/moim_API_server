@@ -30,12 +30,6 @@ public class CreditService {
         return result;
     }
 
-//    public List<MemberDto> downGradeMember () {
-//
-//        List<MemberDto> expiredMember = iCreditMapper.getExpiredMembers();
-//
-//        return expiredMember;
-//    }
 
 
 }
