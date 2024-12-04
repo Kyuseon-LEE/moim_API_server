@@ -59,6 +59,8 @@ public interface GroupMapper {
 
 	int updateGroup(@Param("gNo") int gNo, @Param("updatedGroupData") GroupDto updatedGroupData);
 
+	List<PostDto> findPostsByGroupAndMember(@Param("gNo") int gNo, @Param("mNo")int mNo);
+
 
 
 

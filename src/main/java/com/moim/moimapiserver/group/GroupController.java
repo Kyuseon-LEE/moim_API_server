@@ -305,6 +305,17 @@ public class GroupController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("서버 오류로 인해 그룹 정보를 업데이트할 수 없습니다.");
         }
     }
+    @GetMapping("/{g_no}/posts/{m_no}")
+    public ResponseEntity<?> getPostsByGroupAndMember(
+            @PathVariable("g_no") int gNo,
+            @PathVariable("m_no") int mNo) {
+        try {
+            List<PostDto> posts = groupService.getPostsByGroupAndMember(gNo, mNo);
+            return ResponseEntity.ok(posts);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to fetch posts");
+        }
+    }
     
     
 

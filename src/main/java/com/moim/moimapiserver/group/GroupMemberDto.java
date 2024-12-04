@@ -14,4 +14,7 @@ public class GroupMemberDto {
     
     private String m_nickname;       // 추가된 필드
     private String m_profile_img;   // 추가된 필드
+    private String m_category;   // 추가된 필드
+    private String m_id;
+    private String m_mail;
 }

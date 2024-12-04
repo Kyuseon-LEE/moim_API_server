@@ -212,6 +212,10 @@ public class GroupService {
         return rowsAffected > 0; // 성공적으로 업데이트된 경우 true 반환
     }
 
+    public List<PostDto> getPostsByGroupAndMember(int gNo, int mNo) {
+        return groupMapper.findPostsByGroupAndMember(gNo, mNo);
+    }
+
 
 
 

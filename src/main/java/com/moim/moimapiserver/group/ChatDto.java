@@ -18,6 +18,9 @@ public class ChatDto {
     
     private String m_nickname;
     private String m_profile_img;
+    private String m_mail;
+    private String m_category;
+    private String g_reg_date;
     
     @Override
     public String toString() {
