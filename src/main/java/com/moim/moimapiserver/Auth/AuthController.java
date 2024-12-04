@@ -65,7 +65,7 @@ public class AuthController {
         log.info("refreshTokenRequest: {}", refreshTokenDto);
 
         ResponseWrapper<Object> response = authService.confirmRefreshTokenDelete(refreshTokenDto);
-
+        log.info("response: {}", response);
         return switch (response.getStatus()) {
             case "SUCCESS", "FAIL" -> ResponseEntity.ok(response);
             default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
