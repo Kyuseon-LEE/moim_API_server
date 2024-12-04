@@ -54,4 +54,41 @@
         WHERE
             AD_STATUS = 3
     </select>
+
+    <update id="updateAdStatusByAdNo" parameterType="com.moim.moimapiserver.dto.AdvertisementDto">
+        UPDATE
+            TBL_ADVERTISEMENT
+        SET
+            AD_STATUS = #{ad_status},
+            AD_MOD_DATE= NOW()
+        WHERE
+            AD_NO = #{ad_no}
+    </update>
+
+    <update id="updateAdByAdNo" parameterType="com.moim.moimapiserver.dto.AdvertisementDto">
+        UPDATE
+            TBL_ADVERTISEMENT
+        SET
+            AD_NAME = #{ad_name},
+            AD_TYPE = #{ad_type},
+            AD_ADVERTISER = #{ad_advertiser},
+            AD_LINK = #{ad_link},
+            AD_OWNER = #{ad_owner},
+            AD_START_DATE = #{ad_start_date},
+            AD_END_DATE = #{ad_end_date},
+            AD_MOD_DATE = NOW()
+            <if test="ad_img != null">
+                , AD_IMG = #{ad_img}
+            </if>
+        WHERE
+            AD_NO = #{ad_no}
+    </update>
+
+    <delete id="deleteAdByAdNo" parameterType="com.moim.moimapiserver.dto.AdvertisementDto">
+        DELETE
+            FROM
+                TBL_ADVERTISEMENT
+            WHERE
+                AD_NO = #{ad_no}
+    </delete>
 </mapper>

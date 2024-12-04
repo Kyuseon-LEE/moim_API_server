@@ -92,4 +92,49 @@ public class AdvertisementController {
 
         };
     }
+
+    @PostMapping("/changeAdStatus")
+    public ResponseEntity<ResponseWrapper<Integer>> changeAdStatus(@RequestBody AdvertisementDto advertisementDto) {
+        log.info("changeAdStatus()");
+        log.info("advertisementDto: {}", advertisementDto);
+        ResponseWrapper<Integer> result = advertisementService.updateStatusByAdNo(advertisementDto);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/updateAd")
+    public ResponseEntity<ResponseWrapper<Integer>> updateAd(@RequestBody AdvertisementDto advertisementDto) {
+        log.info("updateAd()");
+        log.info("advertisementDto: {}", advertisementDto);
+        ResponseWrapper<Integer> result = advertisementService.confirmAdUpdate(advertisementDto);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/deleteAd")
+    public ResponseEntity<ResponseWrapper<Integer>> deleteAd(@RequestBody AdvertisementDto advertisementDto) {
+        log.info("deleteAd()");
+        log.info("advertisementDto: {}", advertisementDto);
+        ResponseWrapper<Integer> result = advertisementService.confirmAdDelete(advertisementDto);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
 }
