@@ -104,33 +104,37 @@
         VALUES (#{g_no}, #{m_no}, #{p_text}, #{p_img}, NOW(), NOW())
     </insert>
     
-		<select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
-		    SELECT 
-		        p.P_NO,
-		        p.G_NO,
-		        p.M_NO,
-		        p.P_TEXT,
-		        p.P_IMG,
-		        p.P_REG_DATE,
-		        p.P_MOD_DATE,
-		        m.M_NICKNAME,
-		        m.M_PROFILE_IMG,
-		        gm.G_M_ROLE -- g_m_role 추가
-		    FROM 
-		        TBL_POST p
-		    JOIN 
-		        TBL_MEMBER m
-		    ON 
-		        p.M_NO = m.M_NO
-		    JOIN
-		        TBL_GROUP_MEMBER gm
-		    ON
-		        p.G_NO = gm.G_NO AND p.M_NO = gm.M_NO -- TBL_POST와 TBL_GROUP_MEMBER 연결 조건
-		    WHERE 
-		        p.G_NO = #{gNo}
-		    ORDER BY 
-		        p.P_REG_DATE DESC
-		</select>
+	<select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
+	        SELECT 
+        p.P_NO,
+        p.G_NO,
+        p.M_NO,
+        p.P_TEXT,
+        p.P_IMG,
+        p.P_REG_DATE,
+        p.P_MOD_DATE,
+        m.M_NICKNAME,
+        m.M_PROFILE_IMG,
+        m.M_MAIL,
+        m.M_CATEGORY,
+        gm.G_M_ROLE,
+        gm.G_REG_DATE -- 멤버의 그룹 가입일
+    FROM 
+        TBL_POST p
+    JOIN 
+        TBL_MEMBER m
+    ON 
+        p.M_NO = m.M_NO
+    JOIN
+        TBL_GROUP_MEMBER gm
+    ON
+        p.G_NO = gm.G_NO AND p.M_NO = gm.M_NO 
+    WHERE 
+        p.G_NO = #{gNo} -- 특정 그룹
+    ORDER BY 
+        p.P_REG_DATE DESC
+	</select>
+
 
 
 	
@@ -155,7 +159,9 @@
 	        gm.G_REG_DATE,
 	        gm.G_MOD_DATE,
 	        m.M_NICKNAME AS m_nickname,
-	        m.M_PROFILE_IMG AS m_profile_img
+	        m.M_PROFILE_IMG AS m_profile_img,
+	        m.M_CATEGORY AS m_category,
+	        m.M_MAIL AS m_mail
 	    FROM TBL_GROUP_MEMBER gm
 	    JOIN TBL_MEMBER m ON gm.M_NO = m.M_NO
 	    WHERE gm.G_NO = #{gNo};
@@ -177,23 +183,31 @@
 	        c.CO_REG_DATE AS co_reg_date,
 	        c.CO_MOD_DATE AS co_mod_date,
 	        m.M_NICKNAME AS m_nickname,
-	        m.M_PROFILE_IMG AS m_profile_img,
-	        gm.G_M_ROLE AS g_m_role
-	    FROM 
-	        TBL_COMMENT c
-	    JOIN 
-	        TBL_MEMBER m
-	    ON 
-	        c.M_NO = m.M_NO
-	    LEFT JOIN 
-	        TBL_GROUP_MEMBER gm
-	    ON 
-	        c.G_NO = gm.G_NO AND c.M_NO = gm.M_NO
-	    WHERE 
-	        c.P_NO = #{p_no}
-	    ORDER BY 
-	        c.CO_REG_DATE DESC
-	</select>
+		        m.M_PROFILE_IMG AS m_profile_img,
+		        m.M_MAIL AS m_mail,
+		        m.M_CATEGORY AS m_category,
+		        gm.G_M_ROLE AS g_m_role,
+		        g.G_REG_DATE AS g_reg_date -- 추가된 G_REG_DATE
+		    FROM 
+		        TBL_COMMENT c
+		    JOIN 
+		        TBL_MEMBER m
+		    ON 
+		        c.M_NO = m.M_NO
+		    LEFT JOIN 
+		        TBL_GROUP_MEMBER gm
+		    ON 
+		        c.G_NO = gm.G_NO AND c.M_NO = gm.M_NO
+		    JOIN 
+		        TBL_GROUP g -- TBL_GROUP 테이블 조인
+		    ON 
+		        c.G_NO = g.G_NO -- 그룹 번호를 기준으로 조인
+		    WHERE 
+		        c.P_NO = #{p_no}
+		    ORDER BY 
+		        c.CO_REG_DATE DESC
+		</select>
+
 	
 	<select id="getUserRoleInGroup" parameterType="map" resultType="int">
         SELECT G_M_ROLE
@@ -243,11 +257,12 @@
 	
 
 	<insert id="createMessage">
-	    INSERT INTO TBL_CHATTING (G_NO, M_NO, C_CONTENT, C_REG_DATE)
+	    INSERT INTO TBL_CHATTING (G_NO, M_NO, C_CONTENT, C_IMG_URL, C_REG_DATE)
 	    SELECT 
 	        #{g_no}, 
 	        #{m_no}, 
-	        #{c_content}, 
+	        #{c_content},
+	        #{c_img_url},
 	        NOW()
 	    FROM TBL_MEMBER 
 	    WHERE M_NO = #{m_no}
@@ -258,16 +273,66 @@
 	        c.G_NO, 
 	        c.M_NO, 
 	        c.C_CONTENT, 
-	        c.C_REG_DATE, 
-	        m.M_NICKNAME
-	    FROM TBL_CHATTING c
-	    JOIN TBL_MEMBER m ON c.M_NO = m.M_NO
-	    WHERE c.G_NO = #{g_no}
-	    ORDER BY c.C_REG_DATE ASC
+	        c.C_REG_DATE,
+	        c.C_IMG_URL, 
+	        m.M_NICKNAME,
+	        m.M_PROFILE_IMG,
+	        m.M_MAIL,
+	        m.M_CATEGORY,
+	        gm.G_REG_DATE AS g_reg_date -- 그룹 가입 날짜 추가
+	    FROM 
+	        TBL_CHATTING c
+	    JOIN 
+	        TBL_MEMBER m 
+	    ON 
+	        c.M_NO = m.M_NO
+	    JOIN 
+	        TBL_GROUP_MEMBER gm -- TBL_GROUP_MEMBER 테이블 조인
+	    ON 
+	        c.G_NO = gm.G_NO AND c.M_NO = gm.M_NO -- 그룹과 멤버 매핑
+	    WHERE 
+	        c.G_NO = #{g_no} -- 특정 그룹
+	    ORDER BY 
+	        c.C_REG_DATE ASC -- 메시지 등록 날짜 기준 정렬
 	</select>
-	
+
 
 	
+	<update id="updateGroup" parameterType="map">
+	    UPDATE TBL_GROUP
+	    SET 
+	        G_NAME = #{updatedGroupData.g_name},
+	        G_INFO = #{updatedGroupData.g_info},
+	        G_CATEGORY = #{updatedGroupData.g_category},
+	        G_MAX_NUMBER = #{updatedGroupData.g_max_number},
+	        G_PUBLIC = #{updatedGroupData.g_public},
+	        G_REGIST = #{updatedGroupData.g_regist},
+	        G_CONFIRM = #{updatedGroupData.g_confirm},
+	        G_IMG_NAME = #{updatedGroupData.g_img_name}
+	    WHERE G_NO = #{gNo}
+	</update>
 	
+	<select id="findPostsByGroupAndMember" parameterType="map" resultType="com.moim.moimapiserver.group.PostDto">
+	    SELECT 
+	      p.P_NO AS p_no,
+	      p.G_NO AS g_no,
+	      p.M_NO AS m_no,
+	      p.P_TEXT AS p_text,
+	      p.P_IMG AS p_img,
+	      p.P_REG_DATE AS p_reg_date,
+	      m.M_NICKNAME AS m_nickname,
+	      m.M_PROFILE_IMG AS m_profile_img
+	    FROM 
+	      TBL_POST p
+	    JOIN 
+	      TBL_MEMBER m 
+	    ON 
+	      p.M_NO = m.M_NO
+	    WHERE 
+	      p.G_NO = #{gNo} 
+	      AND p.M_NO = #{mNo}
+	    ORDER BY 
+	      p.P_REG_DATE DESC
+	  </select>
 	
 </mapper>

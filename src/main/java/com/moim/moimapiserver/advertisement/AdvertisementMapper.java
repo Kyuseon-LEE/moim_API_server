@@ -18,4 +18,10 @@ public interface AdvertisementMapper {
 
     AdvertisementDto selectAdByAdStatus();
 
+    int updateAdStatusByAdNo(AdvertisementDto advertisementDto);
+
+    int updateAdByAdNo(AdvertisementDto advertisementDto);
+
+    int deleteAdByAdNo(AdvertisementDto advertisementDto);
 }
+

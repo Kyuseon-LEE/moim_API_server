@@ -155,4 +155,80 @@ public class AdvertisementService {
 
         }
     }
+
+
+    public ResponseWrapper<Integer> updateStatusByAdNo(AdvertisementDto advertisementDto) {
+        log.info("updateStatusByAdNo()");
+        try {
+            int result = advertisementMapper.updateAdStatusByAdNo(advertisementDto);
+            if (result > 0) {
+                log.info("AD UPDATE SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE SUCCESS", null);
+            } else {
+                log.info("AD UPDATE FAIL");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> confirmAdUpdate(AdvertisementDto advertisementDto) {
+        log.info("confirmAdUpdate()");
+        try {
+            int result = advertisementMapper.updateAdByAdNo(advertisementDto);
+            if (result > 0) {
+                log.info("AD INFO UPDATE SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE SUCCESS", null);
+            } else {
+                log.info("AD INFO UPDATE FAIL");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> confirmAdDelete(AdvertisementDto advertisementDto) {
+        log.info("confirmAdDelete()");
+        try {
+            int result = advertisementMapper.deleteAdByAdNo(advertisementDto);
+            if (result > 0) {
+                log.info("AD INFO DELETE SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE SUCCESS", null);
+            } else {
+                log.info("AD INFO DELETE FAIL");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
 }
