@@ -61,6 +61,12 @@ public interface GroupMapper {
 
 	List<PostDto> findPostsByGroupAndMember(@Param("gNo") int gNo, @Param("mNo")int mNo);
 
+	int deleteGroupMember(@Param("gNo") int gNo, @Param("mNo") int mNo);
+
+	int updateMemberRole(@Param("gNo") int gNo, @Param("mNo") int mNo, @Param("gMRole") int gMRole);
+
+	List<GroupDto> findAllGroups();
+
 
 
 

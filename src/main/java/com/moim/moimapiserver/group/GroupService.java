@@ -216,6 +216,38 @@ public class GroupService {
         return groupMapper.findPostsByGroupAndMember(gNo, mNo);
     }
 
+    @Transactional
+    public boolean kickMember(int gNo, int mNo) {
+        try {
+            log.info("Attempting to kick member: gNo={}, mNo={}", gNo, mNo);
+            
+            // 그룹 멤버 삭제
+            int rowsAffected = groupMapper.deleteGroupMember(gNo, mNo);
+            log.info("Rows affected during kick: {}", rowsAffected);
+            
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            log.error("Error during member kick: gNo={}, mNo={}", gNo, mNo, e);
+            throw new RuntimeException("멤버 강퇴 중 오류 발생.", e);
+        }
+    }
+
+    @Transactional
+    public boolean updateMemberRole(int gNo, int mNo, int gMRole) {
+        try {
+            int rowsUpdated = groupMapper.updateMemberRole(gNo, mNo, gMRole);
+            return rowsUpdated > 0; // 성공적으로 변경된 경우 true 반환
+        } catch (Exception e) {
+            log.error("등급 변경 중 오류 발생:", e);
+            throw new RuntimeException("등급 변경 실패");
+        }
+    }
+
+    public List<GroupDto> getAllGroups() {
+        return groupMapper.findAllGroups();
+    }
+
+
 
 
 

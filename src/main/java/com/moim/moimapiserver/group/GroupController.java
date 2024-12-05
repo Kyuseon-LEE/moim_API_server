@@ -317,7 +317,63 @@ public class GroupController {
         }
     }
     
+    @DeleteMapping("/{g_no}/kick")
+    public ResponseEntity<Map<String, Object>> kickMember(
+            @PathVariable("g_no") int gNo,
+            @RequestBody Map<String, Object> requestBody) {
+        try {
+            int mNo = (int) requestBody.get("m_no"); // JSON의 m_no 추출
+            log.info("Kick request received: g_no={}, m_no={}", gNo, mNo);
+
+            // 강퇴 처리
+            boolean isKicked = groupService.kickMember(gNo, mNo);
+
+            if (isKicked) {
+                return ResponseEntity.ok(Map.of("success", true, "message", "멤버를 성공적으로 강퇴했습니다."));
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(Map.of("success", false, "message", "멤버 강퇴 실패. 멤버가 존재하지 않을 수 있습니다."));
+            }
+        } catch (Exception e) {
+            log.error("Error during member kick: g_no={}, m_no={}", gNo, requestBody.get("m_no"), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("success", false, "message", "멤버 강퇴 중 서버 오류 발생."));
+        }
+    }
     
+    @PutMapping("/{g_no}/member/{m_no}/role")
+    public ResponseEntity<?> updateMemberRole(
+        @PathVariable("g_no") int gNo,
+        @PathVariable("m_no") int mNo,
+        @RequestBody Map<String, Object> requestBody) {
+        try {
+            int newRole = (int) requestBody.get("g_m_role");
+
+            // 역할 변경 서비스 호출
+            boolean isUpdated = groupService.updateMemberRole(gNo, mNo, newRole);
+            if (isUpdated) {
+                return ResponseEntity.ok(Map.of("success", true, "message", "등급이 성공적으로 변경되었습니다."));
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body(Map.of("success", false, "message", "등급 변경에 실패했습니다."));
+            }
+        } catch (Exception e) {
+            log.error("등급 변경 오류:", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("success", false, "message", "서버 오류가 발생했습니다."));
+        }
+    }
+    
+    @GetMapping("/all")
+    public ResponseEntity<List<GroupDto>> getAllGroups() {
+        try {
+            List<GroupDto> groups = groupService.getAllGroups();
+            return ResponseEntity.ok(groups);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(Collections.emptyList());
+        }
+    }
 
     
 }
