@@ -21,6 +21,7 @@ public class ChatDto {
     private String m_mail;
     private String m_category;
     private String g_reg_date;
+    private int g_m_role;
     
     @Override
     public String toString() {

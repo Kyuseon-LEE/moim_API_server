@@ -105,37 +105,35 @@
     </insert>
     
 	<select id="findPostsByGroup" parameterType="int" resultType="com.moim.moimapiserver.group.PostDto">
-	        SELECT 
-        p.P_NO,
-        p.G_NO,
-        p.M_NO,
-        p.P_TEXT,
-        p.P_IMG,
-        p.P_REG_DATE,
-        p.P_MOD_DATE,
-        m.M_NICKNAME,
-        m.M_PROFILE_IMG,
-        m.M_MAIL,
-        m.M_CATEGORY,
-        gm.G_M_ROLE,
-        gm.G_REG_DATE -- 멤버의 그룹 가입일
-    FROM 
-        TBL_POST p
-    JOIN 
-        TBL_MEMBER m
-    ON 
-        p.M_NO = m.M_NO
-    JOIN
-        TBL_GROUP_MEMBER gm
-    ON
-        p.G_NO = gm.G_NO AND p.M_NO = gm.M_NO 
-    WHERE 
-        p.G_NO = #{gNo} -- 특정 그룹
-    ORDER BY 
-        p.P_REG_DATE DESC
+	    SELECT 
+	        p.P_NO,
+	        p.G_NO,
+	        p.M_NO,
+	        p.P_TEXT,
+	        p.P_IMG,
+	        p.P_REG_DATE,
+	        p.P_MOD_DATE,
+	        m.M_NICKNAME,
+	        m.M_PROFILE_IMG,
+	        m.M_MAIL,
+	        m.M_CATEGORY,
+	        gm.G_M_ROLE,
+	        gm.G_REG_DATE -- 멤버의 그룹 가입일 (없으면 NULL)
+	    FROM 
+	        TBL_POST p
+	    JOIN 
+	        TBL_MEMBER m
+	    ON 
+	        p.M_NO = m.M_NO
+	    LEFT JOIN 
+	        TBL_GROUP_MEMBER gm
+	    ON 
+	        p.G_NO = gm.G_NO AND p.M_NO = gm.M_NO
+	    WHERE 
+	        p.G_NO = #{gNo} -- 특정 그룹
+	    ORDER BY 
+	        p.P_REG_DATE DESC
 	</select>
-
-
 
 	
 	<select id="findGroupConfirmStatus" parameterType="int" resultType="int">
@@ -164,7 +162,8 @@
 	        m.M_MAIL AS m_mail
 	    FROM TBL_GROUP_MEMBER gm
 	    JOIN TBL_MEMBER m ON gm.M_NO = m.M_NO
-	    WHERE gm.G_NO = #{gNo};
+	    WHERE gm.G_NO = #{gNo}
+	    ORDER BY gm.G_M_ROLE DESC, gm.G_REG_DATE ASC;
 	</select>
 
 	<insert id="insertComment" parameterType="com.moim.moimapiserver.group.CommentDto">
@@ -187,7 +186,7 @@
 		        m.M_MAIL AS m_mail,
 		        m.M_CATEGORY AS m_category,
 		        gm.G_M_ROLE AS g_m_role,
-		        g.G_REG_DATE AS g_reg_date -- 추가된 G_REG_DATE
+		        gm.G_REG_DATE AS g_reg_date -- 추가된 G_REG_DATE
 		    FROM 
 		        TBL_COMMENT c
 		    JOIN 
@@ -279,6 +278,7 @@
 	        m.M_PROFILE_IMG,
 	        m.M_MAIL,
 	        m.M_CATEGORY,
+	        gm.G_M_ROLE,
 	        gm.G_REG_DATE AS g_reg_date -- 그룹 가입 날짜 추가
 	    FROM 
 	        TBL_CHATTING c
@@ -286,8 +286,8 @@
 	        TBL_MEMBER m 
 	    ON 
 	        c.M_NO = m.M_NO
-	    JOIN 
-	        TBL_GROUP_MEMBER gm -- TBL_GROUP_MEMBER 테이블 조인
+	    LEFT JOIN 
+	        TBL_GROUP_MEMBER gm -- TBL_GROUP_MEMBER 테이블 LEFT JOIN
 	    ON 
 	        c.G_NO = gm.G_NO AND c.M_NO = gm.M_NO -- 그룹과 멤버 매핑
 	    WHERE 
@@ -334,5 +334,35 @@
 	    ORDER BY 
 	      p.P_REG_DATE DESC
 	  </select>
+	  
+	 <delete id="deleteGroupMember" parameterType="map">
+	   DELETE FROM TBL_GROUP_MEMBER
+	   WHERE G_NO = #{gNo} AND M_NO = #{mNo}
+	 </delete>
+	 
+	 <update id="updateMemberRole" parameterType="map">
+	    UPDATE TBL_GROUP_MEMBER
+	    SET G_M_ROLE = #{gMRole}
+	    WHERE G_NO = #{gNo} AND M_NO = #{mNo}
+	</update>
+	
+	<select id="findAllGroups" resultType="com.moim.moimapiserver.group.GroupDto">
+        SELECT 
+            G_NO AS g_no,
+            G_NAME AS g_name,
+            G_INFO AS g_info,
+            G_CATEGORY AS g_category,
+            G_LOCATION AS g_location,
+            G_IMG_NAME AS g_img_name,
+            G_CONFIRM AS g_confirm,
+            G_MAX_NUMBER AS g_max_number,
+            G_PUBLIC AS g_public,
+            G_REG_DATE AS g_reg_date
+        FROM 
+            TBL_GROUP
+        ORDER BY G_REG_DATE DESC
+    </select>
+	 
+	  
 	
 </mapper>
