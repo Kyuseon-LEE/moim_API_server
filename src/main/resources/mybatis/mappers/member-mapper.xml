@@ -12,15 +12,40 @@
         SELECT * FROM TBL_MEMBER WHERE M_ID = #{m_id}
     </select>
 
-    <select id="getMemberInfo" parameterType="String">
-        SELECT * FROM TBL_MEMBER WHERE M_ID = #{m_id}
+    <select id="getMemberInfo" parameterType="com.moim.moimapiserver.member.MemberDto">
+        SELECT *
+        FROM TBL_MEMBER
+        <where>
+            <if test="m_id != null">
+                AND M_ID = #{m_id}
+            </if>
+            <if test="m_social_id != null">
+                AND M_SOCIAL_ID = #{m_social_id}
+            </if>
+        </where>
     </select>
 
-    <update id="updateMemberInfo" parameterType="com.moim.moimapiserver.member.MemberDto">
+    <update id="updateMemberInfo" parameterType="com.moim.moimapiserver.member.MemberDto" >
         UPDATE TBL_MEMBER
-        SET m_nickname = #{m_nickname}, m_gender = #{m_gender}, m_phone = #{m_phone}, m_address = #{m_address}, m_profile_img = #{m_profile_img}, m_category = #{m_category}
-        WHERE m_id = #{m_id}
+        SET
+        m_nickname = #{m_nickname},
+        m_gender = #{m_gender},
+        m_phone = #{m_phone},
+        m_address = #{m_address},
+        m_profile_img = #{m_profile_img},
+        m_category = #{m_category}
+        <where>
+            <choose>
+                <when test="m_id != null">
+                    AND M_ID = #{m_id}
+                </when>
+                <when test="m_social_id != null">
+                    AND M_SOCIAL_ID = #{m_social_id}
+                </when>
+            </choose>
+        </where>
     </update>
+
 
     <update id="insertCategories" parameterType="com.moim.moimapiserver.member.IMemberMapper">
         UPDATE TBL_MEMBER

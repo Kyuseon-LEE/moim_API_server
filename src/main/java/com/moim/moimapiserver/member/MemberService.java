@@ -59,12 +59,12 @@ public class MemberService {
     }
 
 
-    public Map<String, Object> getMemberInfo(String m_id) {
+    public Map<String, Object> getMemberInfo(MemberDto memberDto) {
         log.info("[MemberService] getMemberInfo");
 
         Map<String, Object> resultMap = new HashMap<>();
 
-        MemberDto memberDtos = iMemberMapper.getMemberInfo(m_id);
+        MemberDto memberDtos = iMemberMapper.getMemberInfo(memberDto);
 
         if (memberDtos != null) {
             log.info("[MemberService] getMemberInfo successful");

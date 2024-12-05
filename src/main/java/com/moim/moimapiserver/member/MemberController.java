@@ -34,23 +34,18 @@ public class MemberController {
     @ResponseBody
     public Object getMemberInfo(@RequestBody MemberDto memberDto) {
         log.info("getMemberInfo()");
-
-        String m_id = memberDto.getM_id();
-        log.info("Authenticated m_id: " + m_id);
-
-        memberDto.setM_id(m_id);
-
-        Map<String, Object> resultMap = memberService.getMemberInfo(m_id);
+        Map<String, Object> resultMap = memberService.getMemberInfo(memberDto);
 
         return resultMap;
     }
 
     @PostMapping("/updateMemberInfo")
     @ResponseBody
-    public Object updateMemberInfo(@RequestBody MemberDto memberDto) {
+    public int updateMemberInfo(@RequestBody MemberDto memberDto) {
         log.info("updateMemberInfo()");
+        log.info("Received MemberDto: {}", memberDto);
         int result = memberService.updateMemberInfo(memberDto);
-        log.info("memberDto", memberDto);
+
         return result;
     }
 
