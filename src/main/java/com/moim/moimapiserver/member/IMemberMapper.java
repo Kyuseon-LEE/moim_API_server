@@ -17,4 +17,10 @@ public interface IMemberMapper {
     int socialSignup(MemberDto memberDto);
 
     int existMember(String m_social_id);
+
+    MemberDto findMemberId(MemberDto memberDto);
+
+    int findMemberPw(MemberDto memberDto);
+
+    int findPasswordConfirm(MemberDto memberDto);
 }

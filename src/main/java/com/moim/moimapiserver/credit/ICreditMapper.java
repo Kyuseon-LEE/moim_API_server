@@ -13,4 +13,13 @@ public interface ICreditMapper {
     List<CreditDto> getExpiredMembers();
 
     void updateMemberStatusToExpired(int m_no);
+
+
+    CreditDto getPayment(MemberDto memberDto);
+
+    int cancelMembership(MemberDto memberDto);
+
+    int updatePaymentStatus(MemberDto memberDto);
+
+    void updatePayStatusToExpired(int m_no);
 }

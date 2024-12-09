@@ -35,6 +35,7 @@ public class ExpiredPaymentWriter implements ItemWriter<CreditDto> {
         for (CreditDto creditDto : items) {
             log.info("Updating member status to expired for member ID: {}", creditDto.getM_no());
             iCreditMapper.updateMemberStatusToExpired(creditDto.getM_no());
+            iCreditMapper.updatePayStatusToExpired(creditDto.getM_no());
         }
     }
 }

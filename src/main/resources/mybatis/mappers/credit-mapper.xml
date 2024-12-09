@@ -26,7 +26,93 @@
         UPDATE TBL_MEMBER M
             JOIN TBL_PAYMENT P ON M.m_no = P.m_no
             SET M.M_GRADE = 0
-        WHERE DATE(P.PAY_EXPIRED_DATE) = CURRENT_DATE();
+        WHERE DATE(P.PAY_EXPIRED_DATE) = CURRENT_DATE()
     </update>
+
+    <update id="updatePayStatusToExpired">
+        UPDATE TBL_PAYMENT M
+        SET M.PAY_STATUS = 0
+        WHERE DATE(M.PAY_EXPIRED_DATE) = CURRENT_DATE()
+    </update>
+
+    <select id="getPayment" parameterType="com.moim.moimapiserver.member.MemberDto" resultMap="paymentResultMap">
+        SELECT
+        m.M_NO,
+        m.M_NAME,
+        m.M_MAIL,
+        p.PAY_NO,
+        p.PAY_PROD_NAME,
+        p.PAY_PERIOD,
+        p.PAY_AMOUNT,
+        p.PAY_METHOD,
+        p.PAY_REG_DATE,
+        p.PAY_MOD_DATE,
+        p.PAY_EXPIRED_DATE
+        FROM TBL_MEMBER m
+        JOIN TBL_PAYMENT p ON m.M_NO = p.M_NO
+        <where>
+            <choose>
+                <when test="m_id != null">
+                    AND m.M_ID = #{m_id}
+                </when>
+                <when test="m_social_id != null">
+                    AND m.M_SOCIAL_ID = #{m_social_id}
+                </when>
+            </choose>
+            AND p.PAY_STATUS = 1
+        </where>
+    </select>
+
+
+    <resultMap id="paymentResultMap" type="com.moim.moimapiserver.credit.CreditDto">
+        <!-- 결제 정보 -->
+        <result property="pay_no" column="PAY_NO"/>
+        <result property="pay_prod_name" column="PAY_PROD_NAME"/>
+        <result property="pay_period" column="PAY_PERIOD"/>
+        <result property="pay_amount" column="PAY_AMOUNT"/>
+        <result property="pay_method" column="PAY_METHOD"/>
+        <result property="pay_reg_date" column="PAY_REG_DATE"/>
+        <result property="pay_mod_date" column="PAY_MOD_DATE"/>
+        <result property="pay_expired_date" column="PAY_EXPIRED_DATE"/>
+
+        <!-- 멤버 정보 -->
+        <association property="memberDto" javaType="com.moim.moimapiserver.member.MemberDto">
+            <result property="m_no" column="M_NO"/>
+            <result property="m_name" column="M_NAME"/>
+            <result property="m_mail" column="M_MAIL"/>
+        </association>
+    </resultMap>
+
+    <update id="cancelMembership" parameterType="com.moim.moimapiserver.member.MemberDto">
+        <!-- TBL_MEMBER의 M_GRADE를 0으로 업데이트 -->
+        UPDATE TBL_MEMBER
+        SET M_GRADE = 0
+        <where>
+            <choose>
+                <when test="m_id != null">
+                    AND M_ID = #{m_id}
+                </when>
+                <when test="m_social_id != null">
+                    AND M_SOCIAL_ID = #{m_social_id}
+                </when>
+            </choose>
+        </where>
+    </update>
+
+    <update id="updatePaymentStatus" parameterType="com.moim.moimapiserver.member.MemberDto">
+        UPDATE TBL_PAYMENT
+        SET PAY_STATUS = 0
+        <where>
+            <choose>
+                <when test="m_id != null">
+                    AND M_NO = (SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id})
+                </when>
+                <when test="m_social_id != null">
+                    AND M_NO = (SELECT M_NO FROM TBL_MEMBER WHERE M_SOCIAL_ID = #{m_social_id})
+                </when>
+            </choose>
+        </where>
+    </update>
+
 
 </mapper>

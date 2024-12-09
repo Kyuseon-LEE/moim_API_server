@@ -29,13 +29,13 @@ public class BatchConfig {
     @Bean
     public Job downGradeMember(PlatformTransactionManager transactionManager, JobRepository jobRepository) {
         return new JobBuilder("downGradeMember", jobRepository)
-                .start(expiredPatmentStep(transactionManager, jobRepository))
+                .start(expiredPaymentStep(transactionManager, jobRepository))
                 .build();
     }
 
     @Bean
-    public Step expiredPatmentStep(PlatformTransactionManager transactionManager, JobRepository jobRepository) {
-        return new StepBuilder("testSimpleStep", jobRepository)
+    public Step expiredPaymentStep(PlatformTransactionManager transactionManager, JobRepository jobRepository) {
+        return new StepBuilder("expiredPaymentProcessingStep", jobRepository)
                 .tasklet(testTasklet(), transactionManager)
                 .build();
 
@@ -54,7 +54,7 @@ public class BatchConfig {
                 }
             } while (member != null);
 
-            log.info("검색된 만료된 회원" + expiredMembers.size());
+            log.info("검색된 만료된 회원 수: {}", expiredMembers.size());
 
             if(!expiredMembers.isEmpty()) {
                 try {

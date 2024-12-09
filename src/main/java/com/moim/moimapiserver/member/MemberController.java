@@ -79,5 +79,33 @@ public class MemberController {
         return result;
     }
 
+    @PostMapping("/findMemberId")
+    @ResponseBody
+    public Object findMemberId(@RequestBody MemberDto memberDto) {
+        log.info("[memberController]findMemberId()");
+        Map<String, Object> resultMap =  memberService.findMemberId(memberDto);
+
+        return resultMap;
+    }
+
+    @PostMapping("/findMemberPw")
+    @ResponseBody
+    public Object findMemberPw(@RequestBody MemberDto memberDto) {
+        log.info("[memberController]findMemberPw()");
+        int result =  memberService.findMemberPw(memberDto);
+
+        return result;
+    }
+
+    @PostMapping("/findPasswordConfirm")
+    @ResponseBody
+    public Object findPasswordConfirm(@RequestBody MemberDto memberDto) {
+        log.info("[memberController]findPasswordConfirm()");
+        int result = memberService.findPasswordConfirm(memberDto);
+        return result;
+    }
+
+
+
 }
 

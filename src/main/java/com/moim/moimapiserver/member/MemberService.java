@@ -1,6 +1,7 @@
 package com.moim.moimapiserver.member;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.core.parameters.P;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,10 @@ public class MemberService {
     public static int FAIL_SOCIAL_SIGNUP = 9;
     public static int NOT_EXIST_SOCIAL_MEMBER = 10;
     public static int EXIST_SOCIAL_MEMBER = 11;
+    public static int CORRECT_USER_FOR_FIND_PASSWORD = 12;
+    public static int FAIL_USER_FOR_FIND_PASSWORD = 13;
+    public static int SUCCESS_UPDATE_TEMPORARY_PASSWORD = 14;
+    public static int FAIL_UPDATE_TEMPORARY_PASSWORD = 15;
 
 
     private final IMemberMapper iMemberMapper;
@@ -128,6 +133,42 @@ public class MemberService {
             return EXIST_SOCIAL_MEMBER;
         } else {
             return NOT_EXIST_SOCIAL_MEMBER;
+        }
+    }
+
+    public Map<String, Object> findMemberId(MemberDto memberDto) {
+        log.info("[memberService] findMemberId");
+
+        Map<String, Object> resultMap = new HashMap<>();
+        MemberDto memberId = iMemberMapper.findMemberId(memberDto);
+
+        if(memberId != null) {
+            resultMap.put("memberId", memberId);
+            return resultMap;
+        } else {
+            return null;
+        }
+    }
+
+    public int findMemberPw(MemberDto memberDto) {
+
+        int result = iMemberMapper.findMemberPw(memberDto);
+        if(result > 0) {
+            return CORRECT_USER_FOR_FIND_PASSWORD;
+        } else {
+            return FAIL_USER_FOR_FIND_PASSWORD;
+        }
+    }
+
+    public int findPasswordConfirm(MemberDto memberDto) {
+        log.info("[memberService] findPasswordConfirm");
+
+        int result = iMemberMapper.findPasswordConfirm(memberDto);
+
+        if(result > 0) {
+            return SUCCESS_UPDATE_TEMPORARY_PASSWORD;
+        } else {
+            return FAIL_UPDATE_TEMPORARY_PASSWORD;
         }
     }
 }

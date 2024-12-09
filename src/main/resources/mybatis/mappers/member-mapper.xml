@@ -74,4 +74,16 @@
         ) THEN 1 ELSE 0 END
     </select>
 
+    <select id="findMemberId" parameterType="com.moim.moimapiserver.member.MemberDto">
+        SELECT M_ID, M_REG_DATE FROM TBL_MEMBER WHERE M_NAME = #{m_name} AND M_PHONE = #{m_phone} AND M_ID IS NOT NULL
+    </select>
+
+    <select id="findMemberPw" parameterType="com.moim.moimapiserver.member.MemberDto" resultType="int">
+        SELECT COUNT(*) FROM TBL_MEMBER WHERE M_ID=#{m_id} AND M_NAME=#{m_name} AND M_MAIL = #{m_mail}
+    </select>
+
+    <update id="findPasswordConfirm" parameterType="com.moim.moimapiserver.member.MemberDto">
+        UPDATE TBL_MEMBER SET M_PW=#{m_pw} WHERE M_ID = #{m_id} AND M_MAIL = #{m_mail}
+    </update>
+
 </mapper>
