@@ -374,6 +374,5 @@ public class GroupController {
                                  .body(Collections.emptyList());
         }
     }
-
-    
+        
 }

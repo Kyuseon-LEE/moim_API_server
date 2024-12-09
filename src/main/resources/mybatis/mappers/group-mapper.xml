@@ -347,22 +347,36 @@
 	</update>
 	
 	<select id="findAllGroups" resultType="com.moim.moimapiserver.group.GroupDto">
-        SELECT 
-            G_NO AS g_no,
-            G_NAME AS g_name,
-            G_INFO AS g_info,
-            G_CATEGORY AS g_category,
-            G_LOCATION AS g_location,
-            G_IMG_NAME AS g_img_name,
-            G_CONFIRM AS g_confirm,
-            G_MAX_NUMBER AS g_max_number,
-            G_PUBLIC AS g_public,
-            G_REG_DATE AS g_reg_date
-        FROM 
-            TBL_GROUP
-        ORDER BY G_REG_DATE DESC
-    </select>
-	 
+	    SELECT 
+	        g.G_NO AS g_no,
+	        g.G_NAME AS g_name,
+	        g.G_INFO AS g_info,
+	        g.G_CATEGORY AS g_category,
+	        g.G_LOCATION AS g_location,
+	        g.G_IMG_NAME AS g_img_name,
+	        g.G_CONFIRM AS g_confirm,
+	        g.G_MAX_NUMBER AS g_max_number,
+	        g.G_PUBLIC AS g_public,
+	        g.G_REG_DATE AS g_reg_date,
+	        g.G_MASTER_ID AS g_master_id,
+	        m.M_NICKNAME AS g_master_nickname,
+	        (
+	            SELECT COUNT(*)
+	            FROM TBL_GROUP_MEMBER gm
+	            WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0
+	        ) AS memberCount
+	    FROM 
+	        TBL_GROUP g
+	    LEFT JOIN 
+	        TBL_MEMBER m
+	    ON 
+	        g.G_MASTER_ID = m.M_NO
+	    ORDER BY 
+	        memberCount DESC, 
+	        g.G_REG_DATE DESC
+	</select>
+
+ 
 	  
 	
 </mapper>
