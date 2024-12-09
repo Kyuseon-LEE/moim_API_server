@@ -1,4 +1,5 @@
 package com.moim.moimapiserver.credit;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @EnableScheduling
+@Log4j2
 public class BatchScheduler {
 
     private final JobLauncher jobLauncher;
@@ -19,17 +21,18 @@ public class BatchScheduler {
         this.downGradeMember = downGradeMember;
     }
 
-    @Scheduled(cron = "0 0 0 * * ?") // 매일 자정 실행
+    @Scheduled(cron = "0 40 17 * * ?") // 매일 자정 실행
     public void runJob() {
         try {
             JobParameters jobParameters = new JobParametersBuilder()
-                    .addLong("time", System.currentTimeMillis()) // Job의 유니크 파라미터 추가
+                    .addLong("time", System.currentTimeMillis()) // 유니크 파라미터
+                    .addString("jobName", "downGradeMemberJob")   // 추가 식별자
                     .toJobParameters();
 
             jobLauncher.run(downGradeMember, jobParameters);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Batch job downGradeMember failed: {}", e.getMessage(), e);
         }
     }
 }
