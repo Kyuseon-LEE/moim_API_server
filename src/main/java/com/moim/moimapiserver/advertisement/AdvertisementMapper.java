@@ -23,5 +23,13 @@ public interface AdvertisementMapper {
     int updateAdByAdNo(AdvertisementDto advertisementDto);
 
     int deleteAdByAdNo(AdvertisementDto advertisementDto);
+
+    List<AdvertisementDto> selectAdTime();
+
+    void updateAdvertisementStartStatus();
+
+    void updateAdvertisementEndStatus();
+
+    List<AdvertisementDto> selectAdTimeByFilteredAdNo(int ad_no);
 }
 
