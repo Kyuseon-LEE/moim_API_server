@@ -33,6 +33,7 @@ public class AdvertisementService {
         log.info("confirmAdCreate()");
         try {
             int result = advertisementMapper.insertNewAd(advertisementDto);
+
             if (result > 0) {
                 log.info("AD INSERT SUCCESS");
 
