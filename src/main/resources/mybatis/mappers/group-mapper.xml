@@ -3,9 +3,11 @@
 <mapper namespace="com.moim.moimapiserver.group.GroupMapper">
 
     <!-- m_id로 m_no 조회 -->
-    <select id="findMNoByMId" parameterType="string" resultType="int">
-        SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id}
-    </select>
+    <select id="findMNoByUserId" parameterType="string" resultType="java.lang.Integer">
+	    SELECT M_NO 
+	    FROM TBL_MEMBER 
+	    WHERE M_ID = #{userId} OR M_SOCIAL_ID = #{userId}
+	</select>
 
     <!-- 그룹 생성 -->
     <insert id="insertNewGroup" parameterType="com.moim.moimapiserver.group.GroupDto">
@@ -55,10 +57,19 @@
 	    WHERE g.G_NO IN (
 	        SELECT gm.G_NO 
 	        FROM TBL_GROUP_MEMBER gm 
-	        WHERE gm.M_NO = (SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id})
+	        WHERE gm.M_NO = (
+	            SELECT M_NO 
+	            FROM TBL_MEMBER 
+	            WHERE M_ID = #{userId} OR M_SOCIAL_ID = #{userId}
+	        )
 	    )
-	    AND gm.M_NO = (SELECT M_NO FROM TBL_MEMBER WHERE M_ID = #{m_id}); 
+	    AND gm.M_NO = (
+	        SELECT M_NO 
+	        FROM TBL_MEMBER 
+	        WHERE M_ID = #{userId} OR M_SOCIAL_ID = #{userId}
+	    ); 
 	</select>
+
 
 
 	
@@ -375,10 +386,6 @@
 	        memberCount DESC, 
 	        g.G_REG_DATE DESC
 	</select>
-
-	<update id="updateStatusGroup" parameterType="com.moim.moimapiserver.group.GroupDto">
-		UPDATE TBL_GROUP SET G_STATUS = 1 WHERE G_MASTER_ID = #{g_master_id}
-	</update>
 
  
 	  

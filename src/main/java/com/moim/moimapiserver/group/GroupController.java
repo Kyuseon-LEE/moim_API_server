@@ -39,21 +39,22 @@ public class GroupController {
         return resultMap;
     }
     
-    @GetMapping("/user-groups/{m_id}")
-    public ResponseEntity<List<GroupDto>> getUserGroups(@PathVariable("m_id") String m_id) {
-        log.info("Fetching groups for user with m_id: {}", m_id);
+    @GetMapping("/user-groups/{userId}")
+    public ResponseEntity<List<GroupDto>> getUserGroups(@PathVariable("userId") String userId) {
+        log.info("Fetching groups for user with ID: {}", userId);
         try {
-            List<GroupDto> groups = groupService.getUserGroups(m_id);
+            List<GroupDto> groups = groupService.getUserGroups(userId);
             if (groups == null || groups.isEmpty()) {
                 return ResponseEntity.ok(Collections.emptyList());
             }
             return ResponseEntity.ok(groups);
         } catch (Exception e) {
-            log.error("Error fetching groups for user with m_id: {}", m_id, e);
+            log.error("Error fetching groups for user with ID: {}", userId, e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                                  .body(Collections.emptyList());
         }
     }
+
     
     @GetMapping("/{g_no}")
     public ResponseEntity<GroupDto> getGroupByGNo(@PathVariable("g_no") int gNo) {
@@ -107,7 +108,7 @@ public class GroupController {
         try {
             log.info("Join Request Received: gNo={}, requestData={}", gNo, requestData);
 
-            String mNoStr = (String) requestData.get("m_no");
+            String mNoStr = String.valueOf(requestData.get("m_no"));
             String message = (String) requestData.get("message");
 
             // 문자열을 정수로 변환

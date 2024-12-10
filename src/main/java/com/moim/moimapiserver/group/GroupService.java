@@ -25,10 +25,13 @@ public class GroupService {
         try {
             log.info("Received group data: {}", groupDto);
 
-            // 1. m_id를 기반으로 m_no 조회
-            String mId = groupDto.getM_id();
-            int mNo = groupMapper.findMNoByMId(mId);
-            log.info("m_id {} corresponds to m_no {}", mId, mNo);
+            // 1. m_id 또는 m_social_id 기반으로 m_no 조회
+            String userId = groupDto.getM_id();
+            Integer mNo = groupMapper.findMNoByUserId(userId);
+            if (mNo == null) {
+                throw new IllegalArgumentException("사용자를 찾을 수 없습니다.");
+            }
+            log.info("User ID {} corresponds to m_no {}", userId, mNo);
 
             // 2. g_master_id 설정
             groupDto.setG_master_id(mNo);
@@ -63,19 +66,21 @@ public class GroupService {
         }
         return response;
     }
+
     
-    public List<GroupDto> getUserGroups(String mId) {
+    public List<GroupDto> getUserGroups(String userId) {
         try {
-            List<GroupDto> groups = groupMapper.findGroupsByUserId(mId);
+            List<GroupDto> groups = groupMapper.findGroupsByUserId(userId);
             if (groups == null) {
                 return Collections.emptyList(); // null 대신 빈 리스트 반환
             }
             return groups;
         } catch (Exception e) {
-            log.error("Error fetching groups for m_id: {}", mId, e);
+            log.error("Error fetching groups for userId: {}", userId, e);
             return Collections.emptyList(); // 예외 발생 시 빈 리스트 반환
         }
     }
+
 
     public GroupDto getGroupByGNo(int gNo) {
         return groupMapper.findGroupByGNo(gNo);
