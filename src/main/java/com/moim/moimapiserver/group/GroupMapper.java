@@ -13,13 +13,13 @@ public interface GroupMapper {
 
     int insertNewGroup(GroupDto groupDto);
 
-	int findMNoByMId(String mId);
+	int findMNoByUserId(String userId);
 
 	int findLastInsertedGroupNo();
 
 	int insertGroupMember(@Param("gNo") int gNo, @Param("mNo") int mNo, @Param("gMRole") int gMRole);
 
-	List<GroupDto> findGroupsByUserId(String mId);
+	List<GroupDto> findGroupsByUserId(String userId);
 
 	GroupDto findGroupByGNo(int gNo);
 
