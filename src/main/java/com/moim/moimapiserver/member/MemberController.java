@@ -105,45 +105,6 @@ public class MemberController {
         return result;
     }
 
-    @PostMapping("/passwordConfirm")
-    @ResponseBody
-    public boolean passwordConfirm(@RequestBody MemberDto memberDto) {
-        log.info("[memberController]passwordConfirm()");
-
-        boolean result = memberService.passwordConfirm(memberDto);
-
-        return result;
-    }
-
-    @PostMapping("/changePassword")
-    @ResponseBody
-    public int changePassword(@RequestBody MemberDto memberDto) {
-        log.info("[memberController]changePassword()");
-
-        int result = memberService.changePassword(memberDto);
-
-        return result;
-    }
-
-    @GetMapping("/checkNickname")
-    public int checkNickname(@RequestParam String m_nickname) {
-        log.info("[memberController]checkNickname()");
-        int result = memberService.checkNickname(m_nickname);
-        return result;
-
-    }
-
-    @PostMapping("/newProfileImage")
-    @ResponseBody
-    public Object newProfileImage(@RequestBody MemberDto memberDto) {
-        log.info("[memberController]newProfileImage()");
-
-        int result = memberService.newProfileImage(memberDto);
-        return result;
-    }
-
-
-
 
 
 }

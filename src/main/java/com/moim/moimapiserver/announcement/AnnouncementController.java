@@ -67,4 +67,35 @@ public class AnnouncementController {
 
         };
     }
+
+    @PostMapping("/createAnnouncement")
+    public ResponseEntity<ResponseWrapper<Integer>> createAnnouncement(@RequestBody AnnouncementDto announcement) {
+       log.info("createAnnouncement()");
+
+        ResponseWrapper<Integer> result = announcementService.confirmAnnouncementCreate(announcement);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/updateAnnouncement")
+    public ResponseEntity<ResponseWrapper<Integer>> updateAnnouncement(@RequestBody AnnouncementDto announcement) {
+       log.info("updateAnnouncement()");
+
+        ResponseWrapper<Integer> result = announcementService.confirmAnnouncementUpdate(announcement);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+
+    }
 }

@@ -376,6 +376,7 @@
 	        g.G_REG_DATE DESC
 	</select>
 
+<<<<<<< HEAD
 	<select id="getMyGroup" parameterType="com.moim.moimapiserver.member.MemberDto" resultType="com.moim.moimapiserver.group.GroupDto">
 		SELECT g.*
 		FROM TBL_GROUP g
@@ -393,6 +394,8 @@
 
 
 
+=======
+>>>>>>> e9c9b95448795ee0b82c243125246544987848ac
  
 	  
 	

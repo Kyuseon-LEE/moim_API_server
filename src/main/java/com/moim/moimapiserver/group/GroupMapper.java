@@ -10,9 +10,13 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface GroupMapper {
+<<<<<<< HEAD
 
 
 	int insertNewGroup(GroupDto groupDto);
+=======
+    int insertNewGroup(GroupDto groupDto);
+>>>>>>> e9c9b95448795ee0b82c243125246544987848ac
 
 	int findMNoByMId(String mId);
 
@@ -72,6 +76,12 @@ public interface GroupMapper {
 
 	List<GroupDto> getMyGroup(MemberDto memberDto);
 
+<<<<<<< HEAD
 	int updateGroupStatus(GroupDto groupDto);
+=======
+
+
+
+>>>>>>> e9c9b95448795ee0b82c243125246544987848ac
 }
 	
