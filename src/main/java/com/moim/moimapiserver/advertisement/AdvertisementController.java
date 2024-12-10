@@ -126,7 +126,6 @@ public class AdvertisementController {
     @PostMapping("/deleteAd")
     public ResponseEntity<ResponseWrapper<Integer>> deleteAd(@RequestBody AdvertisementDto advertisementDto) {
         log.info("deleteAd()");
-        log.info("advertisementDto: {}", advertisementDto);
         ResponseWrapper<Integer> result = advertisementService.confirmAdDelete(advertisementDto);
         return switch (result.getStatus()) {
             case "SUCCESS" -> ResponseEntity.ok(result);
@@ -136,5 +135,35 @@ public class AdvertisementController {
             default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
 
         };
+    }
+
+    @GetMapping("/fetchAdTimeList")
+    public ResponseEntity<Object> fetchAdTimeList() {
+        log.info("fetchAdTimeList()");
+        ResponseWrapper<List<AdvertisementDto>> result = advertisementService.getAdTimeList();
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/fetchFilteredAdTimeList")
+    public ResponseEntity<Object> fetchFilteredAdTimeList(@RequestBody AdvertisementDto advertisementDto) {
+        log.info("fetchFilteredAdTimeList()");
+        log.info("advertisementDto: {}", advertisementDto);
+        ResponseWrapper<List<AdvertisementDto>> result = advertisementService.getAdTimeListByFilteredAdNo(advertisementDto.getAd_no());
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+
     }
 }

@@ -232,4 +232,68 @@ public class AdvertisementService {
 
         }
     }
+
+    public ResponseWrapper<List<AdvertisementDto>> getAdTimeList() {
+        log.info("getAdTimeList()");
+        try {
+            List<AdvertisementDto> advertisementDtos = advertisementMapper.selectAdTime();
+            if (advertisementDtos == null) {
+                log.info("AD TIME DTO IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("AD TIME DTO GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", advertisementDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
+
+    public ResponseWrapper<List<AdvertisementDto>> getAdTimeListByFilteredAdNo(int ad_no) {
+        log.info("getAdTimeListByFilteredAdNo()");
+        try {
+            List<AdvertisementDto> advertisementDtos = advertisementMapper.selectAdTimeByFilteredAdNo(ad_no);
+            if (advertisementDtos == null) {
+                log.info("AD TIME DTO IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("AD TIME DTO GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", advertisementDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+    public void updateAdvertisementStartStatus() {
+        advertisementMapper.updateAdvertisementStartStatus();
+    }
+
+    public void updateAdvertisementEndStatus() {
+        advertisementMapper.updateAdvertisementEndStatus();
+    }
+
+    public void updateAllAdvertisementStatuses() {
+        updateAdvertisementStartStatus();
+        updateAdvertisementEndStatus();
+    }
+
 }

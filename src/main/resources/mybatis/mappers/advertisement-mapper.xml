@@ -91,4 +91,40 @@
             WHERE
                 AD_NO = #{ad_no}
     </delete>
+
+    <select id="selectAdTime" resultType="com.moim.moimapiserver.dto.AdvertisementDto">
+        SELECT
+            AD_START_DATE,
+            AD_END_DATE
+        FROM
+            TBL_ADVERTISEMENT
+    </select>
+
+    <select id="selectAdTimeByFilteredAdNo" resultType="com.moim.moimapiserver.dto.AdvertisementDto" parameterType="int">
+        SELECT
+            AD_START_DATE,
+            AD_END_DATE
+        FROM
+            TBL_ADVERTISEMENT
+        WHERE
+            AD_NO != #{ad_no}
+    </select>
+
+    <update id="updateAdvertisementStartStatus">
+    <![CDATA[
+        UPDATE TBL_ADVERTISEMENT
+        SET AD_STATUS = 3
+        WHERE AD_STATUS = 2
+          AND AD_START_DATE <= NOW()
+        ]]>
+</update>
+
+    <update id="updateAdvertisementEndStatus">
+    <![CDATA[
+        UPDATE TBL_ADVERTISEMENT
+        SET AD_STATUS = 4
+        WHERE AD_STATUS = 3
+          AND AD_END_DATE <= NOW()
+        ]]>
+    </update>
 </mapper>
