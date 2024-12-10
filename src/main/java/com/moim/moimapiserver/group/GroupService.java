@@ -14,6 +14,9 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class GroupService {
 
+    public final int SUCCESS_UPDATE_STATUS = 0;
+    public final int FAIL_UPDATE_STATUS = 1;
+
     @Autowired
     private GroupMapper groupMapper;
 
@@ -246,6 +249,18 @@ public class GroupService {
     public List<GroupDto> getAllGroups() {
         return groupMapper.findAllGroups();
     }
+
+    public int updateStatusGroup(GroupDto groupDto) {
+        log.info("[groupService] updateStatusGroup]");
+
+        int result = groupMapper.updateStatusGroup(groupDto);
+        if(result > 0) {
+            return SUCCESS_UPDATE_STATUS;
+        } else {
+            return FAIL_UPDATE_STATUS;
+        }
+    }
+
 
 
 }
