@@ -387,6 +387,20 @@
 	        g.G_REG_DATE DESC
 	</select>
 
+	<select id="getMyGroup" parameterType="com.moim.moimapiserver.member.MemberDto" resultType="com.moim.moimapiserver.group.GroupDto">
+		SELECT g.*
+		FROM TBL_GROUP g
+				 JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO
+				 JOIN TBL_MEMBER m ON m.M_NO = gm.M_NO
+		WHERE
+			(m.M_ID = #{m_id} OR m.M_SOCIAL_ID = #{m_social_id})
+		  AND gm.G_M_ROLE = 3
+	</select>
+
+	<update id="updateGroupStatus" parameterType="com.moim.moimapiserver.group.GroupDto">
+		UPDATE TBL_GROUP SET G_STATUS = #{g_status}	WHERE G_NO =#{g_no}
+	</update>
+
  
 	  
 	

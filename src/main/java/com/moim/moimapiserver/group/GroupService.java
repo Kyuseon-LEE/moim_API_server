@@ -4,7 +4,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.moim.moimapiserver.member.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,9 +16,6 @@ import lombok.extern.log4j.Log4j2;
 @Service
 @Log4j2
 public class GroupService {
-
-    public final int SUCCESS_UPDATE_STATUS = 0;
-    public final int FAIL_UPDATE_STATUS = 1;
 
     @Autowired
     private GroupMapper groupMapper;
@@ -255,10 +255,27 @@ public class GroupService {
         return groupMapper.findAllGroups();
     }
 
-    public int updateStatusGroup(GroupDto groupDto) {
-        log.info("[groupService] updateStatusGroup]");
 
-        int result = groupMapper.updateStatusGroup(groupDto);
+<<<<<<< HEAD
+    public Map<String, Object> getMyGroup(MemberDto memberDto) {
+        log.info("[groupService] getMyGroup");
+
+        Map<String, Object> resultMap = new HashMap<>();
+
+        List<GroupDto> groupDtos = groupMapper.getMyGroup(memberDto);
+        if (groupDtos != null && !groupDtos.isEmpty()) {
+            resultMap.put("groupDtos", groupDtos);
+        } else {
+            resultMap.put("groupDtos", Collections.emptyList());
+        }
+
+        return resultMap;
+    }
+
+    public int updateGroupStatus(GroupDto groupDto) {
+        log.info("[groupService] updateGroupStatus");
+
+        int result = groupMapper.updateGroupStatus(groupDto);
         if(result > 0) {
             return SUCCESS_UPDATE_STATUS;
         } else {
@@ -267,6 +284,7 @@ public class GroupService {
     }
 
 
-
+=======
+>>>>>>> e9c9b95448795ee0b82c243125246544987848ac
 }
 

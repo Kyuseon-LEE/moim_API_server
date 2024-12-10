@@ -9,6 +9,7 @@ public class AnnouncementDto {
     private String an_title;
     private String an_body;
     private String an_owner;
+    private String an_last_modify_admin;
     private String an_reg_date;
     private String an_mod_date;
 }
