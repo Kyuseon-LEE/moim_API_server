@@ -374,13 +374,5 @@ public class GroupController {
                                  .body(Collections.emptyList());
         }
     }
-
-    @PostMapping("/updateStatusGroup")
-    @ResponseBody
-    public int updateStatusGroup (@RequestBody GroupDto groupDto) {
-        log.info("[GroupController] updateStatusGroup");
-         int result = groupService.updateStatusGroup(groupDto);
-         return result;
-    }
         
 }

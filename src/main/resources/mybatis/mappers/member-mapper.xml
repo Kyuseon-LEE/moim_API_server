@@ -32,6 +32,7 @@
         m_gender = #{m_gender},
         m_phone = #{m_phone},
         m_address = #{m_address},
+        m_profile_img = #{m_profile_img},
         m_category = #{m_category}
         <where>
             <choose>
@@ -83,32 +84,6 @@
 
     <update id="findPasswordConfirm" parameterType="com.moim.moimapiserver.member.MemberDto">
         UPDATE TBL_MEMBER SET M_PW=#{m_pw} WHERE M_ID = #{m_id} AND M_MAIL = #{m_mail}
-    </update>
-
-    <select id="getPasswordById" parameterType="com.moim.moimapiserver.member.MemberDto">
-        SELECT M_PW FROM TBL_MEMBER WHERE M_ID =#{m_id}
-    </select>
-
-    <update id="changePassword" parameterType="com.moim.moimapiserver.member.MemberDto">
-        UPDATE TBL_MEMBER SET M_PW=#{m_pw} WHERE M_ID = #{m_id}
-    </update>
-
-    <select id="checkNickname" parameterType="String" resultType="int">
-        SELECT COUNT(*) FROM TBL_MEMBER WHERE M_NICKNAME = #{m_nickname}
-    </select>
-
-    <update id="newProfileImage" parameterType="com.moim.moimapiserver.member.MemberDto">
-        UPDATE TBL_MEMBER SET M_PROFILE_IMG = #{m_profile_img}
-          <where>
-            <choose>
-                <when test="m_id != null">
-                    AND M_ID = #{m_id}
-                </when>
-                <when test="m_social_id != null">
-                    AND M_SOCIAL_ID = #{m_social_id}
-                </when>
-            </choose>
-        </where>
     </update>
 
 </mapper>

@@ -21,12 +21,11 @@ public class GroupDto {
     private String g_reg_date;
     private String g_mod_date;
     private String m_id;
-
+    
     // 추가 내용
     private String g_master_nickname;
     private int memberCount;
-    private int g_m_role;
-    private int g_status;
+    private int g_m_role; 
     
     private List<GroupMemberDto> members;
 }
