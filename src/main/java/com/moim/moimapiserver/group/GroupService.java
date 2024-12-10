@@ -17,6 +17,9 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class GroupService {
 
+    final public static int SUCCESS_UPDATE_STATUS = 0;
+    final public static int FAIL_UPDATE_STATUS = 1;
+
     @Autowired
     private GroupMapper groupMapper;
 
@@ -250,8 +253,6 @@ public class GroupService {
         return groupMapper.findAllGroups();
     }
 
-
-<<<<<<< HEAD
     public Map<String, Object> getMyGroup(MemberDto memberDto) {
         log.info("[groupService] getMyGroup");
 
@@ -278,8 +279,17 @@ public class GroupService {
         }
     }
 
+    public Map<String, Object> getPremiumGroup() {
 
-=======
->>>>>>> e9c9b95448795ee0b82c243125246544987848ac
+        Map<String, Object> resultMap = new HashMap<>();
+
+        List<GroupDto> groupDtos = groupMapper.getPremiumGroup();
+        if(groupDtos != null) {
+            resultMap.put("premiumGroup", groupDtos);
+            return resultMap;
+        } else {
+            return null;
+        }
+    }
 }
 

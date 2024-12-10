@@ -376,7 +376,6 @@
 	        g.G_REG_DATE DESC
 	</select>
 
-<<<<<<< HEAD
 	<select id="getMyGroup" parameterType="com.moim.moimapiserver.member.MemberDto" resultType="com.moim.moimapiserver.group.GroupDto">
 		SELECT g.*
 		FROM TBL_GROUP g
@@ -391,12 +390,11 @@
 		UPDATE TBL_GROUP SET G_STATUS = #{g_status}	WHERE G_NO =#{g_no}
 	</update>
 
+	<select id="getPremiumGroup" resultType="com.moim.moimapiserver.group.GroupDto">
+		SELECT * FROM TBL_GROUP WHERE G_STATUS = 1
+	</select>
 
 
-
-=======
->>>>>>> e9c9b95448795ee0b82c243125246544987848ac
- 
 	  
 	
 </mapper>

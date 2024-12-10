@@ -375,7 +375,7 @@ public class GroupController {
                                  .body(Collections.emptyList());
         }
     }
-<<<<<<< HEAD
+
 
 
     @PostMapping("/getMyGroup")
@@ -397,7 +397,14 @@ public class GroupController {
         return result;
     }
 
-=======
->>>>>>> e9c9b95448795ee0b82c243125246544987848ac
+    @GetMapping("/getPremiumGroup")
+    public Object getPremiumGroup () {
+        log.info("[GroupController] getPremiumGroup");
+
+        Map<String, Object> resultMap = groupService.getPremiumGroup();
+
+        return resultMap;
+    }
+
         
 }

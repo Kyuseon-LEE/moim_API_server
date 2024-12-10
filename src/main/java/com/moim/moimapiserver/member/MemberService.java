@@ -33,6 +33,12 @@ public class MemberService {
     public static int FAIL_USER_FOR_FIND_PASSWORD = 13;
     public static int SUCCESS_UPDATE_TEMPORARY_PASSWORD = 14;
     public static int FAIL_UPDATE_TEMPORARY_PASSWORD = 15;
+    public static int SUCCESS_UPDATE_PASSWORD = 16;
+    public static int FAIL_UPDATE_PASSWORD = 17;
+    public static int OKAY_NICKNAME = 18;
+    public static int NOT_OKAY_NICKNAME = 19;
+    public static int SUCCESS_UPDATE_PROFILE_IMAGE = 20;
+    public static int FAIL_UPDATE_PROFILE_IMAGE = 21;
 
 
     private final IMemberMapper iMemberMapper;
@@ -169,6 +175,53 @@ public class MemberService {
             return SUCCESS_UPDATE_TEMPORARY_PASSWORD;
         } else {
             return FAIL_UPDATE_TEMPORARY_PASSWORD;
+        }
+    }
+
+    public boolean passwordConfirm(MemberDto memberDto) {
+        log.info("[memberService] passwordConfirm");
+        String passwordInDB = iMemberMapper.getPasswordById(memberDto);
+        if(passwordInDB == null) {
+            log.info("[memberService] 사용자 정보가 존재하지 않습니다.");
+            return false;
+        } else {
+            boolean isMatch = passwordEncoder.matches(memberDto.getM_pw(), passwordInDB);
+            if(isMatch) {
+                log.info("비밀번호가 일치합니다");
+                return true;
+            } else {
+                log.info("비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+        }
+    }
+    public int changePassword(MemberDto memberDto) {
+        log.info("[memberService] changePassword");
+        String newPassword = passwordEncoder.encode(memberDto.getM_pw());
+        memberDto.setM_pw(newPassword);
+        int result = iMemberMapper.changePassword(memberDto);
+        if(result > 0) {
+            return SUCCESS_UPDATE_PASSWORD;
+        } else {
+            return FAIL_UPDATE_PASSWORD;
+        }
+    }
+    public int checkNickname(String m_nickname) {
+        log.info("[memberService] checkNickname");
+        int result = iMemberMapper.checkNickname(m_nickname);
+        if(result > 0) {
+            return NOT_OKAY_NICKNAME;
+        } else {
+            return OKAY_NICKNAME;
+        }
+    }
+    public int newProfileImage(MemberDto memberDto) {
+        log.info("[memberService] newProfileImage");
+        int result = iMemberMapper.newProfileImage(memberDto);
+        if(result > 0) {
+            return SUCCESS_UPDATE_PROFILE_IMAGE;
+        } else {
+            return FAIL_UPDATE_PROFILE_IMAGE;
         }
     }
 }
