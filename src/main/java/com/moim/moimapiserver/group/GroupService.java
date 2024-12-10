@@ -4,7 +4,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.moim.moimapiserver.member.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -250,17 +253,32 @@ public class GroupService {
         return groupMapper.findAllGroups();
     }
 
-    public int updateStatusGroup(GroupDto groupDto) {
-        log.info("[groupService] updateStatusGroup]");
 
-        int result = groupMapper.updateStatusGroup(groupDto);
+    public Map<String, Object> getMyGroup(MemberDto memberDto) {
+        log.info("[groupService] getMyGroup");
+
+        Map<String, Object> resultMap = new HashMap<>();
+
+        List<GroupDto> groupDtos = groupMapper.getMyGroup(memberDto);
+        if (groupDtos != null && !groupDtos.isEmpty()) {
+            resultMap.put("groupDtos", groupDtos);
+        } else {
+            resultMap.put("groupDtos", Collections.emptyList());
+        }
+
+        return resultMap;
+    }
+
+    public int updateGroupStatus(GroupDto groupDto) {
+        log.info("[groupService] updateGroupStatus");
+
+        int result = groupMapper.updateGroupStatus(groupDto);
         if(result > 0) {
             return SUCCESS_UPDATE_STATUS;
         } else {
             return FAIL_UPDATE_STATUS;
         }
     }
-
 
 
 }

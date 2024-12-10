@@ -27,6 +27,7 @@ public class GroupDto {
     private int memberCount;
     private int g_m_role;
     private int g_status;
+    private String m_social_id;
     
     private List<GroupMemberDto> members;
 }

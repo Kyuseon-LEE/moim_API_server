@@ -1,5 +1,6 @@
 package com.moim.moimapiserver.group;
 
+import com.moim.moimapiserver.member.MemberDto;
 import lombok.extern.log4j.Log4j2;
 
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -375,12 +376,25 @@ public class GroupController {
         }
     }
 
-    @PostMapping("/updateStatusGroup")
+
+    @PostMapping("/getMyGroup")
     @ResponseBody
-    public int updateStatusGroup (@RequestBody GroupDto groupDto) {
-        log.info("[GroupController] updateStatusGroup");
-         int result = groupService.updateStatusGroup(groupDto);
-         return result;
+    public Object getMyGroup(@RequestBody MemberDto memberDto) {
+        log.info("[GroupController] getMyGroup()");
+
+        Map<String, Object> resultMap = groupService.getMyGroup(memberDto);
+
+        return resultMap;
     }
+
+
+    @PostMapping("/updateGroupStatus")
+    @ResponseBody
+    public int updateGroupStatus(@RequestBody GroupDto groupDto) {
+        log.info("[GroupController] updateGroupStatus");
+        int result = groupService.updateGroupStatus(groupDto);
+        return result;
+    }
+
         
 }

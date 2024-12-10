@@ -3,6 +3,7 @@ package com.moim.moimapiserver.group;
 import java.util.List;
 import java.util.Map;
 
+import com.moim.moimapiserver.member.MemberDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -10,7 +11,8 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface GroupMapper {
 
-    int insertNewGroup(GroupDto groupDto);
+
+	int insertNewGroup(GroupDto groupDto);
 
 	int findMNoByMId(String mId);
 
@@ -68,7 +70,8 @@ public interface GroupMapper {
 
 	List<GroupDto> findAllGroups();
 
+	List<GroupDto> getMyGroup(MemberDto memberDto);
 
-	int updateStatusGroup(GroupDto groupDto);
+	int updateGroupStatus(GroupDto groupDto);
 }
 	
