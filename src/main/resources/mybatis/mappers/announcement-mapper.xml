@@ -21,4 +21,33 @@
         WHERE
             AN_NO = #{an_no}
     </delete>
+
+    <insert id="insertNewAnnouncement" parameterType="com.moim.moimapiserver.dto.AnnouncementDto">
+        INSERT
+            INTO
+                TBL_ANNOUNCEMENT (
+                                  AN_TYPE,
+                                  AN_TITLE,
+                                  AN_BODY,
+                                  AN_OWNER
+            ) VALUES (
+                      #{an_type},
+                      #{an_title},
+                      #{an_body},
+                      #{an_owner}
+                                 )
+    </insert>
+
+    <update id="updateAnnouncementByAnNo" parameterType="com.moim.moimapiserver.dto.AnnouncementDto">
+        UPDATE
+            TBL_ANNOUNCEMENT
+        SET
+            AN_TYPE = #{an_type},
+            AN_TITLE = #{an_title},
+            AN_BODY = #{an_body},
+            AN_LAST_MODIFY_ADMIN = #{an_last_modify_admin},
+            AN_MOD_DATE = NOW()
+        WHERE
+            AN_NO = #{an_no}
+    </update>
 </mapper>

@@ -12,4 +12,8 @@ public interface AnnouncementMapper {
     List<AnnouncementDto> selectAllAnnouncement(int offset, int size);
 
     int deleteAnnouncementByAnNo(int an_no);
+
+    int insertNewAnnouncement(AnnouncementDto announcement);
+
+    int updateAnnouncementByAnNo(AnnouncementDto announcement);
 }
