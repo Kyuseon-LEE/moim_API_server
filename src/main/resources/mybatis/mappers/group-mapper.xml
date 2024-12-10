@@ -376,6 +376,10 @@
 	        g.G_REG_DATE DESC
 	</select>
 
+	<update id="updateStatusGroup" parameterType="com.moim.moimapiserver.group.GroupDto">
+		UPDATE TBL_GROUP SET G_STATUS = 1 WHERE G_MASTER_ID = #{g_master_id}
+	</update>
+
  
 	  
 	

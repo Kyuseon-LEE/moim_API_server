@@ -23,4 +23,12 @@ public interface IMemberMapper {
     int findMemberPw(MemberDto memberDto);
 
     int findPasswordConfirm(MemberDto memberDto);
+
+    String getPasswordById(MemberDto memberDto);
+
+    int changePassword(MemberDto memberDto);
+
+    int checkNickname(String m_nickname);
+
+    int newProfileImage(MemberDto memberDto);
 }
