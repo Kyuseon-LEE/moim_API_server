@@ -405,7 +405,10 @@
 		SELECT * FROM TBL_GROUP WHERE G_STATUS = 1
 	</select>
 
+<<<<<<< HEAD
 
 	  
 	
+=======
+>>>>>>> 7a6dd7deeb5a87d77c19c1dd49bce3bdb0450c90
 </mapper>
