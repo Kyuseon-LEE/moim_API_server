@@ -462,7 +462,6 @@
 	    WHERE G_NO = #{g_no}
 	    ORDER BY E_START_DATE DESC
 	</select>
-
 	
 	<insert id="insertEvent" parameterType="com.moim.moimapiserver.group.EventDto">
 	    INSERT INTO TBL_EVENT (
@@ -494,7 +493,4 @@
 	    ON DUPLICATE KEY UPDATE VOTE_STATUS = #{vote_status}
 	</insert>
 
-	
-
-	
 </mapper>

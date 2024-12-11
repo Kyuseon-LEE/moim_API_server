@@ -50,4 +50,42 @@
         WHERE
             AN_NO = #{an_no}
     </update>
+
+    <select id="selectAnnouncementByOffsetAndSort" resultType="com.moim.moimapiserver.dto.AnnouncementDto" parameterType="Map">
+        SELECT
+            *
+        FROM
+            TBL_ANNOUNCEMENT
+        <where>
+            <if test="sort != '전체'">
+                AN_TYPE = #{sort}
+            </if>
+        </where>
+            LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <select id="selectAnnouncementCountBySort" parameterType="String">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_ANNOUNCEMENT
+        <where>
+            <if test="sort != '전체'">
+                AN_TYPE = #{sort}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAnnouncementByAnNo" parameterType="com.moim.moimapiserver.dto.AnnouncementDto" resultType="com.moim.moimapiserver.dto.AnnouncementDto">
+        SELECT
+            AN_NO,
+            AN_TYPE,
+            AN_TITLE,
+            AN_BODY,
+            AN_REG_DATE
+        FROM
+            TBL_ANNOUNCEMENT
+        WHERE
+            AN_NO = #{an_no}
+    </select>
 </mapper>

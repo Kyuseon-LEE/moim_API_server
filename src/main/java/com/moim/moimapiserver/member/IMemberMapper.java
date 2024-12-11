@@ -28,7 +28,7 @@ public interface IMemberMapper {
 
     int changePassword(MemberDto memberDto);
 
-    int checkNickname(String m_nickname);
+    int checkNickname(String m_id);
 
     int newProfileImage(MemberDto memberDto);
 

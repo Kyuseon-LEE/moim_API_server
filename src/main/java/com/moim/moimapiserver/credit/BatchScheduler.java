@@ -21,7 +21,7 @@ public class BatchScheduler {
         this.downGradeMember = downGradeMember;
     }
 
-    @Scheduled(cron = "0 40 17 * * ?") // 매일 자정 실행
+    @Scheduled(cron = "0 40 17 * * ?") //실행 시간
     public void runJob() {
         try {
             JobParameters jobParameters = new JobParametersBuilder()

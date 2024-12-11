@@ -35,8 +35,8 @@ public class MemberService {
     public static int FAIL_UPDATE_TEMPORARY_PASSWORD = 15;
     public static int SUCCESS_UPDATE_PASSWORD = 16;
     public static int FAIL_UPDATE_PASSWORD = 17;
-    public static int OKAY_NICKNAME = 18;
-    public static int NOT_OKAY_NICKNAME = 19;
+    public static int OKAY_MID = 18;
+    public static int NOT_OKAY_MID = 19;
     public static int SUCCESS_UPDATE_PROFILE_IMAGE = 20;
     public static int FAIL_UPDATE_PROFILE_IMAGE = 21;
 
@@ -206,13 +206,13 @@ public class MemberService {
             return FAIL_UPDATE_PASSWORD;
         }
     }
-    public int checkNickname(String m_nickname) {
+    public int checkNickname(String m_id) {
         log.info("[memberService] checkNickname");
-        int result = iMemberMapper.checkNickname(m_nickname);
+        int result = iMemberMapper.checkNickname(m_id);
         if(result > 0) {
-            return NOT_OKAY_NICKNAME;
+            return NOT_OKAY_MID;
         } else {
-            return OKAY_NICKNAME;
+            return OKAY_MID;
         }
     }
     public int newProfileImage(MemberDto memberDto) {
