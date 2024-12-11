@@ -401,15 +401,11 @@
 		UPDATE TBL_GROUP SET G_STATUS = #{g_status}	WHERE G_NO =#{g_no}
 	</update>
 
-<<<<<<< HEAD
 	<select id="getPremiumGroup" resultType="com.moim.moimapiserver.group.GroupDto">
 		SELECT * FROM TBL_GROUP WHERE G_STATUS = 1
 	</select>
 
 
-=======
- 
->>>>>>> 69af5ebee95b38de9337e469be561448cf375559
 	  
 	
 </mapper>

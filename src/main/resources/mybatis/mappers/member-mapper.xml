@@ -32,7 +32,6 @@
         m_gender = #{m_gender},
         m_phone = #{m_phone},
         m_address = #{m_address},
-        m_profile_img = #{m_profile_img},
         m_category = #{m_category}
         <where>
             <choose>
@@ -93,7 +92,7 @@
         UPDATE TBL_MEMBER SET M_PW=#{m_pw} WHERE M_ID = #{m_id}
     </update>
     <select id="checkNickname" parameterType="String" resultType="int">
-        SELECT COUNT(*) FROM TBL_MEMBER WHERE M_NICKNAME = #{m_nickname}
+        SELECT COUNT(*) FROM TBL_MEMBER WHERE M_ID = #{m_id}
     </select>
     <update id="newProfileImage" parameterType="com.moim.moimapiserver.member.MemberDto">
         UPDATE TBL_MEMBER SET M_PROFILE_IMG = #{m_profile_img}

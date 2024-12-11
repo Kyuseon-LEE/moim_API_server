@@ -120,9 +120,9 @@ public class MemberController {
         return result;
     }
     @GetMapping("/checkNickname")
-    public int checkNickname(@RequestParam String m_nickname) {
+    public int checkNickname(@RequestParam String m_id) {
         log.info("[memberController]checkNickname()");
-        int result = memberService.checkNickname(m_nickname);
+        int result = memberService.checkNickname(m_id);
         return result;
     }
     @PostMapping("/newProfileImage")
