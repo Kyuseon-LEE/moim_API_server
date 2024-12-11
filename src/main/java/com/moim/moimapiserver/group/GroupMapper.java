@@ -74,5 +74,26 @@ public interface GroupMapper {
 	int updateGroupStatus(GroupDto groupDto);
 	
     List<GroupDto> getPremiumGroup();
+
+	void deleteCommentsByGroup(int gNo);
+
+	void deletePostsByGroup(int gNo);
+
+	void deleteChattingByGroup(int gNo);
+
+	void deleteEventsByGroup(int gNo);
+
+	void deleteGroupMembers(int gNo);
+
+	void deleteGroup(int gNo);
+
+	List<EventDto> findEventsByGroupNo(int g_no);
+
+	void insertEvent(EventDto eventDto);
+
+	List<VoteDto> findVotesByEvent(int e_no);
+
+	void upsertVote(int e_no, VoteDto voteDto);
+
 }
 	

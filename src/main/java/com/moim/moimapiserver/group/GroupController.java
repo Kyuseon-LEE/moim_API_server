@@ -405,6 +405,72 @@ public class GroupController {
 
         return resultMap;
     }
+    
+    @DeleteMapping("/{g_no}/delete")
+    public ResponseEntity<?> deleteGroup(@PathVariable("g_no") int gNo) {
+        try {
+            boolean isDeleted = groupService.deleteGroup(gNo);
+
+            if (isDeleted) {
+                return ResponseEntity.ok(Map.of("success", true, "message", "그룹 삭제 성공"));
+            } else {
+                return ResponseEntity.badRequest().body(Map.of("success", false, "message", "그룹 삭제 실패"));
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(Map.of("success", false, "message", "서버 오류 발생"));
+        }
+    }
+    
+    @GetMapping("/{g_no}/events")
+    public ResponseEntity<List<EventDto>> getGroupEvents(@PathVariable("g_no") int g_no) {
+        try {
+            List<EventDto> events = groupService.getGroupEvents(g_no);
+            return ResponseEntity.ok(events);
+        } catch (Exception e) {
+            log.error("정모 일정 조회 중 오류:", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(Collections.emptyList());
+        }
+    }
+
+    @PostMapping("/{g_no}/events")
+    public ResponseEntity<Map<String, String>> addGroupEvent(@PathVariable("g_no") int g_no, @RequestBody EventDto eventDto) {
+        try {
+            groupService.addGroupEvent(g_no, eventDto);
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "정모 일정이 등록되었습니다.");
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        } catch (Exception e) {
+            log.error("정모 일정 등록 중 오류:", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(Collections.singletonMap("message", "정모 일정 등록 실패"));
+        }
+    }
+    
+    @GetMapping("/{e_no}/votes")
+    public ResponseEntity<List<VoteDto>> getVotes(@PathVariable("e_no") int e_no) {
+        try {
+            List<VoteDto> votes = groupService.getVotesByEvent(e_no);
+            return ResponseEntity.ok(votes);
+        } catch (Exception e) {
+            log.error("투표 결과 조회 중 오류: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @PostMapping("/{e_no}/votes")
+    public ResponseEntity<String> addOrUpdateVote(
+            @PathVariable("e_no") int e_no,
+            @RequestBody VoteDto voteDto) {
+        try {
+        	groupService.addOrUpdateVote(e_no, voteDto);
+            return ResponseEntity.ok("투표가 반영되었습니다.");
+        } catch (Exception e) {
+            log.error("투표 등록 중 오류: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("투표 등록 실패");
+        }
+    }
 
         
 }

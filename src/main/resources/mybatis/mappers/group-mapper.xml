@@ -46,6 +46,7 @@
 	        g.G_REGIST AS g_regist,
 	        g.G_REG_DATE AS g_reg_date,
 	        g.G_MOD_DATE AS g_mod_date,
+	        g.G_STATUS AS g_status,
 	        (
 	            SELECT COUNT(*)
 	            FROM TBL_GROUP_MEMBER gm
@@ -87,6 +88,7 @@
 	        g.G_CONFIRM AS g_confirm,
 	        g.G_REGIST AS g_regist,
 	        g.G_PUBLIC AS g_public,
+	        g.G_STATUS AS g_status,
 	        (
             SELECT COUNT(*)
             FROM TBL_GROUP_MEMBER gm
@@ -370,6 +372,7 @@
 	        g.G_PUBLIC AS g_public,
 	        g.G_REG_DATE AS g_reg_date,
 	        g.G_MASTER_ID AS g_master_id,
+	        g.G_STATUS AS g_status,
 	        m.M_NICKNAME AS g_master_nickname,
 	        (
 	            SELECT COUNT(*)
@@ -388,24 +391,110 @@
 	</select>
 
 	<select id="getMyGroup" parameterType="com.moim.moimapiserver.member.MemberDto" resultType="com.moim.moimapiserver.group.GroupDto">
-		SELECT g.*
-		FROM TBL_GROUP g
-				 JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO
-				 JOIN TBL_MEMBER m ON m.M_NO = gm.M_NO
-		WHERE
-			(m.M_ID = #{m_id} OR m.M_SOCIAL_ID = #{m_social_id})
-		  AND gm.G_M_ROLE = 3
+	    SELECT 
+	        g.*,
+	        (
+	            SELECT COUNT(*)
+	            FROM TBL_GROUP_MEMBER gm_inner
+	            WHERE gm_inner.G_NO = g.G_NO AND gm_inner.G_M_ROLE != 0
+	        ) AS memberCount
+	    FROM TBL_GROUP g
+	    JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO
+	    JOIN TBL_MEMBER m ON m.M_NO = gm.M_NO
+	    WHERE
+	        (m.M_ID = #{m_id} OR m.M_SOCIAL_ID = #{m_social_id})
+	        AND gm.G_M_ROLE = 3
 	</select>
+
 
 	<update id="updateGroupStatus" parameterType="com.moim.moimapiserver.group.GroupDto">
 		UPDATE TBL_GROUP SET G_STATUS = #{g_status}	WHERE G_NO =#{g_no}
 	</update>
 
 	<select id="getPremiumGroup" resultType="com.moim.moimapiserver.group.GroupDto">
-		SELECT * FROM TBL_GROUP WHERE G_STATUS = 1
+	    SELECT 
+	        g.*,
+	        (
+	            SELECT COUNT(*)
+	            FROM TBL_GROUP_MEMBER gm
+	            WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0
+	        ) AS memberCount
+	    FROM TBL_GROUP g
+	    WHERE G_STATUS = 1
+	</select>
+	
+	<delete id="deleteCommentsByGroup" parameterType="int">
+	    DELETE FROM TBL_COMMENT WHERE G_NO = #{gNo}
+	</delete>
+	
+	<delete id="deletePostsByGroup" parameterType="int">
+	    DELETE FROM TBL_POST WHERE G_NO = #{gNo}
+	</delete>
+	
+	<delete id="deleteChattingByGroup" parameterType="int">
+	    DELETE FROM TBL_CHATTING WHERE G_NO = #{gNo}
+	</delete>
+	
+	<delete id="deleteEventsByGroup" parameterType="int">
+	    DELETE FROM TBL_EVENT WHERE G_NO = #{gNo}
+	</delete>
+	
+	<delete id="deleteGroupMembers" parameterType="int">
+	    DELETE FROM TBL_GROUP_MEMBER WHERE G_NO = #{gNo}
+	</delete>
+	
+	<delete id="deleteGroup" parameterType="int">
+	    DELETE FROM TBL_GROUP WHERE G_NO = #{gNo}
+	</delete>
+	
+	<select id="findEventsByGroupNo" parameterType="int" resultType="com.moim.moimapiserver.group.EventDto">
+	    SELECT 
+	        E_NO, 
+	        G_NO, 
+	        E_TITLE, 
+	        E_TEXT, 
+	        E_START_DATE, 
+	        E_TIME, 
+	        E_LOCATION, 
+	        E_REG_DATE, 
+	        E_MOD_DATE
+	    FROM TBL_EVENT
+	    WHERE G_NO = #{g_no}
+	    ORDER BY E_START_DATE DESC
 	</select>
 
+	
+	<insert id="insertEvent" parameterType="com.moim.moimapiserver.group.EventDto">
+	    INSERT INTO TBL_EVENT (
+	        G_NO, 
+	        E_TITLE, 
+	        E_TEXT, 
+	        E_START_DATE, 
+	        E_TIME, 
+	        E_LOCATION
+	    ) VALUES (
+	        #{g_no}, 
+	        #{e_title}, 
+	        #{e_text}, 
+	        #{e_start_date}, 
+	        #{e_time}, 
+	        #{e_location}
+	    )
+	</insert>
+	
+	<select id="findVotesByEvent" parameterType="int" resultType="com.moim.moimapiserver.group.VoteDto">
+	    SELECT *
+	    FROM TBL_EVENT_VOTES
+	    WHERE E_NO = #{e_no}
+	</select>
+	
+	<insert id="upsertVote" parameterType="com.moim.moimapiserver.group.VoteDto">
+	    INSERT INTO TBL_EVENT_VOTES (E_NO, M_NO, VOTE_STATUS)
+	    VALUES (#{e_no}, #{m_no}, #{vote_status})
+	    ON DUPLICATE KEY UPDATE VOTE_STATUS = #{vote_status}
+	</insert>
 
-	  
+	
+
 	
 </mapper>

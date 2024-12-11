@@ -297,5 +297,40 @@ public class GroupService {
             return null;
         }
     }
+
+
+    public boolean deleteGroup(int gNo) {
+        try {
+            groupMapper.deleteCommentsByGroup(gNo);
+            groupMapper.deletePostsByGroup(gNo);
+            groupMapper.deleteChattingByGroup(gNo);
+            groupMapper.deleteEventsByGroup(gNo);
+            groupMapper.deleteGroupMembers(gNo);
+            groupMapper.deleteGroup(gNo);
+            return true;
+        } catch (Exception e) {
+            log.error("그룹 삭제 중 오류:", e);
+            return false;
+        }
+    }
+
+
+    public List<EventDto> getGroupEvents(int g_no) {
+        return groupMapper.findEventsByGroupNo(g_no);
+    }
+
+    public void addGroupEvent(int g_no, EventDto eventDto) {
+        eventDto.setG_no(g_no);
+        groupMapper.insertEvent(eventDto);
+    }
+
+
+    public List<VoteDto> getVotesByEvent(int e_no) {
+        return groupMapper.findVotesByEvent(e_no);
+    }
+
+    public void addOrUpdateVote(int e_no, VoteDto voteDto) {
+    	groupMapper.upsertVote(e_no, voteDto);
+    }
 }
 
