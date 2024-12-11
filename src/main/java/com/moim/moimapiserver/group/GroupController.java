@@ -397,5 +397,14 @@ public class GroupController {
         return result;
     }
 
+    @GetMapping("/getPremiumGroup")
+    public Object getPremiumGroup () {
+        log.info("[GroupController] getPremiumGroup");
+
+        Map<String, Object> resultMap = groupService.getPremiumGroup();
+
+        return resultMap;
+    }
+
         
 }
