@@ -16,7 +16,10 @@ import lombok.extern.log4j.Log4j2;
 @Service
 @Log4j2
 public class GroupService {
-
+	
+    public final int SUCCESS_UPDATE_STATUS = 0;
+    public final int FAIL_UPDATE_STATUS = 1;
+    
     @Autowired
     private GroupMapper groupMapper;
 
@@ -256,7 +259,6 @@ public class GroupService {
     }
 
 
-<<<<<<< HEAD
     public Map<String, Object> getMyGroup(MemberDto memberDto) {
         log.info("[groupService] getMyGroup");
 
@@ -283,8 +285,5 @@ public class GroupService {
         }
     }
 
-
-=======
->>>>>>> e9c9b95448795ee0b82c243125246544987848ac
 }
 

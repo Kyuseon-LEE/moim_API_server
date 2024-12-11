@@ -376,7 +376,6 @@ public class GroupController {
                                  .body(Collections.emptyList());
         }
     }
-<<<<<<< HEAD
 
 
     @PostMapping("/getMyGroup")
@@ -398,7 +397,5 @@ public class GroupController {
         return result;
     }
 
-=======
->>>>>>> e9c9b95448795ee0b82c243125246544987848ac
         
 }

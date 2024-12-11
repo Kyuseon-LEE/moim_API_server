@@ -25,13 +25,9 @@ public class GroupDto {
     // 추가 내용
     private String g_master_nickname;
     private int memberCount;
-<<<<<<< HEAD
     private int g_m_role;
     private int g_status;
     private String m_social_id;
-=======
-    private int g_m_role; 
->>>>>>> e9c9b95448795ee0b82c243125246544987848ac
     
     private List<GroupMemberDto> members;
 }
