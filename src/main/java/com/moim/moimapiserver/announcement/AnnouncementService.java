@@ -7,7 +7,9 @@ import lombok.extern.log4j.Log4j2;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Log4j2
 @Service
@@ -146,6 +148,85 @@ public class AnnouncementService {
                 log.info("ANNOUNCEMENT UPDATE FAIL");
 
                 return responseWrapper(AdminStatusConfig.FAIL_STATUS, "UPDATE FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<AnnouncementDto>> getAnnouncementListForUser(int offset, int size, String sort) {
+        log.info("getAnnouncementListForUser()");
+        Map<String, Object> params = new HashMap<>();
+        params.put("offset", offset);
+        params.put("size", size);
+        params.put("sort", sort);
+        try {
+            List<AnnouncementDto> announcementDtos = announcementMapper.selectAnnouncementByOffsetAndSort(params);
+            if (!announcementDtos.isEmpty()) {
+                log.info("ANNOUNCEMENT FOR USER LIST GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", announcementDtos);
+            } else {
+                log.info("ANNOUNCEMENT FOR USER LIST GET FAIL");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA GET FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> getAnnouncementCountBySort(String sort) {
+        log.info("getAnnouncementCountBySort()");
+        try {
+            int result = announcementMapper.selectAnnouncementCountBySort(sort);
+            if (result >= 0) {
+                log.info("ANNOUNCEMENT COUNT BY SORT GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", result);
+            } else {
+                log.info("ANNOUNCEMENT COUNT BY SORT GET FAIL");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA GET FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<AnnouncementDto> getAnnouncementDetail(AnnouncementDto announcementDto) {
+        log.info("getAnnouncementDetail()");
+        try {
+            AnnouncementDto selectedAnnouncementDto = announcementMapper.selectAnnouncementByAnNo(announcementDto);
+            if (announcementDto != null) {
+                log.info("ANNOUNCEMENT GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", selectedAnnouncementDto);
+            } else {
+                log.info("ANNOUNCEMENT GET FAIL");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA GET FAIL", null);
             }
 
         } catch (PersistenceException e) {

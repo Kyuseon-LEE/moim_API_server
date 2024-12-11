@@ -52,6 +52,41 @@ public class AnnouncementController {
         };
     }
 
+    @GetMapping("/fetchAnnouncementCountBySort")
+    public ResponseEntity<ResponseWrapper<Integer>> fetchAnnouncementCountForBySort(@RequestParam("sort") String sort) {
+        log.info("fetchAnnouncementCountForBySort()");
+
+        ResponseWrapper<Integer> result = announcementService.getAnnouncementCountBySort(sort);
+
+        log.info("result : {}", result);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+    @GetMapping("/fetchAnnouncementListForUser")
+    public ResponseEntity<ResponseWrapper<List<AnnouncementDto>>> fetchAnnouncementListForUser(
+            @RequestParam("offset") int offset,
+            @RequestParam("size") int size,
+            @RequestParam("sort") String sort
+            ) {
+        log.info("fetchAnnouncementListForUser()");
+        ResponseWrapper<List<AnnouncementDto>> result = announcementService.getAnnouncementListForUser(offset, size, sort);
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
     @PostMapping("/deleteAnnouncement")
     public ResponseEntity<ResponseWrapper<Integer>> deleteAnnouncement(@RequestBody AnnouncementDto announcement) {
        log.info("deleteAnnouncement()");
@@ -97,5 +132,19 @@ public class AnnouncementController {
 
         };
 
+    }
+
+    @PostMapping("/fetchAnnouncementDetail")
+    public ResponseEntity<ResponseWrapper<AnnouncementDto>> fetchAnnouncementDetail(@RequestBody AnnouncementDto announcementDto) {
+       log.info("fetchAnnouncementDetail()");
+        ResponseWrapper<AnnouncementDto> result = announcementService.getAnnouncementDetail(announcementDto);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
     }
 }

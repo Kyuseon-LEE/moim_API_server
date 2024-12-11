@@ -4,6 +4,7 @@ import com.moim.moimapiserver.dto.AnnouncementDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface AnnouncementMapper {
@@ -16,4 +17,10 @@ public interface AnnouncementMapper {
     int insertNewAnnouncement(AnnouncementDto announcement);
 
     int updateAnnouncementByAnNo(AnnouncementDto announcement);
+
+    List<AnnouncementDto> selectAnnouncementByOffsetAndSort(Map<String, Object> params);
+
+    int selectAnnouncementCountBySort(String sort);
+
+    AnnouncementDto selectAnnouncementByAnNo(AnnouncementDto announcementDto);
 }
