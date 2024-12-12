@@ -67,4 +67,29 @@
         WHERE
             FAQ_NO = #{faq_no}
     </update>
+    <insert id="insertNewFaqCategory" parameterType="com.moim.moimapiserver.dto.FaqCategoryDto">
+        INSERT
+            INTO
+                TBL_FAQ_CATEGORY (
+                                  FAQ_CATEGORY
+            ) VALUES (
+                      #{faq_category}
+                                 )
+    </insert>
+    <delete id="deleteFaqCategoryByCategoryNo" parameterType="int">
+        DELETE
+            FROM
+                TBL_FAQ_CATEGORY
+        WHERE
+            FAQ_CATEGORY_NO = #{faq_category_no}
+    </delete>
+
+    <select id="selectFaqByKeyword" parameterType="String" resultType="com.moim.moimapiserver.dto.FaqDto">
+        SELECT
+            *
+        FROM
+            TBL_FAQ
+        WHERE
+            FAQ_TITLE LIKE CONCAT('%', #{searchKeyword}, '%')
+    </select>
 </mapper>

@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Log4j2
 @RequestMapping("/customer")
@@ -100,6 +101,51 @@ public class CustomerController {
     public ResponseEntity<ResponseWrapper<Integer>> fetchFaqCount(@RequestParam("offset") int offset, @RequestParam("size") int size, @RequestParam("sort")int sort) {
         log.info("fetchFaqCount()");
         ResponseWrapper<Integer> result = customerService.getFaqListCount(offset, size, sort);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/createFaqCategory")
+    public ResponseEntity<ResponseWrapper<Integer>> createFaqCategory(@RequestBody FaqCategoryDto faqCategoryDto) {
+        log.info("createFaqCategory()");
+
+        ResponseWrapper<Integer> result = customerService.confirmFaqCategoryCreate(faqCategoryDto);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/deleteFaqCategory")
+    public ResponseEntity<ResponseWrapper<Integer>> deleteFaqCategory(@RequestBody FaqCategoryDto faqCategoryDto) {
+        log.info("deleteFaqCategory()");
+
+        ResponseWrapper<Integer> result = customerService.confirmFaqCategoryDelete(faqCategoryDto.getFaq_category_no());
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/searchFaq")
+    public ResponseEntity<ResponseWrapper<List<FaqDto>>> searchFaq(@RequestBody Map<String, String> searchKeywordMap) {
+        log.info("searchFaq()");
+        String searchKeyword = searchKeywordMap.get("searchKeyword");
+        ResponseWrapper<List<FaqDto>> result = customerService.getSearchFaq(searchKeyword);
         return switch (result.getStatus()) {
             case "SUCCESS" -> ResponseEntity.ok(result);
 

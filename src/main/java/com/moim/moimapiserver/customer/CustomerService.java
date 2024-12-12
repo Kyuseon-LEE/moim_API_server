@@ -180,4 +180,80 @@ public class CustomerService {
 
         }
     }
+
+    public ResponseWrapper<Integer> confirmFaqCategoryCreate(FaqCategoryDto faqCategoryDto) {
+        log.info("confirmFaqCategoryCreate()");
+        try {
+            int result = customerMapper.insertNewFaqCategory(faqCategoryDto);
+            if (result > 0) {
+                log.info("FAQ CATEGORY INSERT SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE SUCCESS", result);
+            } else {
+                log.info("FAQ CATEGORY INSERT FAIL");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "UPDATE FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> confirmFaqCategoryDelete(int faq_category_no) {
+        log.info("confirmFaqCategoryDelete()");
+        try {
+            int result = customerMapper.deleteFaqCategoryByCategoryNo(faq_category_no);
+            if (result > 0) {
+                log.info("FAQ CATEGORY DELETE SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE SUCCESS", result);
+            } else {
+                log.info("FAQ CATEGORY DELETE FAIL");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "UPDATE FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<FaqDto>> getSearchFaq(String searchKeyword) {
+        log.info("getSearchFaq()");
+        log.info(searchKeyword);
+        try {
+            List<FaqDto> faqDtos = customerMapper.selectFaqByKeyword(searchKeyword);
+            if (!faqDtos.isEmpty()) {
+                log.info("FAQ SEARCH LIST GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "SEARCH SUCCESS [ MATCH SUCCESS ]", faqDtos);
+            } else {
+                log.info("FAQ SEARCH LIST GET FAIL");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "SEARCH FAIL [ MISS MATCH ]", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
 }

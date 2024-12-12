@@ -19,4 +19,10 @@ public interface CustomerMapper {
     int deleteFaqByFaqNo(int faq_no);
 
     int updateFaqByFaqNo(FaqDto faqDto);
+
+    int insertNewFaqCategory(FaqCategoryDto faqCategoryDto);
+
+    int deleteFaqCategoryByCategoryNo(int faq_category_no);
+
+    List<FaqDto> selectFaqByKeyword(String searchKeyword);
 }
