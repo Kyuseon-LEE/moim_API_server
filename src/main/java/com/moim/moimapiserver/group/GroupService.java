@@ -5,11 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.moim.moimapiserver.member.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.moim.moimapiserver.member.MemberDto;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -329,8 +330,20 @@ public class GroupService {
         return groupMapper.findVotesByEvent(e_no);
     }
 
-    public void addOrUpdateVote(int e_no, VoteDto voteDto) {
-    	groupMapper.upsertVote(e_no, voteDto);
+    public void addOrUpdateVote(VoteDto voteDto) {
+        try {
+            groupMapper.insertVote(voteDto);
+        } catch (DataIntegrityViolationException e) {
+            throw new IllegalArgumentException("이미 해당 이벤트에 투표하셨습니다.");
+        }
     }
+
+
+    public void deleteVote(int e_no, int m_no) {
+        groupMapper.deleteVote(e_no, m_no);
+    }
+
+
+
 }
 

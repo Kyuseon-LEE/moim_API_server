@@ -93,7 +93,11 @@ public interface GroupMapper {
 
 	List<VoteDto> findVotesByEvent(int e_no);
 
-	void upsertVote(int e_no, VoteDto voteDto);
+	void upsertVote(VoteDto voteDto);
+
+	void insertVote(VoteDto voteDto);
+
+	void deleteVote(int e_no, int m_no);
 
 }
 	

@@ -481,8 +481,10 @@
 	    )
 	</insert>
 	
-	<select id="findVotesByEvent" parameterType="int" resultType="com.moim.moimapiserver.group.VoteDto">
-	    SELECT *
+	<select id="findVotesByEvent" parameterType="int" resultType="map">
+	    SELECT 
+	        SUM(CASE WHEN VOTE_STATUS = 1 THEN 1 ELSE 0 END) AS yes,
+	        SUM(CASE WHEN VOTE_STATUS = 0 THEN 1 ELSE 0 END) AS no
 	    FROM TBL_EVENT_VOTES
 	    WHERE E_NO = #{e_no}
 	</select>
@@ -492,5 +494,21 @@
 	    VALUES (#{e_no}, #{m_no}, #{vote_status})
 	    ON DUPLICATE KEY UPDATE VOTE_STATUS = #{vote_status}
 	</insert>
+	
+	<insert id="insertVote" parameterType="com.moim.moimapiserver.group.VoteDto">
+	    INSERT INTO TBL_EVENT_VOTES (E_NO, M_NO, VOTE_STATUS)
+	    VALUES (#{e_no}, #{m_no}, #{vote_status})
+	</insert>
+	
+	<delete id="deleteVote" parameterType="map">
+	    DELETE FROM TBL_EVENT_VOTES
+	    WHERE E_NO = #{e_no} AND M_NO = #{m_no};
+	</delete>
+	
+	
+	
+	
+
+
 
 </mapper>

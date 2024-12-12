@@ -451,6 +451,9 @@ public class GroupController {
     @GetMapping("/{e_no}/votes")
     public ResponseEntity<List<VoteDto>> getVotes(@PathVariable("e_no") int e_no) {
         try {
+            if (e_no <= 0) {
+                return ResponseEntity.badRequest().body(Collections.emptyList());
+            }
             List<VoteDto> votes = groupService.getVotesByEvent(e_no);
             return ResponseEntity.ok(votes);
         } catch (Exception e) {
@@ -459,18 +462,65 @@ public class GroupController {
         }
     }
 
-    @PostMapping("/{e_no}/votes")
-    public ResponseEntity<String> addOrUpdateVote(
+
+    @PostMapping("/events/{e_no}/vote")
+    public ResponseEntity<Map<String, Object>> handleVote(
             @PathVariable("e_no") int e_no,
             @RequestBody VoteDto voteDto) {
+        Map<String, Object> response = new HashMap<>();
+
         try {
-        	groupService.addOrUpdateVote(e_no, voteDto);
-            return ResponseEntity.ok("투표가 반영되었습니다.");
+            voteDto.setE_no(e_no);
+            groupService.addOrUpdateVote(voteDto);
+
+            response.put("success", true);
+            response.put("message", "투표가 반영되었습니다.");
+            return ResponseEntity.ok(response);
+
+        } catch (IllegalArgumentException e) {
+            response.put("success", false);
+            response.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+
         } catch (Exception e) {
-            log.error("투표 등록 중 오류: {}", e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("투표 등록 실패");
+            log.error("투표 등록 중 오류: ", e);
+            response.put("success", false);
+            response.put("message", "투표 등록 실패");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+    
+    @DeleteMapping("/events/{e_no}/vote")
+    public ResponseEntity<Map<String, Object>> deleteVote(
+            @PathVariable("e_no") int e_no,
+            @RequestBody VoteDto voteDto) {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            log.info("Delete Vote Request: e_no={}, m_no={}", e_no, voteDto.getM_no());
+
+            if (voteDto.getM_no() <= 0) {
+                response.put("success", false);
+                response.put("message", "유효하지 않은 데이터입니다.");
+                return ResponseEntity.badRequest().body(response);
+            }
+
+            groupService.deleteVote(e_no, voteDto.getM_no());
+            response.put("success", true);
+            response.put("message", "투표가 삭제되었습니다.");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            log.error("투표 삭제 중 오류: ", e);
+            response.put("success", false);
+            response.put("message", "투표 삭제 실패");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
 
-        
+
+    
+    
+
+
+
 }
