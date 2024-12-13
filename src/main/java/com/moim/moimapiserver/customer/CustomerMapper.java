@@ -1,10 +1,12 @@
 package com.moim.moimapiserver.customer;
 
+import com.moim.moimapiserver.dto.CustomerInquiriesDto;
 import com.moim.moimapiserver.dto.FaqCategoryDto;
 import com.moim.moimapiserver.dto.FaqDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface CustomerMapper {
@@ -25,4 +27,10 @@ public interface CustomerMapper {
     int deleteFaqCategoryByCategoryNo(int faq_category_no);
 
     List<FaqDto> selectFaqByKeyword(String searchKeyword);
+
+    FaqDto selectFaqByFaqNo(int faq_no);
+
+    int insertNewInquiries(CustomerInquiriesDto customerInquiriesDto);
+
+    List<CustomerInquiriesDto> selectInquiriesListByMid(Map<String, Object> data);
 }

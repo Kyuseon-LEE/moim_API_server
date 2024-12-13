@@ -92,4 +92,54 @@
         WHERE
             FAQ_TITLE LIKE CONCAT('%', #{searchKeyword}, '%')
     </select>
+
+    <select id="selectFaqByFaqNo" parameterType="int" resultType="com.moim.moimapiserver.dto.FaqDto">
+        SELECT
+            *
+        FROM
+            TBL_FAQ
+        WHERE
+            FAQ_NO = #{faq_no}
+    </select>
+
+    <insert id="insertNewInquiries" parameterType="com.moim.moimapiserver.dto.CustomerInquiriesDto">
+        INSERT
+            INTO
+                TBL_CUSTOMER_INQUIRIES (
+                CSI_TITLE,
+                CSI_CATEGORY,
+                CSI_BODY,
+                CSI_REQUEST_USER,
+                CSI_ATTACH_FILE1,
+                CSI_ATTACH_FILE2,
+                CSI_ATTACH_FILE3,
+                CSI_ATTACH_FILE4
+
+            ) VALUES (
+                      #{csi_title},
+                      #{csi_category},
+                      #{csi_body},
+                      #{csi_request_user},
+                      #{csi_attach_file1},
+                      #{csi_attach_file2},
+                      #{csi_attach_file3},
+                      #{csi_attach_file4}
+        )
+    </insert>
+
+    <select id="selectInquiriesListByMid" parameterType="Map" resultType="com.moim.moimapiserver.dto.CustomerInquiriesDto">
+        SELECT
+            *
+        FROM
+            TBL_CUSTOMER_INQUIRIES
+            <where>
+                <if test="m_id != null">
+                    CSI_REQUEST_USER = #{m_id}
+                </if>
+                <if test="m_social_id != null">
+                    CSI_REQUEST_USER = #{m_social_id}
+                </if>
+            </where>
+        LIMIT #{size} OFFSET #{offset}
+    </select>
 </mapper>

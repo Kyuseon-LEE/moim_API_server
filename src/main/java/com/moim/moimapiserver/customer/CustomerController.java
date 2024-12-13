@@ -1,9 +1,6 @@
 package com.moim.moimapiserver.customer;
 
-import com.moim.moimapiserver.dto.AnnouncementDto;
-import com.moim.moimapiserver.dto.FaqCategoryDto;
-import com.moim.moimapiserver.dto.FaqDto;
-import com.moim.moimapiserver.dto.ResponseWrapper;
+import com.moim.moimapiserver.dto.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -144,8 +141,57 @@ public class CustomerController {
     @PostMapping("/searchFaq")
     public ResponseEntity<ResponseWrapper<List<FaqDto>>> searchFaq(@RequestBody Map<String, String> searchKeywordMap) {
         log.info("searchFaq()");
+
         String searchKeyword = searchKeywordMap.get("searchKeyword");
+
         ResponseWrapper<List<FaqDto>> result = customerService.getSearchFaq(searchKeyword);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/fetchFaqDetail")
+    public ResponseEntity<ResponseWrapper<FaqDto>> fetchFaqDetail(@RequestBody FaqDto faqDto) {
+        log.info("fetchFaqDetail()");
+        log.info("faqDto: {}", faqDto);
+        ResponseWrapper<FaqDto> result = customerService.getFaqDetail(faqDto.getFaq_no());
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/createInquiries")
+    public ResponseEntity<ResponseWrapper<Integer>> createInquiries(@RequestBody CustomerInquiriesDto customerInquiriesDto) {
+        log.info("createInquiries()");
+        log.info("customerInquiriesDto: {}", customerInquiriesDto);
+        ResponseWrapper<Integer> result = customerService.confirmInquiriesCreate(customerInquiriesDto);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/fetchUserInquiriesList")
+    public ResponseEntity<ResponseWrapper<List<CustomerInquiriesDto>>> fetchUserInquiriesList(@RequestBody Map<String, Object> data) {
+        log.info("fetchUserInquiriesList()");
+
+        log.info("data: {}", data);
+
+        ResponseWrapper<List<CustomerInquiriesDto>> result = customerService.getUserInquiriesList(data);
         return switch (result.getStatus()) {
             case "SUCCESS" -> ResponseEntity.ok(result);
 
