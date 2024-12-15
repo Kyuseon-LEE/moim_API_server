@@ -11,9 +11,20 @@
 
     <select id="selectAllGroup" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
         SELECT
-            *
+            g.*,
+            m.M_NAME
         FROM
-            TBL_GROUP
-                LIMIT #{size} OFFSET #{offset}
+            TBL_GROUP g
+                LEFT JOIN
+            TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO
+            LIMIT #{size} OFFSET #{offset}
     </select>
+
+    <delete id="deleteGroupByGNo" parameterType="int">
+        DELETE
+            FROM
+                TBL_GROUP
+        WHERE
+            G_NO = ${g_no}
+    </delete>
 </mapper>

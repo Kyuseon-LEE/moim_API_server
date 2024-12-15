@@ -56,6 +56,7 @@ public class AdminGroupService {
         log.info("getGroupListCount()");
         try {
             List<GroupDto> groupDtos = adminGroupMapper.selectAllGroup(offset, size);
+            log.info("groupDtos: {}", groupDtos);
             if (!groupDtos.isEmpty()) {
                 log.info("GROUP LIST GET SUCCESS");
 
@@ -64,6 +65,32 @@ public class AdminGroupService {
                 log.info("GROUP LIST GET FAIL");
 
                 return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA GET FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+
+    public ResponseWrapper<Integer> confirmGroupDelete(int g_no) {
+        log.info("confirmGroupDelete()");
+        try {
+            int result = adminGroupMapper.deleteGroupByGNo(g_no);
+            if (result > 0) {
+                log.info("GROUP DELETE SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE SUCCESS", result);
+            } else {
+                log.info("GROUP DELETE FAIL");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DELETE FAIL", null);
             }
 
         } catch (PersistenceException e) {

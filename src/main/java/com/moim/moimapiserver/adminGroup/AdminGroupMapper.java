@@ -10,4 +10,6 @@ public interface AdminGroupMapper {
     int selectGroupCount();
 
     List<GroupDto> selectAllGroup(int offset, int size);
+
+    int deleteGroupByGNo(int g_no);
 }

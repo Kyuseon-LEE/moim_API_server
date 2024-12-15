@@ -21,6 +21,7 @@ public class GroupDto {
     private String g_reg_date;
     private String g_mod_date;
     private String m_id;
+    private String m_name;
     
     // 추가 내용
     private String g_master_nickname;
