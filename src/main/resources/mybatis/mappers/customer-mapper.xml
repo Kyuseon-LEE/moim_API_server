@@ -142,4 +142,23 @@
             </where>
         LIMIT #{size} OFFSET #{offset}
     </select>
+
+    <select id="selectInquiriesByCsiNo" parameterType="int" resultType="com.moim.moimapiserver.dto.CustomerInquiriesDto">
+        SELECT
+            *
+        FROM
+            TBL_CUSTOMER_INQUIRIES
+        WHERE
+            CSI_NO = #{csi_no}
+    </select>
+
+    <update id="updateCsiStatusByCsiNo" parameterType="int">
+        UPDATE
+            TBL_CUSTOMER_INQUIRIES
+        SET
+            CSI_STATUS = 3
+        WHERE
+            CSI_NO = #{csi_no}
+    </update>
+
 </mapper>

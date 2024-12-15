@@ -201,4 +201,34 @@ public class CustomerController {
 
         };
     }
+
+    @PostMapping("/fetchUserInquiriesDetail")
+    public ResponseEntity<ResponseWrapper<CustomerInquiriesDto>> fetchUserInquiriesDetail(@RequestBody CustomerInquiriesDto customerInquiriesDto) {
+        log.info("fetchUserInquiriesDetail()");
+        log.info("customerInquiriesDto: {}", customerInquiriesDto);
+        ResponseWrapper<CustomerInquiriesDto> result = customerService.getUserInquiriesDetail(customerInquiriesDto.getCsi_no());
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/cancelUserInquiries")
+    public ResponseEntity<ResponseWrapper<Integer>> cancelUserInquiries(@RequestBody CustomerInquiriesDto customerInquiriesDto) {
+        log.info("cancelUserInquiries()");
+
+        ResponseWrapper<Integer> result = customerService.confirmInquiriesCancel(customerInquiriesDto.getCsi_no());
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
 }

@@ -5,7 +5,6 @@ import com.moim.moimapiserver.dto.*;
 import lombok.extern.log4j.Log4j2;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Map;
@@ -313,9 +312,60 @@ public class CustomerService {
 
                 return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", customerInquiriesDtos);
             } else {
-                log.info("USER INQUIRIES DTO GET SUCCESS FAIL");
+                log.info("USER INQUIRIES DTO GET FAIL");
 
                 return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<CustomerInquiriesDto> getUserInquiriesDetail(int csi_no) {
+        log.info("getUserInquiriesList()");
+
+        try {
+            CustomerInquiriesDto customerInquiriesDto = customerMapper.selectInquiriesByCsiNo(csi_no);
+            if (customerInquiriesDto != null) {
+                log.info("USER INQUIRIES DTO GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", customerInquiriesDto);
+            } else {
+                log.info("USER INQUIRIES DTO GET FAIL");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET FAIL", null);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> confirmInquiriesCancel(int csi_no) {
+        log.info("confirmInquiriesCancel()");
+        try {
+            int result = customerMapper.updateCsiStatusByCsiNo(csi_no);
+            if (result > 0) {
+                log.info("INQUIRIES CANCEL SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "INSERT SUCCESS", result);
+            } else {
+                log.info("INQUIRIES CANCEL FAIL");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "INSERT FAIL", null);
             }
 
         } catch (PersistenceException e) {

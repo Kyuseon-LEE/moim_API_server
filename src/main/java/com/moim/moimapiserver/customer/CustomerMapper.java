@@ -33,4 +33,8 @@ public interface CustomerMapper {
     int insertNewInquiries(CustomerInquiriesDto customerInquiriesDto);
 
     List<CustomerInquiriesDto> selectInquiriesListByMid(Map<String, Object> data);
+
+    CustomerInquiriesDto selectInquiriesByCsiNo(int csi_no);
+
+    int updateCsiStatusByCsiNo(int csi_no);
 }
