@@ -67,4 +67,10 @@ public interface AdminMapper {
     int selectUserCount();
 
     List<MemberDto> selectUsers(int offset, int size);
+
+    List<MemberDto> selectMemberByMname(String searchKeyword);
+
+    int deleteUserByMno(int m_no);
+
+    int updateUserByMno(MemberDto memberDto);
 }

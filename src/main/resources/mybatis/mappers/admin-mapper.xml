@@ -263,6 +263,39 @@
         FROM
             TBL_MEMBER
     </select>
+
+    <select id="selectMemberByMname" parameterType="String" resultType="com.moim.moimapiserver.dto.MemberDto">
+        SELECT
+            *
+        FROM
+            TBL_MEMBER
+        WHERE
+            M_NICKNAME LIKE CONCAT('%', #{searchKeyword}, '%')
+    </select>
+
+    <delete id="deleteUserByMno" parameterType="int">
+        DELETE
+            FROM
+                TBL_MEMBER
+        WHERE
+            M_NO = #{m_no}
+    </delete>
+
+    <update id="updateUserByMno" parameterType="com.moim.moimapiserver.dto.MemberDto">
+        UPDATE
+            TBL_MEMBER
+        SET
+            M_NAME = #{m_name},
+            M_NICKNAME = #{m_nickname},
+            M_MAIL = #{m_mail},
+            M_PHONE = #{m_phone},
+            M_GENDER = #{m_gender},
+            M_GRADE = #{m_grade},
+            M_STATUS = #{m_status},
+            M_MOD_DATE = NOW()
+        WHERE
+            M_NO = #{m_no}
+    </update>
 </mapper>
 
 

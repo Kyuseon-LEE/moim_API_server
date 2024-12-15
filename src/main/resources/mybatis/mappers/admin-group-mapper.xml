@@ -12,7 +12,8 @@
     <select id="selectAllGroup" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
         SELECT
             g.*,
-            m.M_NAME
+            m.M_NAME,
+            m.M_NICKNAME
         FROM
             TBL_GROUP g
                 LEFT JOIN

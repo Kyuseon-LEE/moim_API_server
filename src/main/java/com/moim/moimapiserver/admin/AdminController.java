@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Log4j2
 @RestController
@@ -462,6 +463,52 @@ public class AdminController {
             case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(adminCount);
 
             default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(adminCount);
+
+        };
+    }
+
+    @PostMapping("/searchUsers")
+    public ResponseEntity<ResponseWrapper<List<MemberDto>>> searchUsers(@RequestBody Map<String, String> searchMap) {
+        log.info("searchUsers()");
+
+        ResponseWrapper<List<MemberDto>> result = adminService.searchUsers(searchMap.get("searchKeyword"));
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/deleteUser")
+    public ResponseEntity<ResponseWrapper<Integer>> deleteUser(@RequestBody MemberDto memberDto) {
+        log.info("deleteUser()");
+
+        ResponseWrapper<Integer> result = adminService.confirmUserDelete(memberDto.getM_no());
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/updateUser")
+    public ResponseEntity<ResponseWrapper<Integer>> updateUser(@RequestBody MemberDto memberDto) {
+        log.info("updateUser()");
+        ResponseWrapper<Integer> result = adminService.confirmUserUpdate(memberDto);
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
 
         };
     }

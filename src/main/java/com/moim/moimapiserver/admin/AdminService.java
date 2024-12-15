@@ -725,4 +725,72 @@ public class AdminService {
         }
     }
 
+    public ResponseWrapper<List<MemberDto>> searchUsers(String searchKeyword) {
+        log.info("searchUsers()");
+        try {
+            List<MemberDto> memberDtos = adminMapper.selectMemberByMname(searchKeyword);
+            if (memberDtos != null) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "GET DATA SUCCESS", memberDtos);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "GET DATA FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
+
+    public ResponseWrapper<Integer> confirmUserDelete(int m_no) {
+        log.info("confirmUserDelete()");
+        try {
+            int result = adminMapper.deleteUserByMno(m_no);
+            if (result > 0) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE SUCCESS", result);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DELETE FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> confirmUserUpdate(MemberDto memberDto) {
+        try {
+            int result = adminMapper.updateUserByMno(memberDto);
+            if (result > 0) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE SUCCESS", result);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "UPDATE FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
 }

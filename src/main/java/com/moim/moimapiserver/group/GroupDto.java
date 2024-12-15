@@ -12,6 +12,7 @@ public class GroupDto {
     private String g_category;
     private int g_master_id;
     private String g_img_name;
+    private String m_nickname;
     private int g_max_number;
     private String g_location;
     private int g_good;
