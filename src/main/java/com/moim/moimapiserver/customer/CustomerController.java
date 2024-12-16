@@ -231,4 +231,60 @@ public class CustomerController {
 
         };
     }
+
+    @GetMapping("/fetchInquiriesList")
+    public ResponseEntity<ResponseWrapper<List<CustomerInquiriesDto>>> fetchInquiriesList(@RequestParam("offset")int offset, @RequestParam("size")int size, @RequestParam("sort")int sort) {
+        ResponseWrapper<List<CustomerInquiriesDto>> result = customerService.getInquiriesList(offset, size, sort);
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+    @GetMapping("/fetchInquiriesListCount")
+    public ResponseEntity<ResponseWrapper<Integer>> fetchInquiriesListCount() {
+        ResponseWrapper<Integer> result = customerService.getInquiriesListCount();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/fetchUserInquiriesDetailForAdmin")
+    public ResponseEntity<ResponseWrapper<CustomerInquiriesDto>> fetchUserInquiriesDetailForAdmin(@RequestBody CustomerInquiriesDto customerInquiriesDto) {
+        ResponseWrapper<CustomerInquiriesDto> result = customerService.getUserInquiriesDetailForAdmin(customerInquiriesDto.getCsi_no());
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/updateInquiries")
+    public ResponseEntity<ResponseWrapper<Integer>> updateInquiries (@RequestBody CustomerInquiriesDto customerInquiriesDto) {
+        log.info("updateInquiries()");
+
+       ResponseWrapper<Integer> result = customerService.confirmInquiriesUpdate(customerInquiriesDto);
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
 }

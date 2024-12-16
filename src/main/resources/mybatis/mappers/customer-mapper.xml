@@ -161,4 +161,36 @@
             CSI_NO = #{csi_no}
     </update>
 
+    <select id="selectInquiriesListByOffset" parameterType="int" resultType="com.moim.moimapiserver.dto.CustomerInquiriesDto">
+        SELECT
+            *
+        FROM
+            TBL_CUSTOMER_INQUIRIES
+                <where>
+                    <if test="sort > 0">
+                        CSI_STATUS = #{sort}
+                    </if>
+                </where>
+                LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <select id="selectInquiriesListCount">
+        SELECT
+            COUNT(*)
+        FROM
+            TBL_CUSTOMER_INQUIRIES
+    </select>
+
+    <update id="updateInquiriesByCsiNo" parameterType="com.moim.moimapiserver.dto.CustomerInquiriesDto">
+        UPDATE
+            TBL_CUSTOMER_INQUIRIES
+        SET
+            CSI_RESPONSE_ADMIN = #{csi_response_admin},
+            CSI_RESPONSE_BODY = #{csi_response_body},
+            CSI_STATUS = 2,
+            CSI_RESPONSE_DATE = NOW()
+        WHERE
+            CSI_NO = #{csi_no}
+    </update>
+
 </mapper>

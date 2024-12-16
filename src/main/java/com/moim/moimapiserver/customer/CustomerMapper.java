@@ -37,4 +37,10 @@ public interface CustomerMapper {
     CustomerInquiriesDto selectInquiriesByCsiNo(int csi_no);
 
     int updateCsiStatusByCsiNo(int csi_no);
+
+    List<CustomerInquiriesDto> selectInquiriesListByOffset(int offset, int size, int sort);
+
+    int selectInquiriesListCount();
+
+    int updateInquiriesByCsiNo(CustomerInquiriesDto customerInquiriesDto);
 }
