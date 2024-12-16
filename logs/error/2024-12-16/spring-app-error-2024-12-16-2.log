@@ -1,4 +1,4 @@
-2024-12-16 21:11:41 ERROR [AdminService] - 기타 오류 발생: null
+2024-12-16 21:10:23 ERROR [AdminService] - 기타 오류 발생: null
 org.mybatis.spring.MyBatisSystemException: null
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97) ~[mybatis-spring-3.0.3.jar:3.0.3]
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]

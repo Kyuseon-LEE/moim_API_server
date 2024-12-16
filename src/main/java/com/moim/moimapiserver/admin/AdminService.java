@@ -936,4 +936,56 @@ public class AdminService {
 
         }
     }
+
+    public ResponseWrapper<List<UserGenderStatisticsDto>> getGenderData() {
+        log.info("getGenderData");
+        try {
+            List<UserGenderStatisticsDto> userGenderStatisticsDtos = adminMapper.selectGenderCount();
+            if (userGenderStatisticsDtos.isEmpty()) {
+                log.info("USER GENDER DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER GENDER DATA GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", userGenderStatisticsDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
+
+    public ResponseWrapper<List<UserAgeStatisticsDto>> getAgeData() {
+        log.info("getAgeData");
+        try {
+            List<UserAgeStatisticsDto> userGenderStatisticsDtos = adminMapper.selectAgeCount();
+            if (userGenderStatisticsDtos.isEmpty()) {
+                log.info("USER GENDER DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER GENDER DATA GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", userGenderStatisticsDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
 }

@@ -603,4 +603,36 @@ public class AdminController {
 
         };
     }
+
+    @GetMapping("/fetchGenderData")
+    public ResponseEntity<ResponseWrapper<List<UserGenderStatisticsDto>>> fetchGenderData() {
+        log.info("fetchGenderData()");
+
+        ResponseWrapper<List<UserGenderStatisticsDto>> result = adminService.getGenderData();
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+
+    @GetMapping("/fetchAgeStats")
+    public ResponseEntity<ResponseWrapper<List<UserAgeStatisticsDto>>> fetchAgeData() {
+        log.info("fetchAgeData()");
+
+        ResponseWrapper<List<UserAgeStatisticsDto>> result = adminService.getAgeData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
 }

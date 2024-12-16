@@ -1,2 +1,3 @@
-2024-12-16 17:15:00 INFO  [AdvertisementScheduler] - Advertisement statuses update
-2024-12-16 17:16:00 INFO  [AdvertisementScheduler] - Advertisement statuses update
+2024-12-16 22:18:00 INFO  [AdminController] - fetchGenderData()
+2024-12-16 22:18:00 INFO  [AdminService] - getGenderData
+2024-12-16 22:18:00 INFO  [AdminService] - USER GENDER DATA GET SUCCESS

@@ -1,3 +1,3 @@
-2024-12-16 17:16:53 INFO  [MemberController] - getMemberInfo()
-2024-12-16 17:16:53 INFO  [MemberService] - [MemberService] getMemberInfo
-2024-12-16 17:16:53 INFO  [MemberController] - getMemberInfo()
+2024-12-16 22:18:01 INFO  [AdminController] - fetchAgeData()
+2024-12-16 22:18:01 INFO  [AdminService] - getAgeData
+2024-12-16 22:18:01 INFO  [AdminService] - USER GENDER DATA GET SUCCESS

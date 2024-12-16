@@ -358,6 +358,27 @@
         FROM
             TBL_MEMBER
     </select>
+
+    <select id="selectGenderCount" resultType="com.moim.moimapiserver.dto.UserGenderStatisticsDto">
+        SELECT
+            M_GENDER AS gender,
+            COUNT(*) AS count
+        FROM
+            TBL_MEMBER
+        GROUP BY
+            M_GENDER
+    </select>
+    <select id="selectAgeCount" resultType="com.moim.moimapiserver.dto.UserAgeStatisticsDto">
+        SELECT
+            M_AGE AS AGE,
+            COUNT(*) AS count
+        FROM
+            TBL_MEMBER
+        GROUP BY
+            M_AGE
+        ORDER BY
+            CAST(M_AGE AS UNSIGNED);
+    </select>
 </mapper>
 
 
