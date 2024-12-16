@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <!-- 로그 패턴 설정 -->
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} %-5p [%c{1}] - %m%n</Property>
+
+        <!-- 로그 파일 경로 -->
+        <Property name="LOG_PATH">logs</Property>
+
+    </Properties>
+
+    <Appenders>
+        <!-- 콘솔 출력 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- 로그 파일 기록 :: Root -->
+        <File name="FileByInfo" fileName="${LOG_PATH}/spring-info.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </File>
+
+        <!-- 로그 파일 기록 :: Application -->
+        <!--
+        <File name="FileForAppByInfo" fileName="${LOG_PATH}/spring-app-info.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+            	<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </File>
+        -->
+
+        <!-- DEBUG -->
+        <!--
+        <File name="FileForAppByDebug" fileName="${LOG_PATH}/spring-app-debug.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+            	<LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </File>
+        -->
+
+        <RollingFile
+                name="RollingFileForAppByDebug"
+                fileName="${LOG_PATH}/debug/spring-app-debug.log"
+                filePattern="${LOG_PATH}/debug/%d{yyyy-MM-dd}/spring-app-debug-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+                <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <Policies>
+                <!-- 용량 기반 롤링 -->
+                <SizeBasedTriggeringPolicy size="128B"/>
+                <!-- 날짜 기반 롤링 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+        <!-- INFO -->
+        <!--
+        <File name="FileForAppByInfo" fileName="${LOG_PATH}/spring-app-info.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+            	<LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </File>
+        -->
+        <RollingFile
+                name="RollingFileForAppByInfo"
+                fileName="${LOG_PATH}/info/spring-app-info.log"
+                filePattern="${LOG_PATH}/info/%d{yyyy-MM-dd}/spring-app-info-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+                <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <Policies>
+                <!-- 용량 기반 롤링 -->
+                <SizeBasedTriggeringPolicy size="128B"/>
+                <!-- 날짜 기반 롤링 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+        <!-- WARN -->
+        <!--
+        <File name="FileForAppByWarn" fileName="${LOG_PATH}/spring-app-warn.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+            	<LevelRangeFilter minLevel="WARN" maxLevel="WARN" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </File>
+        -->
+        <RollingFile
+                name="RollingFileForAppByWarn"
+                fileName="${LOG_PATH}/warn/spring-app-warn.log"
+                filePattern="${LOG_PATH}/warn/%d{yyyy-MM-dd}/spring-app-warn-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+                <LevelRangeFilter minLevel="WARN" maxLevel="WARN" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <Policies>
+                <!-- 용량 기반 롤링 -->
+                <SizeBasedTriggeringPolicy size="128B"/>
+                <!-- 날짜 기반 롤링 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+        <!-- ERROR -->
+        <!--
+        <File name="FileForAppByError" fileName="${LOG_PATH}/spring-app-error.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+            	<LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </File>
+        -->
+        <RollingFile
+                name="RollingFileForAppByError"
+                fileName="${LOG_PATH}/error/spring-app-error.log"
+                filePattern="${LOG_PATH}/error/%d{yyyy-MM-dd}/spring-app-error-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+                <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <Policies>
+                <!-- 용량 기반 롤링 -->
+                <SizeBasedTriggeringPolicy size="128B"/>
+                <!-- 날짜 기반 롤링 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <!-- 기본 로거 설정 -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileByInfo"/>
+        </Root>
+
+        <!-- 애플리케이션 패키지 로깅 -->
+        <Logger name="com.moim" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFileForAppByDebug"/>
+            <AppenderRef ref="RollingFileForAppByInfo"/>
+            <AppenderRef ref="RollingFileForAppByWarn"/>
+            <AppenderRef ref="RollingFileForAppByError"/>
+        </Logger>
+    </Loggers>
+</Configuration>
