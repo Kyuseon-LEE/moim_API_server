@@ -31,5 +31,7 @@ public interface AdvertisementMapper {
     void updateAdvertisementEndStatus();
 
     List<AdvertisementDto> selectAdTimeByFilteredAdNo(int ad_no);
+
+    List<AdvertisementDto> selectAllAd();
 }
 

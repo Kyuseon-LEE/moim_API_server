@@ -296,6 +296,68 @@
         WHERE
             M_NO = #{m_no}
     </update>
+
+    <select id="selectUserGroupByMno" parameterType="int" resultType="com.moim.moimapiserver.dto.UserJoinGroupDto">
+        SELECT
+            gm.G_NO,
+            gm.G_REG_DATE,
+            gm.G_M_ROLE,
+            g.G_CATEGORY,
+            g.G_LOCATION,
+            g.G_NAME
+        FROM
+            TBL_GROUP_MEMBER gm
+        JOIN
+            TBL_GROUP g
+            ON
+                gm.G_NO = g.G_NO
+        WHERE
+            gm.M_NO = #{m_no}
+    </select>
+
+    <select id="selectUserGroupPostByMno" parameterType="int" resultType="com.moim.moimapiserver.dto.UserPostDto">
+        SELECT
+            p.P_NO,
+            p.G_NO,
+            p.P_TEXT,
+            p.P_IMG,
+            p.P_REG_DATE,
+            p.P_MOD_DATE
+        FROM
+            TBL_POST p
+        WHERE
+            p.G_NO IN (
+                SELECT
+                    gm.G_NO
+                FROM
+                    TBL_GROUP_MEMBER gm
+                WHERE
+                    gm.M_NO = #{m_no}
+            )
+    </select>
+    <delete id="deleteGroupMemberByGnoAndMno" parameterType="Integer">
+        DELETE FROM TBL_GROUP_MEMBER
+        WHERE G_NO = #{g_no} AND M_NO = #{m_no};
+    </delete>
+
+    <delete id="deleteGroupPostByPnoAndMno" parameterType="Integer">
+        DELETE FROM TBL_POST
+        WHERE P_NO = #{p_no} AND M_NO = #{m_no}
+    </delete>
+
+    <select id="selectAllAdmin" resultType="com.moim.moimapiserver.dto.AdminDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN
+    </select>
+
+    <select id="selectAllUser" resultType="com.moim.moimapiserver.dto.MemberDto">
+        SELECT
+            *
+        FROM
+            TBL_MEMBER
+    </select>
 </mapper>
 
 

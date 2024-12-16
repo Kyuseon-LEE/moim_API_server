@@ -1,9 +1,6 @@
 package com.moim.moimapiserver.admin;
 
-import com.moim.moimapiserver.dto.AdminDto;
-import com.moim.moimapiserver.dto.AdminPartDto;
-import com.moim.moimapiserver.dto.AdminPositionDto;
-import com.moim.moimapiserver.dto.MemberDto;
+import com.moim.moimapiserver.dto.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -73,4 +70,16 @@ public interface AdminMapper {
     int deleteUserByMno(int m_no);
 
     int updateUserByMno(MemberDto memberDto);
+
+    List<UserJoinGroupDto> selectUserGroupByMno(int m_no);
+
+    List<UserPostDto> selectUserGroupPostByMno(int m_no);
+
+    int deleteGroupMemberByGnoAndMno(Integer m_no, Integer g_no);
+
+    int deleteGroupPostByPnoAndMno(Integer m_no, Integer p_no);
+
+    List<AdminDto> selectAllAdmin();
+
+    List<MemberDto> selectAllUser();
 }

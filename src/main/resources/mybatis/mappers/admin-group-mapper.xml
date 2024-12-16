@@ -9,7 +9,7 @@
             TBL_GROUP
     </select>
 
-    <select id="selectAllGroup" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
+    <select id="selectAllGroupByOffset" parameterType="int" resultType="com.moim.moimapiserver.group.GroupDto">
         SELECT
             g.*,
             m.M_NAME,
@@ -28,4 +28,42 @@
         WHERE
             G_NO = ${g_no}
     </delete>
+
+    <select id="selectGroupBySearchKeyword" parameterType="String" resultType="com.moim.moimapiserver.group.GroupDto">
+        SELECT
+            *
+        FROM
+            TBL_GROUP
+        WHERE
+            G_NAME LIKE CONCAT('%', #{searchKeyword}, '%')
+    </select>
+
+    <update id="updateGroupByGno" parameterType="com.moim.moimapiserver.group.GroupDto">
+        UPDATE
+            TBL_GROUP
+        SET
+            G_NAME = #{g_name},
+            G_INFO = #{g_info},
+            G_MAX_NUMBER = #{g_max_number},
+            G_LOCATION = #{g_location},
+            G_PUBLIC = #{g_public},
+            G_CONFIRM = #{g_confirm},
+            G_REGIST = #{g_regist},
+            G_STATUS = #{g_status},
+            G_CATEGORY = #{g_category},
+            G_MOD_DATE = NOW()
+        WHERE
+            G_NO = #{g_no}
+    </update>
+
+    <select id="selectAllGroup" resultType="com.moim.moimapiserver.group.GroupDto">
+        SELECT
+            g.*,
+            m.M_NAME,
+            m.M_NICKNAME
+        FROM
+            TBL_GROUP g
+                LEFT JOIN
+            TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO
+    </select>
 </mapper>

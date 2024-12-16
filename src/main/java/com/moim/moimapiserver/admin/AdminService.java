@@ -793,4 +793,147 @@ public class AdminService {
 
         }
     }
+
+    public ResponseWrapper<List<UserJoinGroupDto>> getUserDetailGroupInfo(int m_no) {
+        log.info("getUserDetailGroupInfo()");
+        try {
+            List<UserJoinGroupDto> userJoinGroupDtos = adminMapper.selectUserGroupByMno(m_no);
+            if (userJoinGroupDtos != null) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", userJoinGroupDtos);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATE GET FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
+
+    public ResponseWrapper<List<UserPostDto>> getUserDetailPostInfo(int m_no) {
+        log.info("getUserDetailPostInfo()");
+        try {
+            List<UserPostDto> userPostDtos = adminMapper.selectUserGroupPostByMno(m_no);
+            if (userPostDtos != null) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", userPostDtos);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA GET FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> confirmDeleteGroupMember(Integer m_no, Integer g_no) {
+        log.info("confirmDeleteGroupMember()");
+        try {
+            int result = adminMapper.deleteGroupMemberByGnoAndMno(m_no, g_no);
+            if (result > 0) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE SUCCESS", result);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DELETE FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<Integer> confirmDeleteGroupPost(Integer m_no, Integer p_no) {
+        log.info("confirmDeleteGroupPost()");
+        try {
+            int result = adminMapper.deleteGroupPostByPnoAndMno(m_no, p_no);
+            if (result > 0) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE SUCCESS", result);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DELETE FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<AdminDto>> getAllAdminList() {
+        log.info("getAllAdminList");
+        try {
+            List<AdminDto> adminDtos = adminMapper.selectAllAdmin();
+            if (adminDtos.isEmpty()) {
+                log.info("ADMIN ALL LIST IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("ADMIN ALL LIST GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", adminDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<MemberDto>> getAllUserList() {
+        log.info("getAllUserList");
+        try {
+            List<MemberDto> memberDtos = adminMapper.selectAllUser();
+            if (memberDtos.isEmpty()) {
+                log.info("USER ALL LIST IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER ALL LIST GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", memberDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
 }

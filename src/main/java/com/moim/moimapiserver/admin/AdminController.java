@@ -512,4 +512,95 @@ public class AdminController {
 
         };
     }
+
+    @PostMapping("/fetchUserDetailGroupInfo")
+    public ResponseEntity<ResponseWrapper<List<UserJoinGroupDto>>> fetchUserDetailGroupInfo(@RequestBody MemberDto memberDto) {
+        log.info("fetchUserDetailGroupInfo()");
+        log.info("meberDto: {}", memberDto);
+        ResponseWrapper<List<UserJoinGroupDto>> result = adminService.getUserDetailGroupInfo(memberDto.getM_no());
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/fetchUserDetailPostInfo")
+    public ResponseEntity<ResponseWrapper<List<UserPostDto>>> fetchUserDetailPostInfo(@RequestBody MemberDto memberDto) {
+        log.info("fetchUserDetailPostInfo()");
+        ResponseWrapper<List<UserPostDto>> result = adminService.getUserDetailPostInfo(memberDto.getM_no());
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/deleteGroupMember")
+    public ResponseEntity<ResponseWrapper<Integer>> deleteGroupMember (@RequestBody Map<String, Integer> data) {
+        log.info("deleteGroupMember()");
+
+        ResponseWrapper<Integer> result = adminService.confirmDeleteGroupMember(data.get("m_no"), data.get("g_no"));
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @PostMapping("/deleteGroupPost")
+    public ResponseEntity<ResponseWrapper<Integer>> deleteGroupPost (@RequestBody Map<String, Integer> data) {
+        log.info("deleteGroupPost()");
+
+        ResponseWrapper<Integer> result = adminService.confirmDeleteGroupPost(data.get("m_no"), data.get("p_no"));
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+
+    }
+
+    @GetMapping("/fetchAllAdminList")
+    public ResponseEntity<ResponseWrapper<List<AdminDto>>> fetchAllAdminList() {
+        log.info("fetchAllAdminList()");
+
+        ResponseWrapper<List<AdminDto>> adminDtos = adminService.getAllAdminList();
+        return switch (adminDtos.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(adminDtos);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(adminDtos);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(adminDtos);
+
+        };
+    }
+    @GetMapping("/fetchAllUserList")
+    public ResponseEntity<ResponseWrapper<List<MemberDto>>> fetchAllUserList() {
+        log.info("fetchAllUserList()");
+
+        ResponseWrapper<List<MemberDto>> result = adminService.getAllUserList();
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
 }

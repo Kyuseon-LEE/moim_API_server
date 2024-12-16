@@ -296,4 +296,28 @@ public class AdvertisementService {
         updateAdvertisementEndStatus();
     }
 
+    public ResponseWrapper<List<AdvertisementDto>> getAllAdList() {
+        log.info("getAllAdList()");
+        try {
+            List<AdvertisementDto> advertisementDtos = advertisementMapper.selectAllAd();
+            if (advertisementDtos == null) {
+                log.info("AD DTO IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("AD DTO GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", advertisementDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
 }

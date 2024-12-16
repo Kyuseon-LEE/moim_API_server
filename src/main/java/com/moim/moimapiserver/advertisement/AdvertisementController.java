@@ -166,4 +166,19 @@ public class AdvertisementController {
         };
 
     }
+
+    @GetMapping("/fetchAllAdList")
+    public ResponseEntity<ResponseWrapper<List<AdvertisementDto>>> fetchAllAdList() {
+        log.info("fetchAllAdList()");
+
+        ResponseWrapper<List<AdvertisementDto>> advertisementDtos = advertisementService.getAllAdList();
+        return switch (advertisementDtos.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(advertisementDtos);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(advertisementDtos);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(advertisementDtos);
+
+        };
+    }
 }

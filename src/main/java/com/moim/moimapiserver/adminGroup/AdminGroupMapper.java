@@ -9,7 +9,13 @@ import java.util.List;
 public interface AdminGroupMapper {
     int selectGroupCount();
 
-    List<GroupDto> selectAllGroup(int offset, int size);
+    List<GroupDto> selectAllGroupByOffset(int offset, int size);
 
     int deleteGroupByGNo(int g_no);
+
+    List<GroupDto> selectGroupBySearchKeyword(String searchKeyword);
+
+    int updateGroupByGno(GroupDto groupDto);
+
+    List<GroupDto> selectAllGroup();
 }
