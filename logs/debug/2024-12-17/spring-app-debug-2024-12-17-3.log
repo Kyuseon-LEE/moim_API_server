@@ -1,0 +1,1 @@
+2024-12-17 17:42:00 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_STATUS = 2 AND AD_START_DATE <= NOW()

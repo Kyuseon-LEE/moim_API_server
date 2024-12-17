@@ -1,3 +1,2 @@
-2024-12-16 17:16:53 INFO  [MemberController] - getMemberInfo()
-2024-12-16 17:16:53 INFO  [MemberService] - [MemberService] getMemberInfo
-2024-12-16 17:16:53 INFO  [MemberController] - getMemberInfo()
+2024-12-16 23:55:00 INFO  [AdvertisementScheduler] - Advertisement statuses update
+2024-12-16 23:56:00 INFO  [AdvertisementScheduler] - Advertisement statuses update
