@@ -1,9 +1,9 @@
-2024-12-17 15:58:20 ERROR [AdminService] - 기타 오류 발생: 
+2024-12-17 15:56:22 ERROR [AdminService] - 기타 오류 발생: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in file [D:\sdh\last_pjt\1217\moim-api-server\build\resources\main\mybatis\mappers\admin-mapper.xml]
 ### The error may involve defaultParameterMap
 ### The error occurred while setting parameters
-### SQL: SELECT             YEAR(PAY_REG_DATE) AS year,             QUARTER(PAY_REG_DATE) AS quarter_raw,             CONCAT(QUARTER(PAY_REG_DATE), '분기') AS quarter,             SUM(PAY_AMOUNT) AS total_sales         FROM TBL_PAYMENT         WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)            OR YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1         GROUP BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)         ORDER BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)
+### SQL: SELECT             YEAR(PAY_REG_DATE) AS year,             QUARTER(PAY_REG_DATE) AS quarter_raw, -- 원본 데이터             CONCAT(QUARTER(PAY_REG_DATE), '분기') AS quarter, -- 출력용             SUM(PAY_AMOUNT) AS total_sales         FROM TBL_PAYMENT         WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)            OR YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1         GROUP BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)         ORDER BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE);
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []
 org.springframework.jdbc.BadSqlGrammarException: 
@@ -11,7 +11,7 @@ org.springframework.jdbc.BadSqlGrammarException:
 ### The error may exist in file [D:\sdh\last_pjt\1217\moim-api-server\build\resources\main\mybatis\mappers\admin-mapper.xml]
 ### The error may involve defaultParameterMap
 ### The error occurred while setting parameters
-### SQL: SELECT             YEAR(PAY_REG_DATE) AS year,             QUARTER(PAY_REG_DATE) AS quarter_raw,             CONCAT(QUARTER(PAY_REG_DATE), '분기') AS quarter,             SUM(PAY_AMOUNT) AS total_sales         FROM TBL_PAYMENT         WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)            OR YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1         GROUP BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)         ORDER BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)
+### SQL: SELECT             YEAR(PAY_REG_DATE) AS year,             QUARTER(PAY_REG_DATE) AS quarter_raw, -- 원본 데이터             CONCAT(QUARTER(PAY_REG_DATE), '분기') AS quarter, -- 출력용             SUM(PAY_AMOUNT) AS total_sales         FROM TBL_PAYMENT         WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)            OR YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1         GROUP BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)         ORDER BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE);
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []
 	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:103) ~[spring-jdbc-6.1.14.jar:6.1.14]
@@ -25,7 +25,7 @@ org.springframework.jdbc.BadSqlGrammarException:
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80) ~[mybatis-3.5.14.jar:3.5.14]
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141) ~[mybatis-3.5.14.jar:3.5.14]
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.14.jar:3.5.14]
-	at jdk.proxy30/jdk.proxy30.$Proxy344.selectYearlyQuarterlySales(Unknown Source) ~[?:?]
+	at jdk.proxy28/jdk.proxy28.$Proxy326.selectYearlyQuarterlySales(Unknown Source) ~[?:?]
 	at com.moim.moimapiserver.admin.AdminService.getYearAndQuarterAmountData(AdminService.java:1171) ~[main/:?]
 	at com.moim.moimapiserver.admin.AdminController.fetchYearAndQuarterAmountData(AdminController.java:755) ~[main/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]

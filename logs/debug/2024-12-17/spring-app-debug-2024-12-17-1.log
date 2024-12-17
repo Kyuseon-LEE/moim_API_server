@@ -1,0 +1,2 @@
+2024-12-17 16:24:48 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-17 16:24:48 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT

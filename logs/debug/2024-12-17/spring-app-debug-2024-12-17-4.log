@@ -1,0 +1,2 @@
+2024-12-17 16:24:48 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-17 16:24:48 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?

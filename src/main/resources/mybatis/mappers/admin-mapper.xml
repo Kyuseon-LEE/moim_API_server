@@ -379,6 +379,143 @@
         ORDER BY
             CAST(M_AGE AS UNSIGNED);
     </select>
+
+    <select id="selectGenderPremiumData" resultType="com.moim.moimapiserver.dto.GenderPremiumDataDto">
+        SELECT
+            M_GENDER, M_GRADE, COUNT(*) AS count
+        FROM
+            TBL_MEMBER
+        GROUP BY M_GENDER, M_GRADE
+    </select>
+
+    <select id="selectAgePremiumData" resultType="com.moim.moimapiserver.dto.AgePremiumDataDto">
+        SELECT
+            M_AGE, M_GRADE, COUNT(*) AS count
+        FROM
+            TBL_MEMBER
+        GROUP BY M_AGE, M_GRADE ORDER BY M_AGE
+    </select>
+
+    <select id="selectUserPremiumData" resultType="com.moim.moimapiserver.dto.UserPremiumDataDto">
+        SELECT M_GRADE, COUNT(*) AS count FROM TBL_MEMBER GROUP BY M_GRADE
+    </select>
+
+    <select id="selectUserRecentData" resultType="com.moim.moimapiserver.dto.RecentStatisticsDto">
+    <![CDATA[
+        SELECT
+            CASE
+                WHEN M_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH) THEN '1개월 이내'
+                WHEN M_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) AND M_REG_DATE < DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH) THEN '3개월 이내'
+                WHEN M_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 6 MONTH) AND M_REG_DATE < DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) THEN '6개월 이내'
+                WHEN M_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 9 MONTH) AND M_REG_DATE < DATE_SUB(CURRENT_DATE, INTERVAL 6 MONTH) THEN '9개월 이내'
+                WHEN M_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 12 MONTH) AND M_REG_DATE < DATE_SUB(CURRENT_DATE, INTERVAL 9 MONTH) THEN '12개월 이내'
+                ELSE '12개월 초과'
+                END AS period,
+            COUNT(*) AS count
+        FROM TBL_MEMBER
+        GROUP BY period
+        ORDER BY
+            CASE period
+            WHEN '1개월 이내' THEN 1
+            WHEN '3개월 이내' THEN 2
+            WHEN '6개월 이내' THEN 3
+            WHEN '9개월 이내' THEN 4
+            WHEN '12개월 이내' THEN 5
+            ELSE 6
+        END
+        ]]>
+    </select>
+
+    <select id="selectGroupCategoryCount" resultType="com.moim.moimapiserver.dto.GroupCategoryStatisticsDto">
+        SELECT G_CATEGORY, COUNT(*) AS count
+        FROM TBL_GROUP
+        WHERE G_CATEGORY IN ('운동', '사진', '게임', '여행', '음악', '요리')
+        GROUP BY G_CATEGORY
+        ORDER BY count DESC;
+    </select>
+
+    <select id="selectGroupRecentDate" resultType="com.moim.moimapiserver.dto.RecentStatisticsDto">
+        <![CDATA[
+        SELECT
+            CASE
+                WHEN G_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH) THEN '최근 한달'
+                WHEN G_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) THEN '1분기 (1~3월)'
+                WHEN G_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 6 MONTH) THEN '2분기 (4~6월)'
+                WHEN G_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 9 MONTH) THEN '3분기 (7~9월)'
+                WHEN G_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 12 MONTH) THEN '4분기 (10~12월)'
+                END AS period,
+            COUNT(*) AS count
+        FROM TBL_GROUP
+        WHERE G_REG_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 1 YEAR)
+        GROUP BY period
+        ORDER BY
+            CASE period
+            WHEN '최근 한달' THEN 1
+            WHEN '1분기 (1~3월)' THEN 2
+            WHEN '2분기 (4~6월)' THEN 3
+            WHEN '3분기 (7~9월)' THEN 4
+            WHEN '4분기 (10~12월)' THEN 5
+        END
+        ]]>
+    </select>
+    <select id="selectTotalAmountData" resultType="com.moim.moimapiserver.dto.TotalAmountDto">
+        <![CDATA[
+        SELECT
+            '총 매출' AS period,
+            SUM(PAY_AMOUNT) AS total_sales,
+            NULL AS percentage_change
+        FROM TBL_PAYMENT
+
+        UNION ALL
+
+        SELECT
+            '2024년 매출' AS period,
+            SUM(PAY_AMOUNT) AS total_sales,
+            NULL AS percentage_change
+        FROM TBL_PAYMENT
+        WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)
+
+        UNION ALL
+
+        SELECT
+            '전년도 매출' AS period,
+            SUM(PAY_AMOUNT) AS total_sales,
+            NULL AS percentage_change
+        FROM TBL_PAYMENT
+        WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1
+
+        UNION ALL
+
+        SELECT
+            '전년 대비 증감률' AS period,
+            NULL AS total_sales,
+            CASE
+                WHEN SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) = 0 THEN 0
+                ELSE
+                    ROUND(
+                            (SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) THEN PAY_AMOUNT ELSE 0 END) -
+                             SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END))
+                                / SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) * 100, 2
+                    )
+                END AS percentage_change
+        FROM TBL_PAYMENT;
+        ]]>
+    </select>
+
+    <select id="selectYearlyQuarterlySales" resultType="com.moim.moimapiserver.dto.YearAndQuarterAmountDto">
+        SELECT
+            YEAR(PAY_REG_DATE) AS year,
+            QUARTER(PAY_REG_DATE) AS quarter_raw,
+            CONCAT(CAST(QUARTER(PAY_REG_DATE) AS CHAR), '분기') AS quarter,
+            SUM(PAY_AMOUNT) AS total_sales
+        FROM TBL_PAYMENT
+        WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)
+           OR YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1
+        GROUP BY
+            YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE), CONCAT(CAST(QUARTER(PAY_REG_DATE) AS CHAR), '분기')
+        ORDER BY
+            YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)
+    </select>
 </mapper>
 
 

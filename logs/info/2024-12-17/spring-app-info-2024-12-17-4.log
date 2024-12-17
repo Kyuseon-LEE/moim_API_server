@@ -1,0 +1,3 @@
+2024-12-17 16:24:48 INFO  [AdvertisementController] - fetchAdList()
+2024-12-17 16:24:48 INFO  [AdvertisementService] - getAdList()
+2024-12-17 16:24:48 INFO  [AdvertisementController] - fetchAdStatus()

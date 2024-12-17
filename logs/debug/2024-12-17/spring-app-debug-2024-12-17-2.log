@@ -1,0 +1,2 @@
+2024-12-17 16:24:48 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-17 16:24:48 DEBUG [selectAdCount] - ==> Parameters: 
