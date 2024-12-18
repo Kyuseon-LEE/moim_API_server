@@ -936,4 +936,257 @@ public class AdminService {
 
         }
     }
+
+    public ResponseWrapper<List<UserGenderStatisticsDto>> getGenderData() {
+        log.info("getGenderData");
+        try {
+            List<UserGenderStatisticsDto> userGenderStatisticsDtos = adminMapper.selectGenderCount();
+            if (userGenderStatisticsDtos.isEmpty()) {
+                log.info("USER GENDER DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER GENDER DATA GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", userGenderStatisticsDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
+
+    public ResponseWrapper<List<UserAgeStatisticsDto>> getAgeData() {
+        log.info("getAgeData");
+        try {
+            List<UserAgeStatisticsDto> userGenderStatisticsDtos = adminMapper.selectAgeCount();
+            if (userGenderStatisticsDtos.isEmpty()) {
+                log.info("USER GENDER DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER GENDER DATA GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", userGenderStatisticsDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
+
+    public ResponseWrapper<List<AgePremiumDataDto>> getAgePremiumData() {
+        log.info("getAgePremiumData");
+        try {
+            List<AgePremiumDataDto> AgePremiumDataDtos = adminMapper.selectAgePremiumData();
+            if (AgePremiumDataDtos.isEmpty()) {
+                log.info("USER AGE PREMIUM DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER AGE PREMIUM DATA GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", AgePremiumDataDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<GenderPremiumDataDto>> getGenderPremiumData() {
+        log.info("getGenderPremiumData");
+        try {
+            List<GenderPremiumDataDto> GenderPremiumDataDtos = adminMapper.selectGenderPremiumData();
+            log.info("GenderPremiumDataDtos: {}", GenderPremiumDataDtos);
+            if (GenderPremiumDataDtos.isEmpty()) {
+                log.info("USER GENDER PREMIUM DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER GENDER PREMIUM GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", GenderPremiumDataDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<UserPremiumDataDto>> getUserPremiumData() {
+        log.info("getUserPremiumData");
+        try {
+            List<UserPremiumDataDto> UserPremiumDataDtos = adminMapper.selectUserPremiumData();
+            if (UserPremiumDataDtos.isEmpty()) {
+                log.info("USER PREMIUM DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER PREMIUM GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", UserPremiumDataDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<RecentStatisticsDto>> getUserRecentData() {
+        log.info("getUserRecentData");
+        try {
+            List<RecentStatisticsDto> RecentUserStatisticsDtos = adminMapper.selectUserRecentData();
+            if (RecentUserStatisticsDtos.isEmpty()) {
+                log.info("USER RECENT DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("USER RECENT GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", RecentUserStatisticsDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<GroupCategoryStatisticsDto>> getGroupCategoryCountData() {
+        log.info("getGroupCategoryCountData");
+        try {
+            List<GroupCategoryStatisticsDto> GroupCategoryStatisticsDtos = adminMapper.selectGroupCategoryCount();
+            if (GroupCategoryStatisticsDtos.isEmpty()) {
+                log.info("GROUP CATEGORY COUNT DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("GROUP CATEGORY COUNT GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", GroupCategoryStatisticsDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<RecentStatisticsDto>> getGroupRecentData() {
+        log.info("getGroupRecentData");
+        try {
+            List<RecentStatisticsDto> RecentStatisticsDtos = adminMapper.selectGroupRecentDate();
+            if (RecentStatisticsDtos.isEmpty()) {
+                log.info("GROUP RECENT DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("GROUP RECENT GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", RecentStatisticsDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<TotalAmountDto>> getTotalAmountData() {
+        log.info("getTotalAmountData()");
+        try {
+            List<TotalAmountDto> totalAmountDtos = adminMapper.selectTotalAmountData();
+            if (totalAmountDtos.isEmpty()) {
+                log.info("TOTAL AMOUNT DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("TOTAL AMOUNT DATA GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", totalAmountDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
+
+    public ResponseWrapper<List<YearAndQuarterAmountDto>> getYearAndQuarterAmountData() {
+        log.info("getYearAndQuarterAmountData()");
+        try {
+            List<YearAndQuarterAmountDto> yearAndQuarterAmountDtos = adminMapper.selectYearlyQuarterlySales();
+            if (yearAndQuarterAmountDtos.isEmpty()) {
+                log.info("YEAR AND QUARTER AMOUNT DATA IS EMPTY");
+
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "DATA IS EMPTY", null);
+            } else {
+                log.info("YEAR AND QUARTER AMOUNT DATA GET SUCCESS");
+
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DATA GET SUCCESS", yearAndQuarterAmountDtos);
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+    }
 }

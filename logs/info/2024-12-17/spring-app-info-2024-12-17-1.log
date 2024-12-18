@@ -1,2 +1,3 @@
-2024-12-17 17:36:49 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
-2024-12-17 17:36:49 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-17 20:09:02 INFO  [AdminController] - fetchUserList()
+2024-12-17 20:09:02 INFO  [AdminService] - getUserList()
+2024-12-17 20:09:02 INFO  [AdminService] - USER LIST GET SUCCESS

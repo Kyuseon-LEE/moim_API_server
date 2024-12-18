@@ -1,2 +1,138 @@
-2024-12-17 17:42:00 DEBUG [updateAdvertisementEndStatus] - ==> Parameters: 
-2024-12-17 17:42:00 DEBUG [updateAdvertisementEndStatus] - <==    Updates: 0
+2024-12-18 10:53:22 DEBUG [selectAllAd] - <==      Total: 3
+2024-12-18 11:12:26 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 11:12:26 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 11:12:26 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 11:12:26 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 11:12:26 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 11:12:26 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 11:12:26 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 11:15:52 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 11:15:53 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 11:15:53 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 11:15:53 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 11:15:53 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 11:15:53 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 11:15:53 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 11:16:14 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 11:16:16 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 11:16:16 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 11:16:16 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 11:16:16 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 11:16:16 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 11:16:16 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 11:18:49 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 11:18:50 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 11:18:50 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 11:18:50 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 11:18:50 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 11:18:50 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 11:18:50 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 11:27:19 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:27:19 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:27:19 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:27:20 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:27:20 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:27:20 DEBUG [getPremiumGroup] - ==>  Preparing: SELECT g.*, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g WHERE G_STATUS = 1
+2024-12-18 11:27:20 DEBUG [getPremiumGroup] - ==> Parameters: 
+2024-12-18 11:27:20 DEBUG [selectAdByAdStatus] - ==>  Preparing: SELECT AD_NAME, AD_IMG, AD_LINK FROM TBL_ADVERTISEMENT WHERE AD_STATUS = 3
+2024-12-18 11:27:20 DEBUG [selectAdByAdStatus] - ==> Parameters: 
+2024-12-18 11:27:20 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:27:20 DEBUG [selectAdByAdStatus] - <==      Total: 1
+2024-12-18 11:27:20 DEBUG [getPremiumGroup] - <==      Total: 5
+2024-12-18 11:27:20 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:27:20 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:27:20 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:27:20 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:27:20 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:27:20 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:27:29 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 11:27:31 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 11:27:31 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 11:27:31 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 11:27:31 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 11:27:31 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 11:27:31 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 11:30:31 DEBUG [selectMemberForLogin] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:30:31 DEBUG [selectMemberForLogin] - ==> Parameters: kwon(String)
+2024-12-18 11:30:31 DEBUG [selectMemberForLogin] - <==      Total: 1
+2024-12-18 11:30:44 DEBUG [selectMemberForLogin] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:30:44 DEBUG [selectMemberForLogin] - ==> Parameters: kwon(String)
+2024-12-18 11:30:44 DEBUG [selectMemberForLogin] - <==      Total: 1
+2024-12-18 11:30:44 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:30:44 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:30:44 DEBUG [selectAdByAdStatus] - ==>  Preparing: SELECT AD_NAME, AD_IMG, AD_LINK FROM TBL_ADVERTISEMENT WHERE AD_STATUS = 3
+2024-12-18 11:30:44 DEBUG [getPremiumGroup] - ==>  Preparing: SELECT g.*, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g WHERE G_STATUS = 1
+2024-12-18 11:30:44 DEBUG [selectAdByAdStatus] - ==> Parameters: 
+2024-12-18 11:30:44 DEBUG [getPremiumGroup] - ==> Parameters: 
+2024-12-18 11:30:44 DEBUG [selectAdByAdStatus] - <==      Total: 1
+2024-12-18 11:30:44 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:30:44 DEBUG [findGroupsByUserId] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_IMG_NAME AS g_img_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_MASTER_ID AS g_master_id, g.G_MAX_NUMBER AS g_max_number, g.G_LOCATION AS g_location, g.G_GOOD AS g_good, g.G_PUBLIC AS g_public, g.G_CONFIRM AS g_confirm, g.G_REGIST AS g_regist, g.G_REG_DATE AS g_reg_date, g.G_MOD_DATE AS g_mod_date, g.G_STATUS AS g_status, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount, gm.G_M_ROLE AS g_m_role -- 회원 역할 정보 추가 FROM TBL_GROUP g JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO -- TBL_GROUP_MEMBER와 조인 WHERE g.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? ) ) AND gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? );
+2024-12-18 11:30:44 DEBUG [findGroupsByUserId] - ==> Parameters: undefined(String), undefined(String), undefined(String), undefined(String)
+2024-12-18 11:30:44 DEBUG [getPremiumGroup] - <==      Total: 5
+2024-12-18 11:30:44 DEBUG [findGroupsByUserId] - <==      Total: 0
+2024-12-18 11:30:44 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:30:44 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:30:44 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:30:44 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:30:44 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:30:44 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:30:44 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:30:44 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:30:44 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:30:44 DEBUG [findGroupsByUserId] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_IMG_NAME AS g_img_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_MASTER_ID AS g_master_id, g.G_MAX_NUMBER AS g_max_number, g.G_LOCATION AS g_location, g.G_GOOD AS g_good, g.G_PUBLIC AS g_public, g.G_CONFIRM AS g_confirm, g.G_REGIST AS g_regist, g.G_REG_DATE AS g_reg_date, g.G_MOD_DATE AS g_mod_date, g.G_STATUS AS g_status, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount, gm.G_M_ROLE AS g_m_role -- 회원 역할 정보 추가 FROM TBL_GROUP g JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO -- TBL_GROUP_MEMBER와 조인 WHERE g.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? ) ) AND gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? );
+2024-12-18 11:30:44 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:30:44 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:30:44 DEBUG [findGroupsByUserId] - ==> Parameters: kwon(String), kwon(String), kwon(String), kwon(String)
+2024-12-18 11:30:44 DEBUG [findGroupsByUserId] - <==      Total: 3
+2024-12-18 11:30:44 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:31:37 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:31:37 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:31:37 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:31:37 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:31:37 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:31:37 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:31:41 DEBUG [updateMemberInfo] - ==>  Preparing: UPDATE TBL_MEMBER SET m_nickname = ?, m_gender = ?, m_phone = ?, m_address = ?, m_category = ? WHERE M_ID = ?
+2024-12-18 11:31:41 DEBUG [updateMemberInfo] - ==> Parameters: 권익현(String), M(String), 01072343252(String),   11662 경기 의정부시 가능로 70   (String), 게임(String), kwon(String)
+2024-12-18 11:31:41 DEBUG [updateMemberInfo] - <==    Updates: 1
+2024-12-18 11:36:25 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:36:25 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:36:25 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:36:25 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:36:25 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:36:25 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:36:27 DEBUG [updateMemberInfo] - ==>  Preparing: UPDATE TBL_MEMBER SET m_nickname = ?, m_gender = ?, m_phone = ?, m_address = ?, m_category = ? WHERE M_ID = ?
+2024-12-18 11:36:27 DEBUG [updateMemberInfo] - ==> Parameters: 권익현1(String), M(String), 01072343252(String),    11662 경기 의정부시 가능로 70    (String), 게임(String), kwon(String)
+2024-12-18 11:36:27 DEBUG [updateMemberInfo] - <==    Updates: 1
+2024-12-18 11:36:29 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:36:29 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:36:29 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:36:29 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:36:29 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:36:29 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:36:30 DEBUG [selectAdByAdStatus] - ==>  Preparing: SELECT AD_NAME, AD_IMG, AD_LINK FROM TBL_ADVERTISEMENT WHERE AD_STATUS = 3
+2024-12-18 11:36:30 DEBUG [selectAdByAdStatus] - ==> Parameters: 
+2024-12-18 11:36:30 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:36:30 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:36:30 DEBUG [selectAdByAdStatus] - <==      Total: 1
+2024-12-18 11:36:30 DEBUG [getPremiumGroup] - ==>  Preparing: SELECT g.*, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g WHERE G_STATUS = 1
+2024-12-18 11:36:30 DEBUG [getPremiumGroup] - ==> Parameters: 
+2024-12-18 11:36:30 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:36:30 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:36:30 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:36:30 DEBUG [getPremiumGroup] - <==      Total: 5
+2024-12-18 11:36:30 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:36:30 DEBUG [getMemberInfo] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_ID = ?
+2024-12-18 11:36:30 DEBUG [getMemberInfo] - ==> Parameters: kwon(String)
+2024-12-18 11:36:30 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:36:30 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:36:30 DEBUG [getMemberInfo] - <==      Total: 1
+2024-12-18 11:36:30 DEBUG [findGroupsByUserId] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_IMG_NAME AS g_img_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_MASTER_ID AS g_master_id, g.G_MAX_NUMBER AS g_max_number, g.G_LOCATION AS g_location, g.G_GOOD AS g_good, g.G_PUBLIC AS g_public, g.G_CONFIRM AS g_confirm, g.G_REGIST AS g_regist, g.G_REG_DATE AS g_reg_date, g.G_MOD_DATE AS g_mod_date, g.G_STATUS AS g_status, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount, gm.G_M_ROLE AS g_m_role -- 회원 역할 정보 추가 FROM TBL_GROUP g JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO -- TBL_GROUP_MEMBER와 조인 WHERE g.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? ) ) AND gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? );
+2024-12-18 11:36:30 DEBUG [findGroupsByUserId] - ==> Parameters: undefined(String), undefined(String), undefined(String), undefined(String)
+2024-12-18 11:36:30 DEBUG [findGroupsByUserId] - <==      Total: 0
+2024-12-18 11:36:30 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:36:30 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+2024-12-18 11:36:30 DEBUG [findAllGroups] - ==> Parameters: 
+2024-12-18 11:36:30 DEBUG [findGroupsByUserId] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_IMG_NAME AS g_img_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_MASTER_ID AS g_master_id, g.G_MAX_NUMBER AS g_max_number, g.G_LOCATION AS g_location, g.G_GOOD AS g_good, g.G_PUBLIC AS g_public, g.G_CONFIRM AS g_confirm, g.G_REGIST AS g_regist, g.G_REG_DATE AS g_reg_date, g.G_MOD_DATE AS g_mod_date, g.G_STATUS AS g_status, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount, gm.G_M_ROLE AS g_m_role -- 회원 역할 정보 추가 FROM TBL_GROUP g JOIN TBL_GROUP_MEMBER gm ON g.G_NO = gm.G_NO -- TBL_GROUP_MEMBER와 조인 WHERE g.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? ) ) AND gm.M_NO = ( SELECT M_NO FROM TBL_MEMBER WHERE M_ID = ? OR M_SOCIAL_ID = ? );
+2024-12-18 11:36:30 DEBUG [findGroupsByUserId] - ==> Parameters: kwon(String), kwon(String), kwon(String), kwon(String)
+2024-12-18 11:36:30 DEBUG [findAllGroups] - <==      Total: 14
+2024-12-18 11:36:30 DEBUG [findGroupsByUserId] - <==      Total: 3

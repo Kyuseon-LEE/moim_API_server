@@ -2,6 +2,8 @@ package com.moim.moimapiserver.dto;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class AdvertisementDto {
     private int ad_no;
@@ -11,10 +13,10 @@ public class AdvertisementDto {
     private String ad_owner;
     private String ad_advertiser;
     private String ad_link;
-    private String ad_reg_date;
-    private String ad_mod_date;
-    private String ad_start_date;
-    private String ad_end_date;
-    private String ad_approval_date;
+    private Date ad_reg_date;
+    private Date ad_mod_date;
+    private Date ad_start_date;
+    private Date ad_end_date;
+    private Date ad_approval_date;
     private int ad_status;
 }

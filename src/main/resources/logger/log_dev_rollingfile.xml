@@ -16,12 +16,22 @@
         </Console>
 
         <!-- 로그 파일 기록 :: Root -->
-        <File name="FileByInfo" fileName="${LOG_PATH}/spring-info.log">
+        <RollingFile
+                name="RollingFileForRoot"
+                fileName="${LOG_PATH}/root/spring-root.log"
+                filePattern="${LOG_PATH}/root/%d{yyyy-MM-dd}/spring-root-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Filters>
                 <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
             </Filters>
-        </File>
+            <Policies>
+                <!-- 용량 기반 롤링 -->
+                <SizeBasedTriggeringPolicy size="50MB"/>
+                <!-- 날짜 기반 롤링 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
 
         <!-- 로그 파일 기록 :: Application -->
         <!--
@@ -53,7 +63,7 @@
             </Filters>
             <Policies>
                 <!-- 용량 기반 롤링 -->
-                <SizeBasedTriggeringPolicy size="128B"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
                 <!-- 날짜 기반 롤링 -->
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
@@ -79,7 +89,7 @@
             </Filters>
             <Policies>
                 <!-- 용량 기반 롤링 -->
-                <SizeBasedTriggeringPolicy size="128B"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
                 <!-- 날짜 기반 롤링 -->
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
@@ -105,7 +115,7 @@
             </Filters>
             <Policies>
                 <!-- 용량 기반 롤링 -->
-                <SizeBasedTriggeringPolicy size="128B"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
                 <!-- 날짜 기반 롤링 -->
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
@@ -131,7 +141,7 @@
             </Filters>
             <Policies>
                 <!-- 용량 기반 롤링 -->
-                <SizeBasedTriggeringPolicy size="128B"/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
                 <!-- 날짜 기반 롤링 -->
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
@@ -144,7 +154,7 @@
         <!-- 기본 로거 설정 -->
         <Root level="info">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileByInfo"/>
+            <AppenderRef ref="RollingFileForRoot"/>
         </Root>
 
         <!-- 애플리케이션 패키지 로깅 -->

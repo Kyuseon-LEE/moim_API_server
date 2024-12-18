@@ -26,12 +26,15 @@ public interface AdvertisementMapper {
 
     List<AdvertisementDto> selectAdTime();
 
-    void updateAdvertisementStartStatus();
+    void updateAdvertisementStartStatus(int ad_no);
 
-    void updateAdvertisementEndStatus();
+    void updateAdvertisementEndStatus(int ad_no);
 
     List<AdvertisementDto> selectAdTimeByFilteredAdNo(int ad_no);
 
     List<AdvertisementDto> selectAllAd();
+
+    List<AdvertisementDto> findActiveAdvertisements();
+
 }
 

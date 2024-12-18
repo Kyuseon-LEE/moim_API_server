@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 2024-12-17 00:00:00 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_STATUS = 2 AND AD_START_DATE <= NOW()
+=======
+2024-12-16 22:18:20 DEBUG [selectGenderCount] - ==> Parameters: 
+2024-12-16 22:18:20 DEBUG [selectGenderCount] - <==      Total: 2
+>>>>>>> 37e10f9ad97fc53cebef68c8a0c6307481adc53d

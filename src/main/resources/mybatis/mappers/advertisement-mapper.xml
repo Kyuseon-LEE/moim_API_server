@@ -111,22 +111,31 @@
     </select>
 
     <update id="updateAdvertisementStartStatus">
-    <![CDATA[
-        UPDATE TBL_ADVERTISEMENT
-        SET AD_STATUS = 3
-        WHERE AD_STATUS = 2
-          AND AD_START_DATE <= NOW()
-        ]]>
+        UPDATE
+            TBL_ADVERTISEMENT
+        SET
+            AD_STATUS = 3
+        WHERE
+            AD_NO = #{ad_no}
 </update>
 
     <update id="updateAdvertisementEndStatus">
-    <![CDATA[
-        UPDATE TBL_ADVERTISEMENT
-        SET AD_STATUS = 4
-        WHERE AD_STATUS = 3
-          AND AD_END_DATE <= NOW()
-        ]]>
+        UPDATE
+            TBL_ADVERTISEMENT
+        SET
+            AD_STATUS = 4
+        WHERE
+            AD_NO = #{ad_no}
     </update>
+
+    <select id="findActiveAdvertisements" resultType="com.moim.moimapiserver.dto.AdvertisementDto">
+        SELECT
+            *
+        FROM
+            TBL_ADVERTISEMENT
+        WHERE
+            AD_STATUS IN (2, 3)
+</select>
 
     <select id="selectAllAd" resultType="com.moim.moimapiserver.dto.AdvertisementDto">
         SELECT

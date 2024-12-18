@@ -82,4 +82,24 @@ public interface AdminMapper {
     List<AdminDto> selectAllAdmin();
 
     List<MemberDto> selectAllUser();
+
+    List<UserGenderStatisticsDto> selectGenderCount();
+
+    List<UserAgeStatisticsDto> selectAgeCount();
+
+    List<GenderPremiumDataDto> selectGenderPremiumData();
+
+    List<AgePremiumDataDto> selectAgePremiumData();
+
+    List<UserPremiumDataDto> selectUserPremiumData();
+
+    List<RecentStatisticsDto> selectUserRecentData();
+
+    List<GroupCategoryStatisticsDto> selectGroupCategoryCount();
+
+    List<RecentStatisticsDto> selectGroupRecentDate();
+
+    List<TotalAmountDto> selectTotalAmountData();
+
+    List<YearAndQuarterAmountDto> selectYearlyQuarterlySales();
 }

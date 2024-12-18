@@ -4,20 +4,31 @@ import com.moim.moimapiserver.config.AdminStatusConfig;
 import com.moim.moimapiserver.dto.AdStatusDto;
 import com.moim.moimapiserver.dto.AdvertisementDto;
 import com.moim.moimapiserver.dto.ResponseWrapper;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.log4j.Log4j2;
 import org.apache.ibatis.exceptions.PersistenceException;
+import org.quartz.Scheduler;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.TaskScheduler;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ScheduledFuture;
 
 @Log4j2
 @Service
 public class AdvertisementService {
 
     private final AdvertisementMapper advertisementMapper;
+    private final TaskScheduler taskScheduler;
+    private final ConcurrentHashMap<Integer, List<ScheduledFuture<?>>> scheduledTasksMap = new ConcurrentHashMap<>();
 
-    public AdvertisementService(final AdvertisementMapper advertisementMapper) {
+    public AdvertisementService(final AdvertisementMapper advertisementMapper, final TaskScheduler taskScheduler) {
         this.advertisementMapper = advertisementMapper;
+        this.taskScheduler = taskScheduler;
     }
 
     private <T> ResponseWrapper<T> responseWrapper(String status, String message, T data) {
@@ -29,10 +40,57 @@ public class AdvertisementService {
     }
 
 
+    // TaskScheduler
+    @PostConstruct
+    public void init() {
+        List<AdvertisementDto> advertisements = advertisementMapper.findActiveAdvertisements();
+        for (AdvertisementDto ad : advertisements) {
+            scheduleAdvertisementTasks(ad);
+        }
+    }
+
+    // TaskScheduler
+    private void scheduleAdvertisementTasks(AdvertisementDto ad) {
+        List<ScheduledFuture<?>> scheduledFutures = new ArrayList<>();
+
+        if (ad.getAd_start_date() != null) {
+            Runnable startTask = () -> {
+                advertisementMapper.updateAdvertisementStartStatus(ad.getAd_no());
+                System.out.println("광고 시작 상태 업데이트: 광고 ID " + ad.getAd_no());
+            };
+            ScheduledFuture<?> startFuture = taskScheduler.schedule(startTask, ad.getAd_start_date());
+            scheduledFutures.add(startFuture);
+        }
+
+        if (ad.getAd_end_date() != null) {
+            Runnable endTask = () -> {
+                advertisementMapper.updateAdvertisementEndStatus(ad.getAd_no());
+                System.out.println("광고 종료 상태 업데이트: 광고 ID " + ad.getAd_no());
+            };
+            ScheduledFuture<?> endFuture = taskScheduler.schedule(endTask, ad.getAd_end_date());
+            scheduledFutures.add(endFuture);
+        }
+
+        scheduledTasksMap.put(ad.getAd_no(), scheduledFutures);
+    }
+
+    private void cancelScheduledTasks(int ad_no) {
+        List<ScheduledFuture<?>> scheduledFutures = scheduledTasksMap.get(ad_no);
+        if (scheduledFutures != null) {
+            for (ScheduledFuture<?> future : scheduledFutures) {
+                future.cancel(false);
+            }
+            scheduledTasksMap.remove(ad_no);
+        }
+    }
+
+
     public ResponseWrapper<Object> confirmAdCreate(AdvertisementDto advertisementDto) {
         log.info("confirmAdCreate()");
         try {
             int result = advertisementMapper.insertNewAd(advertisementDto);
+            // 새로운 스케줄 등록
+            scheduleAdvertisementTasks(advertisementDto);
 
             if (result > 0) {
                 log.info("AD INSERT SUCCESS");
@@ -187,6 +245,12 @@ public class AdvertisementService {
         log.info("confirmAdUpdate()");
         try {
             int result = advertisementMapper.updateAdByAdNo(advertisementDto);
+
+            // 기존 스케줄 취소
+            cancelScheduledTasks(advertisementDto.getAd_no());
+            // 새로운 스케줄 등록
+            scheduleAdvertisementTasks(advertisementDto);
+
             if (result > 0) {
                 log.info("AD INFO UPDATE SUCCESS");
 
@@ -283,18 +347,7 @@ public class AdvertisementService {
 
         }
     }
-    public void updateAdvertisementStartStatus() {
-        advertisementMapper.updateAdvertisementStartStatus();
-    }
 
-    public void updateAdvertisementEndStatus() {
-        advertisementMapper.updateAdvertisementEndStatus();
-    }
-
-    public void updateAllAdvertisementStatuses() {
-        updateAdvertisementStartStatus();
-        updateAdvertisementEndStatus();
-    }
 
     public ResponseWrapper<List<AdvertisementDto>> getAllAdList() {
         log.info("getAllAdList()");

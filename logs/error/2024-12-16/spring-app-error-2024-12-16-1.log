@@ -1,33 +1,15 @@
-2024-12-17 15:58:20 ERROR [AdminService] - 기타 오류 발생: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-### The error may exist in file [D:\sdh\last_pjt\1217\moim-api-server\build\resources\main\mybatis\mappers\admin-mapper.xml]
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT             YEAR(PAY_REG_DATE) AS year,             QUARTER(PAY_REG_DATE) AS quarter_raw,             CONCAT(QUARTER(PAY_REG_DATE), '분기') AS quarter,             SUM(PAY_AMOUNT) AS total_sales         FROM TBL_PAYMENT         WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)            OR YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1         GROUP BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)         ORDER BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)
-### Cause: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-; bad SQL grammar []
-org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-### The error may exist in file [D:\sdh\last_pjt\1217\moim-api-server\build\resources\main\mybatis\mappers\admin-mapper.xml]
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT             YEAR(PAY_REG_DATE) AS year,             QUARTER(PAY_REG_DATE) AS quarter_raw,             CONCAT(QUARTER(PAY_REG_DATE), '분기') AS quarter,             SUM(PAY_AMOUNT) AS total_sales         FROM TBL_PAYMENT         WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE)            OR YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1         GROUP BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)         ORDER BY             YEAR(PAY_REG_DATE), QUARTER(PAY_REG_DATE)
-### Cause: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-; bad SQL grammar []
-	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:103) ~[spring-jdbc-6.1.14.jar:6.1.14]
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.1.14.jar:6.1.14]
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116) ~[spring-jdbc-6.1.14.jar:6.1.14]
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92) ~[mybatis-spring-3.0.3.jar:3.0.3]
+2024-12-16 21:10:05 ERROR [AdminService] - 기타 오류 발생: null
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97) ~[mybatis-spring-3.0.3.jar:3.0.3]
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
-	at jdk.proxy2/jdk.proxy2.$Proxy89.selectList(Unknown Source) ~[?:?]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-3.0.3.jar:3.0.3]
-	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80) ~[mybatis-3.5.14.jar:3.5.14]
+	at jdk.proxy2/jdk.proxy2.$Proxy89.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87) ~[mybatis-3.5.14.jar:3.5.14]
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141) ~[mybatis-3.5.14.jar:3.5.14]
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.14.jar:3.5.14]
-	at jdk.proxy30/jdk.proxy30.$Proxy344.selectYearlyQuarterlySales(Unknown Source) ~[?:?]
-	at com.moim.moimapiserver.admin.AdminService.getYearAndQuarterAmountData(AdminService.java:1171) ~[main/:?]
-	at com.moim.moimapiserver.admin.AdminController.fetchYearAndQuarterAmountData(AdminController.java:755) ~[main/:?]
+	at jdk.proxy6/jdk.proxy6.$Proxy129.selectGenderCount(Unknown Source) ~[?:?]
+	at com.moim.moimapiserver.admin.AdminService.getGenderData(AdminService.java:943) ~[main/:?]
+	at com.moim.moimapiserver.admin.AdminController.fetchGenderData(AdminController.java:611) ~[main/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -120,30 +102,10 @@ org.springframework.jdbc.BadSqlGrammarException:
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-10.1.31.jar:10.1.31]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.31.jar:10.1.31]
 	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
-Caused by: java.sql.SQLSyntaxErrorException: Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'DB_MEETING.TBL_PAYMENT.PAY_REG_DATE' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354) ~[mysql-connector-j-8.3.0.jar:8.3.0]
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-5.1.0.jar:?]
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor24.invoke(Unknown Source) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.14.jar:3.5.14]
-	at jdk.proxy3/jdk.proxy3.$Proxy94.execute(Unknown Source) ~[?:?]
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.14.jar:3.5.14]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.14.jar:3.5.14]
-	at jdk.internal.reflect.GeneratedMethodAccessor22.invoke(Unknown Source) ~[?:?]
+Caused by: org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:81) ~[mybatis-3.5.14.jar:3.5.14]
+	at jdk.internal.reflect.GeneratedMethodAccessor114.invoke(Unknown Source) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
-	... 101 more
+	... 100 more

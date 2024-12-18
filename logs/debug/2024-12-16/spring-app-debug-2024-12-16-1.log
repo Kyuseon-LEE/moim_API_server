@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 2024-12-16 23:59:00 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 
 2024-12-16 23:59:00 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 0
+=======
+2024-12-16 22:18:01 DEBUG [selectAgeCount] - ==>  Preparing: SELECT M_AGE AS AGE, COUNT(*) AS count FROM TBL_MEMBER GROUP BY M_AGE ORDER BY CAST(M_AGE AS UNSIGNED);
+>>>>>>> 37e10f9ad97fc53cebef68c8a0c6307481adc53d

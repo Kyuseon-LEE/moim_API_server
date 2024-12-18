@@ -1,0 +1,3 @@
+2024-12-18 10:47:28 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 10:47:28 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 10:51:34 DEBUG [selectAdTimeByFilteredAdNo] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT WHERE AD_NO != ?

@@ -603,4 +603,164 @@ public class AdminController {
 
         };
     }
+
+    @GetMapping("/fetchGenderData")
+    public ResponseEntity<ResponseWrapper<List<UserGenderStatisticsDto>>> fetchGenderData() {
+        log.info("fetchGenderData()");
+
+        ResponseWrapper<List<UserGenderStatisticsDto>> result = adminService.getGenderData();
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+
+    @GetMapping("/fetchAgeStats")
+    public ResponseEntity<ResponseWrapper<List<UserAgeStatisticsDto>>> fetchAgeData() {
+        log.info("fetchAgeData()");
+
+        ResponseWrapper<List<UserAgeStatisticsDto>> result = adminService.getAgeData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchAgePremiumData")
+    public ResponseEntity<ResponseWrapper<List<AgePremiumDataDto>>> fetchAgePremiumData() {
+        log.info("fetchAgePremiumData()");
+
+        ResponseWrapper<List<AgePremiumDataDto>> result = adminService.getAgePremiumData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchGenderPremiumData")
+    public ResponseEntity<ResponseWrapper<List<GenderPremiumDataDto>>> fetchGenderPremiumData() {
+        log.info("fetchGenderPremiumData()");
+
+        ResponseWrapper<List<GenderPremiumDataDto>> result = adminService.getGenderPremiumData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchUserPremiumData")
+    public ResponseEntity<ResponseWrapper<List<UserPremiumDataDto>>> fetchUserPremiumData() {
+        log.info("fetchUserPremiumData()");
+
+        ResponseWrapper<List<UserPremiumDataDto>> result = adminService.getUserPremiumData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchUserRecentData")
+    public ResponseEntity<ResponseWrapper<List<RecentStatisticsDto>>> fetchUserRecentData() {
+        log.info("fetchUserRecentData()");
+
+        ResponseWrapper<List<RecentStatisticsDto>> result = adminService.getUserRecentData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchGroupCategoryCount")
+    public ResponseEntity<ResponseWrapper<List<GroupCategoryStatisticsDto>>> fetchGroupCategoryCount() {
+        log.info("fetchGroupCategoryCount()");
+
+        ResponseWrapper<List<GroupCategoryStatisticsDto>> result = adminService.getGroupCategoryCountData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchGroupRecentData")
+    public ResponseEntity<ResponseWrapper<List<RecentStatisticsDto>>> fetchGroupRecentData() {
+        log.info("fetchGroupRecentData()");
+
+        ResponseWrapper<List<RecentStatisticsDto>> result = adminService.getGroupRecentData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchTotalAmount")
+    public ResponseEntity<ResponseWrapper<List<TotalAmountDto>>> fetchTotalAmount() {
+        log.info("fetchTotalAmount()");
+
+        ResponseWrapper<List<TotalAmountDto>> result = adminService.getTotalAmountData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
+    @GetMapping("/fetchYearAndQuarterAmountData")
+    public ResponseEntity<ResponseWrapper<List<YearAndQuarterAmountDto>>> fetchYearAndQuarterAmountData() {
+        log.info("fetchYearAndQuarterAmountData()");
+
+        ResponseWrapper<List<YearAndQuarterAmountDto>> result = adminService.getYearAndQuarterAmountData();
+
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
 }

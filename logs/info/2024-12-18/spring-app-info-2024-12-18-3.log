@@ -1,0 +1,1 @@
+2024-12-18 10:51:34 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=12, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=0)
