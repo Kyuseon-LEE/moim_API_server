@@ -1,2 +1,3 @@
-2024-12-17 16:24:48 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
-2024-12-17 16:24:48 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-17 17:07:22 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-17 17:07:22 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-17 17:10:20 DEBUG [deleteRefreshTokenByAid] - ==>  Preparing: DELETE FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?

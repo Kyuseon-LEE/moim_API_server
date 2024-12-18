@@ -89,11 +89,13 @@ public class AdvertisementService {
         log.info("confirmAdCreate()");
         try {
             int result = advertisementMapper.insertNewAd(advertisementDto);
-            // 새로운 스케줄 등록
-            scheduleAdvertisementTasks(advertisementDto);
+
 
             if (result > 0) {
                 log.info("AD INSERT SUCCESS");
+
+                // 새로운 스케줄 등록
+                scheduleAdvertisementTasks(advertisementDto);
 
                 return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "INSERT SUCCESS", null);
             } else {
@@ -191,7 +193,7 @@ public class AdvertisementService {
     }
 
     public ResponseWrapper<AdvertisementDto> getCurrentAd() {
-        log.info("getAdStatus()");
+        log.info("getCurrentAd()");
         try {
             AdvertisementDto advertisementDto = advertisementMapper.selectAdByAdStatus();
             if (advertisementDto == null) {
@@ -222,7 +224,19 @@ public class AdvertisementService {
             int result = advertisementMapper.updateAdStatusByAdNo(advertisementDto);
             if (result > 0) {
                 log.info("AD UPDATE SUCCESS");
+                if (advertisementDto.getAd_status() == 2) {
+                    // 광고 대기로 변경시 시작 스케줄 등록
+                    scheduleAdvertisementTasks(advertisementDto);
 
+                } else if (advertisementDto.getAd_status() == 3) {
+                    // 광고 시작으로 변경시 종료 스케줄 등록
+                    scheduleAdvertisementTasks(advertisementDto);
+
+                } else if (advertisementDto.getAd_status() == 4) {
+                    // 광고 종료로 변경시 스케줄 캔슬
+                    cancelScheduledTasks(advertisementDto.getAd_no());
+
+                }
                 return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "UPDATE SUCCESS", null);
             } else {
                 log.info("AD UPDATE FAIL");
@@ -245,11 +259,6 @@ public class AdvertisementService {
         log.info("confirmAdUpdate()");
         try {
             int result = advertisementMapper.updateAdByAdNo(advertisementDto);
-
-            // 기존 스케줄 취소
-            cancelScheduledTasks(advertisementDto.getAd_no());
-            // 새로운 스케줄 등록
-            scheduleAdvertisementTasks(advertisementDto);
 
             if (result > 0) {
                 log.info("AD INFO UPDATE SUCCESS");
@@ -278,6 +287,9 @@ public class AdvertisementService {
             int result = advertisementMapper.deleteAdByAdNo(advertisementDto);
             if (result > 0) {
                 log.info("AD INFO DELETE SUCCESS");
+
+                // 광고 삭제시 스케줄 삭제
+                cancelScheduledTasks(advertisementDto.getAd_no());
 
                 return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "DELETE SUCCESS", null);
             } else {

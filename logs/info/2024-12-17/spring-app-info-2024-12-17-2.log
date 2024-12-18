@@ -1,2 +1,2 @@
-2024-12-17 16:24:48 INFO  [AdvertisementService] - getAdStatus()
-2024-12-17 16:24:48 INFO  [AdvertisementService] - AD LIST COUNT GET SUCCESS
+2024-12-17 17:10:20 INFO  [AuthController] - deleteRefreshToken()
+2024-12-17 17:10:20 INFO  [AuthController] - refreshTokenRequest: RefreshTokenDto(rt_no=0, a_id=admin, refresh_token=null, expires_at=null, created_at=null)

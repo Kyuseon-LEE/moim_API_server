@@ -1,0 +1,1 @@
+2024-12-18 14:36:41 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)

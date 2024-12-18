@@ -1,2 +1,1 @@
-2024-12-17 16:24:48 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
-2024-12-17 16:24:48 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 14:36:39 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14

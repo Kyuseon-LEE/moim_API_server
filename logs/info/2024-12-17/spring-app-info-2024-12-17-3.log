@@ -1,2 +1,2 @@
-2024-12-17 16:24:48 INFO  [AdvertisementService] - AD LIST GET SUCCESS
-2024-12-17 16:24:48 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-17 17:10:20 INFO  [AuthService] - confirmRefreshTokenDelete()
+2024-12-17 17:10:20 INFO  [AuthController] - response: ResponseWrapper(data=null, status=SUCCESS, message=DELETE SUCCESS)

@@ -1,3 +1,1 @@
-2024-12-17 16:24:48 DEBUG [selectAdStatus] - ==> Parameters: 
-2024-12-17 16:24:48 DEBUG [selectAdCount] - <==      Total: 1
-2024-12-17 16:24:48 DEBUG [selectAds] - <==      Total: 3
+2024-12-17 17:40:03 DEBUG [getExpiredMembers] - ==>  Preparing: SELECT m_no FROM TBL_PAYMENT WHERE DATE(pay_expired_date) = CURRENT_DATE()
