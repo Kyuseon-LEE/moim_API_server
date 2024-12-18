@@ -482,6 +482,21 @@ public class AdminController {
         };
     }
 
+    @PostMapping("/searchAdmins")
+    public ResponseEntity<ResponseWrapper<List<AdminDto>>> searchAdmins(@RequestBody Map<String, String> searchMap) {
+        log.info("searchAdmins()");
+
+        ResponseWrapper<List<AdminDto>> result = adminService.searchAdmins(searchMap.get("searchKeyword"));
+        return switch (result.getStatus()) {
+            case "SUCCESS" -> ResponseEntity.ok(result);
+
+            case "FAIL" -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+
+            default -> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
+
+        };
+    }
+
     @PostMapping("/deleteUser")
     public ResponseEntity<ResponseWrapper<Integer>> deleteUser(@RequestBody MemberDto memberDto) {
         log.info("deleteUser()");

@@ -102,4 +102,6 @@ public interface AdminMapper {
     List<TotalAmountDto> selectTotalAmountData();
 
     List<YearAndQuarterAmountDto> selectYearlyQuarterlySales();
+
+    List<AdminDto> selectAdminByAname(String searchKeyword);
 }

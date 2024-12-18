@@ -749,6 +749,30 @@ public class AdminService {
 
     }
 
+    public ResponseWrapper<List<AdminDto>> searchAdmins(String searchKeyword) {
+        log.info("searchAdmins()");
+        try {
+            List<AdminDto> adminDtos = adminMapper.selectAdminByAname(searchKeyword);
+            if (adminDtos != null) {
+                return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "GET DATA SUCCESS", adminDtos);
+
+            } else {
+                return responseWrapper(AdminStatusConfig.FAIL_STATUS, "GET DATA FAIL", null);
+
+            }
+
+        } catch (PersistenceException e) {
+            log.error("MyBatis 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.MYBATIS_ERROR_STATUS, AdminStatusConfig.MYBATIS_ERROR_MSG, null);
+
+        } catch (Exception e) {
+            log.error("기타 오류 발생: {}", e.getMessage(), e);
+            return responseWrapper(AdminStatusConfig.DB_ERROR_STATUS, AdminStatusConfig.DB_ERROR_MSG, null);
+
+        }
+
+    }
+
     public ResponseWrapper<Integer> confirmUserDelete(int m_no) {
         log.info("confirmUserDelete()");
         try {

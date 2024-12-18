@@ -273,6 +273,15 @@
             M_NICKNAME LIKE CONCAT('%', #{searchKeyword}, '%')
     </select>
 
+    <select id="selectAdminByAname" parameterType="String" resultType="com.moim.moimapiserver.dto.AdminDto">
+        SELECT
+            *
+        FROM
+            TBL_ADMIN
+        WHERE
+            A_NAME LIKE CONCAT('%', #{searchKeyword}, '%')
+    </select>
+
     <delete id="deleteUserByMno" parameterType="int">
         DELETE
             FROM

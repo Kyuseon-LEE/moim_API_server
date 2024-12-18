@@ -397,3 +397,1932 @@
 2024-12-18 15:10:29 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
 2024-12-18 15:10:29 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
 2024-12-18 15:10:29 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 15:12:13 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 15:12:14 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 15:12:14 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 15:12:14 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 15:12:14 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 15:12:14 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 15:12:14 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 15:13:21 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:13:21 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:13:21 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:13:21 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:13:21 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:13:21 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:13:21 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:13:21 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:13:21 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:13:21 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:13:21 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:13:21 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:13:21 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:13:21 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:13:21 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:13:42 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:13:42 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:13:42 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:13:42 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:13:42 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:13:42 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:13:42 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:13:42 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:13:42 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:13:42 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:13:42 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:13:42 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:13:42 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:13:42 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:13:42 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:15:15 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:15:15 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:15:15 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:15:15 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:15:15 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:15:15 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:15:15 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:15:15 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:15:15 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:15:15 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:15:15 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:15:15 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:15:15 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:15:15 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:15:15 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:15:53 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:15:53 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:15:53 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:15:53 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:15:53 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:15:53 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:15:53 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:15:53 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:15:53 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:15:53 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:15:53 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:15:53 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:15:53 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:15:53 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:15:53 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:16:58 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:16:58 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:16:58 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:16:58 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:16:58 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:16:58 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:16:58 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:16:58 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:16:58 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:20:01 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:20:01 DEBUG [selectMemberByMname] - ==> Parameters: 홍길동(String)
+2024-12-18 15:20:01 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:20:03 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:20:03 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:20:03 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:20:04 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:20:04 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:20:04 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:20:04 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:20:04 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 15:20:04 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 15:20:05 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:20:05 DEBUG [selectUserGroupByMno] - ==> Parameters: 3(Integer)
+2024-12-18 15:20:05 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:20:05 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 3(Integer)
+2024-12-18 15:20:05 DEBUG [selectUserGroupByMno] - <==      Total: 2
+2024-12-18 15:20:05 DEBUG [selectUserGroupPostByMno] - <==      Total: 0
+2024-12-18 15:20:06 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:20:06 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:20:06 DEBUG [selectUserGroupByMno] - ==> Parameters: 26(Integer)
+2024-12-18 15:20:06 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 26(Integer)
+2024-12-18 15:20:06 DEBUG [selectUserGroupPostByMno] - <==      Total: 0
+2024-12-18 15:20:06 DEBUG [selectUserGroupByMno] - <==      Total: 0
+2024-12-18 15:20:07 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:20:07 DEBUG [selectUserGroupByMno] - ==> Parameters: 25(Integer)
+2024-12-18 15:20:07 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:20:07 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 25(Integer)
+2024-12-18 15:20:07 DEBUG [selectUserGroupPostByMno] - <==      Total: 0
+2024-12-18 15:20:07 DEBUG [selectUserGroupByMno] - <==      Total: 0
+2024-12-18 15:20:11 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:20:11 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:20:11 DEBUG [selectUserGroupByMno] - ==> Parameters: 24(Integer)
+2024-12-18 15:20:11 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 24(Integer)
+2024-12-18 15:20:11 DEBUG [selectUserGroupByMno] - <==      Total: 0
+2024-12-18 15:20:11 DEBUG [selectUserGroupPostByMno] - <==      Total: 0
+2024-12-18 15:20:11 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:20:11 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:20:11 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:20:11 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:20:11 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 15:20:11 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 15:21:06 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:21:06 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:21:06 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:21:06 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:21:06 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 15:21:06 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 15:22:05 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:22:05 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:22:05 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:22:05 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:22:05 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 15:22:05 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 15:22:51 DEBUG [selectRefreshTokenByAid] - ==>  Preparing: SELECT * FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+2024-12-18 15:22:51 DEBUG [selectRefreshTokenByAid] - ==> Parameters: admin(String)
+2024-12-18 15:22:51 DEBUG [selectRefreshTokenByAid] - ==>  Preparing: SELECT * FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+2024-12-18 15:22:51 DEBUG [selectRefreshTokenByAid] - ==> Parameters: admin(String)
+2024-12-18 15:22:51 DEBUG [selectRefreshTokenByAid] - <==      Total: 1
+2024-12-18 15:22:51 DEBUG [selectRefreshTokenByAid] - <==      Total: 1
+2024-12-18 15:22:51 DEBUG [updateRefreshTokenByAid] - ==>  Preparing: UPDATE TBL_ADMIN_REFRESH_TOKENS SET REFRESH_TOKEN = ?, EXPIRES_AT = ?, CREATED_AT = NOW() WHERE A_ID = ?
+2024-12-18 15:22:51 DEBUG [updateRefreshTokenByAid] - ==> Parameters: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDI5NzEsImV4cCI6MTczNTEwNzc3MX0.owWpydBZIOmfHz7a1Ilh_9Cn6twYf2-kSf7wwJGCt5c(String), 2024-12-25T06:22:51.857(LocalDateTime), admin(String)
+2024-12-18 15:22:51 DEBUG [updateRefreshTokenByAid] - ==>  Preparing: UPDATE TBL_ADMIN_REFRESH_TOKENS SET REFRESH_TOKEN = ?, EXPIRES_AT = ?, CREATED_AT = NOW() WHERE A_ID = ?
+2024-12-18 15:22:51 DEBUG [updateRefreshTokenByAid] - ==> Parameters: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDI5NzEsImV4cCI6MTczNTEwNzc3MX0.owWpydBZIOmfHz7a1Ilh_9Cn6twYf2-kSf7wwJGCt5c(String), 2024-12-25T06:22:51.854(LocalDateTime), admin(String)
+2024-12-18 15:22:51 DEBUG [updateRefreshTokenByAid] - <==    Updates: 1
+2024-12-18 15:22:51 DEBUG [updateRefreshTokenByAid] - <==    Updates: 1
+2024-12-18 15:22:51 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:22:51 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:22:51 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:22:51 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:22:51 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:22:51 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:22:53 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:22:53 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:22:53 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:22:53 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:22:53 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:22:53 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:22:53 DEBUG [selectGroupBySearchKeyword] - ==>  Preparing: SELECT * FROM TBL_GROUP WHERE G_NAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:22:53 DEBUG [selectGroupBySearchKeyword] - ==> Parameters: 어서오세요(String)
+2024-12-18 15:22:53 DEBUG [selectGroupBySearchKeyword] - <==      Total: 1
+2024-12-18 15:24:19 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:24:19 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:24:19 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:24:20 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:24:20 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:24:20 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:24:20 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:24:20 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 15:24:20 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 15:24:27 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:24:27 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:24:27 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:24:27 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:24:27 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 15:24:27 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 15:24:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:24:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:30 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:24:30 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:24:30 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:24:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:24:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:24:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:24:31 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:24:31 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:31 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:24:31 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:24:31 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:24:31 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:24:33 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:24:33 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:24:33 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:24:33 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:33 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:24:33 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:24:33 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:24:33 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:24:33 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:24:33 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:24:33 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:33 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:24:33 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:24:33 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:24:33 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:24:33 DEBUG [selectAdTime] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT
+2024-12-18 15:24:33 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-18 15:24:33 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-18 15:24:35 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:24:35 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:24:35 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:24:35 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:35 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:24:35 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:24:35 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:24:35 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:24:35 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:24:35 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:35 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:24:35 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:24:36 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:24:36 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:24:36 DEBUG [selectInquiriesListCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_CUSTOMER_INQUIRIES
+2024-12-18 15:24:36 DEBUG [selectInquiriesListCount] - ==> Parameters: 
+2024-12-18 15:24:36 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:24:36 DEBUG [selectInquiriesListCount] - <==      Total: 1
+2024-12-18 15:24:36 DEBUG [selectInquiriesListByOffset] - ==>  Preparing: SELECT * FROM TBL_CUSTOMER_INQUIRIES LIMIT ? OFFSET ?
+2024-12-18 15:24:36 DEBUG [selectInquiriesListByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:36 DEBUG [selectInquiriesListByOffset] - <==      Total: 4
+2024-12-18 15:24:36 DEBUG [selectFaqCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:24:36 DEBUG [selectFaqCount] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:36 DEBUG [selectFaq] - ==>  Preparing: SELECT * FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:24:36 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:24:36 DEBUG [selectFaq] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:36 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:24:36 DEBUG [selectFaqCount] - <==      Total: 1
+2024-12-18 15:24:36 DEBUG [selectFaq] - <==      Total: 5
+2024-12-18 15:24:36 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:24:38 DEBUG [selectGenderCount] - ==>  Preparing: SELECT M_GENDER AS gender, COUNT(*) AS count FROM TBL_MEMBER GROUP BY M_GENDER
+2024-12-18 15:24:38 DEBUG [selectGenderCount] - ==> Parameters: 
+2024-12-18 15:24:38 DEBUG [selectGenderCount] - <==      Total: 2
+2024-12-18 15:24:38 DEBUG [selectTotalAmountData] - ==>  Preparing: SELECT '총 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT UNION ALL SELECT '2024년 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) UNION ALL SELECT '전년도 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 UNION ALL SELECT '전년 대비 증감률' AS period, NULL AS total_sales, CASE WHEN SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) = 0 THEN 0 ELSE ROUND( (SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) THEN PAY_AMOUNT ELSE 0 END) - SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END)) / SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) * 100, 2 ) END AS percentage_change FROM TBL_PAYMENT;
+2024-12-18 15:24:38 DEBUG [selectTotalAmountData] - ==> Parameters: 
+2024-12-18 15:24:38 DEBUG [selectTotalAmountData] - <==      Total: 4
+2024-12-18 15:24:40 DEBUG [selectGroupCategoryCount] - ==>  Preparing: SELECT G_CATEGORY, COUNT(*) AS count FROM TBL_GROUP WHERE G_CATEGORY IN ('운동', '사진', '게임', '여행', '음악', '요리') GROUP BY G_CATEGORY ORDER BY count DESC;
+2024-12-18 15:24:40 DEBUG [selectGroupCategoryCount] - ==> Parameters: 
+2024-12-18 15:24:40 DEBUG [selectGroupCategoryCount] - <==      Total: 6
+2024-12-18 15:24:41 DEBUG [selectAdTime] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT
+2024-12-18 15:24:41 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-18 15:24:41 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-18 15:24:42 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:24:42 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:24:42 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:24:42 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:24:42 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:24:42 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:42 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:24:42 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:24:42 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:24:42 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:24:42 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:24:42 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:24:42 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:42 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:24:42 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:24:43 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:24:43 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:43 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:24:43 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:24:43 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:24:43 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:24:44 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:24:44 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:24:44 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:24:44 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:44 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:24:44 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:24:44 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:24:44 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:24:44 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:25:48 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:25:48 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:25:48 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:25:48 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:25:48 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:25:48 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:26:04 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:26:04 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:26:04 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:26:04 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:26:04 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:26:04 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:26:12 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:26:12 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:26:12 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:26:12 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:26:12 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:26:12 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:26:17 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:26:17 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:26:17 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:26:17 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:26:17 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:26:17 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:27:50 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:27:50 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:27:50 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:27:50 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:27:50 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:27:50 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:29:58 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:29:58 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:29:58 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:29:58 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:29:58 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:29:58 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:29:58 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:29:58 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:29:58 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:05 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:05 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:05 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:06 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:06 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:06 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:09 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:09 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:09 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:11 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:11 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:11 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:12 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:12 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:12 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:29 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:30:29 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:30:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:29 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:30:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:31 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:31 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:31 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:32 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:32 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:32 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:33 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:33 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:33 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:34 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:34 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:34 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:35 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:35 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:35 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:36 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:36 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:36 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:50 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:30:50 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:30:50 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:50 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:50 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:30:50 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:51 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:30:51 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:30:51 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:51 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:51 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:30:51 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:51 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:51 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:51 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:52 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:52 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:52 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:54 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:54 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:54 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:55 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:55 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:55 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:56 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:56 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:56 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:58 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:58 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:30:58 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:30:59 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:30:59 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:30:59 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:09 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:09 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:31:09 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:09 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:31:09 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:31:09 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:09 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:09 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:09 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:10 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:10 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:31:10 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:11 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:11 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 20(Integer)
+2024-12-18 15:31:11 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:13 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:13 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 40(Integer)
+2024-12-18 15:31:13 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:14 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:14 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 50(Integer)
+2024-12-18 15:31:14 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:16 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:16 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 70(Integer)
+2024-12-18 15:31:16 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:17 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:17 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:17 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:18 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:31:18 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:31:18 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:18 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:18 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:31:18 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:18 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:18 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:18 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:47 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:31:47 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:31:47 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:47 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:47 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:31:47 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:48 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:31:48 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:31:48 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:31:48 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:31:48 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 15:31:48 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 15:31:48 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:31:48 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:31:48 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:48 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:31:48 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 15:31:48 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:31:48 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:31:48 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:48 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:31:50 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:31:50 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:31:50 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:50 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:50 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:31:50 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:50 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:50 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:50 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:52 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:52 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:31:52 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:31:53 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:31:53 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:31:53 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:32:04 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:32:04 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:32:04 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:32:04 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:32:04 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:32:04 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:32:04 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:32:04 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:32:04 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:32:10 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:32:10 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:32:10 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:32:14 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:32:14 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 20(Integer)
+2024-12-18 15:32:14 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:32:20 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:32:20 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:32:20 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:21 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:21 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:33:21 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:22 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:22 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 20(Integer)
+2024-12-18 15:33:23 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:23 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:23 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 30(Integer)
+2024-12-18 15:33:23 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:23 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:23 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 40(Integer)
+2024-12-18 15:33:23 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:24 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:24 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 50(Integer)
+2024-12-18 15:33:24 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:24 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:24 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 70(Integer)
+2024-12-18 15:33:24 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:25 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:25 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 120(Integer)
+2024-12-18 15:33:25 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 130(Integer)
+2024-12-18 15:33:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 140(Integer)
+2024-12-18 15:33:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 150(Integer)
+2024-12-18 15:33:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 160(Integer)
+2024-12-18 15:33:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 170(Integer)
+2024-12-18 15:33:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 180(Integer)
+2024-12-18 15:33:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 190(Integer)
+2024-12-18 15:33:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 200(Integer)
+2024-12-18 15:33:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 210(Integer)
+2024-12-18 15:33:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 220(Integer)
+2024-12-18 15:33:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 230(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 240(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 250(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 260(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 270(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 280(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 290(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 300(Integer)
+2024-12-18 15:33:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 310(Integer)
+2024-12-18 15:33:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 320(Integer)
+2024-12-18 15:33:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 330(Integer)
+2024-12-18 15:33:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 340(Integer)
+2024-12-18 15:33:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 350(Integer)
+2024-12-18 15:33:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:29 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 360(Integer)
+2024-12-18 15:33:29 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 370(Integer)
+2024-12-18 15:33:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 380(Integer)
+2024-12-18 15:33:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 390(Integer)
+2024-12-18 15:33:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 400(Integer)
+2024-12-18 15:33:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 410(Integer)
+2024-12-18 15:33:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 420(Integer)
+2024-12-18 15:33:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:31 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:31 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 430(Integer)
+2024-12-18 15:33:31 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:32 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:32 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 420(Integer)
+2024-12-18 15:33:32 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:33 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:33 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:33:33 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:38 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:33:38 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:33:38 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:33:38 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 15:33:38 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:33:38 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 15:33:38 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 15:33:38 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 15:33:38 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 15:33:41 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:33:41 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:33:41 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:41 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:33:41 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:33:41 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:41 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:41 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:33:41 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:33:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:33:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:33:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:34:44 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:34:44 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:34:44 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:34:44 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:34:44 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:34:44 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:34:44 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:34:44 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:34:44 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:34:45 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:34:45 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:34:45 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:34:47 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:34:47 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 20(Integer)
+2024-12-18 15:34:47 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:34:48 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:34:48 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 30(Integer)
+2024-12-18 15:34:48 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:34:48 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:34:48 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 40(Integer)
+2024-12-18 15:34:48 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:34:49 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:34:49 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:34:49 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:35:42 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:35:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:35:42 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:35:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:35:42 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:35:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:35:55 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:35:55 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:35:55 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:35:55 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:35:55 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:35:55 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:35:55 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:35:55 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:35:55 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:35:56 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:35:56 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:35:56 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:35:58 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:35:58 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 20(Integer)
+2024-12-18 15:35:58 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:35:59 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:35:59 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 30(Integer)
+2024-12-18 15:35:59 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:35:59 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:35:59 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 40(Integer)
+2024-12-18 15:35:59 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:00 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:00 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 30(Integer)
+2024-12-18 15:36:00 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:01 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:01 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:36:01 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:01 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:01 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:36:01 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:03 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:03 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 15:36:03 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:03 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:03 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 20(Integer)
+2024-12-18 15:36:03 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:04 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:04 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 30(Integer)
+2024-12-18 15:36:04 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:04 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:04 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 40(Integer)
+2024-12-18 15:36:04 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:06 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:36:06 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:36:06 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:36:06 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:36:06 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 15:36:06 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 15:36:06 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:36:06 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:36:06 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:36:06 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 15:36:06 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:36:06 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:36:06 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:36:06 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:36:06 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:36:16 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:16 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:36:16 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:36:16 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:36:16 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:36:16 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:36:16 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:36:16 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:36:16 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:37:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:37:42 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:37:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:37:42 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:37:42 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:37:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:37:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:37:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:37:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:37:44 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:37:44 DEBUG [selectMemberByMname] - ==> Parameters: ㅇㅇ(String)
+2024-12-18 15:37:44 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:37:45 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:37:45 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:37:45 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:38:09 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:38:09 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:38:09 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:38:09 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:38:09 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:38:09 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:38:27 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:38:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:38:27 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:38:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:38:27 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:38:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:38:36 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:38:36 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:38:36 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:38:36 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:38:36 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:38:36 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:38:44 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:38:44 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:38:44 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:38:44 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:38:44 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:38:44 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:38:49 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:38:49 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:38:49 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:38:49 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:38:49 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:38:49 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:38:49 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:38:49 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:38:49 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:38:55 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:38:55 DEBUG [selectMemberByMname] - ==> Parameters: test1234(String)
+2024-12-18 15:38:55 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:39:00 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:39:00 DEBUG [selectMemberByMname] - ==> Parameters: 테스트용유저(String)
+2024-12-18 15:39:00 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:39:02 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:39:02 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:39:02 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:39:49 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:39:49 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:39:49 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:39:49 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:39:49 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:39:49 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:40:20 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:40:20 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:40:20 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:40:20 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:40:20 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:40:20 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:40:20 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:40:20 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:40:20 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:40:23 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:40:23 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:40:23 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:41:01 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:41:01 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:01 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:41:01 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:41:01 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:41:01 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:41:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:41:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:42 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:41:42 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:41:42 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:41:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:41:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:41:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:41:46 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:41:46 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:46 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:41:46 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:41:46 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:41:46 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:41:47 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:41:47 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:41:47 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:41:47 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:47 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:41:47 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:41:47 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:41:47 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:41:47 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:41:47 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:41:47 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:47 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:41:47 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:41:47 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:41:47 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:41:48 DEBUG [selectAdTime] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT
+2024-12-18 15:41:48 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-18 15:41:48 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-18 15:41:49 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:41:49 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:41:49 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:41:49 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:49 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:41:49 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:41:49 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:41:49 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:49 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:41:49 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:41:49 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:41:49 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:41:50 DEBUG [selectInquiriesListCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_CUSTOMER_INQUIRIES
+2024-12-18 15:41:50 DEBUG [selectInquiriesListCount] - ==> Parameters: 
+2024-12-18 15:41:50 DEBUG [selectInquiriesListByOffset] - ==>  Preparing: SELECT * FROM TBL_CUSTOMER_INQUIRIES LIMIT ? OFFSET ?
+2024-12-18 15:41:50 DEBUG [selectInquiriesListByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:50 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:41:50 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:41:50 DEBUG [selectInquiriesListCount] - <==      Total: 1
+2024-12-18 15:41:50 DEBUG [selectInquiriesListByOffset] - <==      Total: 4
+2024-12-18 15:41:50 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:41:50 DEBUG [selectFaq] - ==>  Preparing: SELECT * FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:41:50 DEBUG [selectFaq] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:50 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:41:50 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:41:50 DEBUG [selectFaqCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:41:50 DEBUG [selectFaqCount] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:41:50 DEBUG [selectFaq] - <==      Total: 5
+2024-12-18 15:41:50 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:41:50 DEBUG [selectFaqCount] - <==      Total: 1
+2024-12-18 15:42:10 DEBUG [selectGenderCount] - ==>  Preparing: SELECT M_GENDER AS gender, COUNT(*) AS count FROM TBL_MEMBER GROUP BY M_GENDER
+2024-12-18 15:42:10 DEBUG [selectGenderCount] - ==> Parameters: 
+2024-12-18 15:42:10 DEBUG [selectGenderCount] - <==      Total: 2
+2024-12-18 15:42:11 DEBUG [selectGroupCategoryCount] - ==>  Preparing: SELECT G_CATEGORY, COUNT(*) AS count FROM TBL_GROUP WHERE G_CATEGORY IN ('운동', '사진', '게임', '여행', '음악', '요리') GROUP BY G_CATEGORY ORDER BY count DESC;
+2024-12-18 15:42:11 DEBUG [selectGroupCategoryCount] - ==> Parameters: 
+2024-12-18 15:42:11 DEBUG [selectGroupCategoryCount] - <==      Total: 6
+2024-12-18 15:42:12 DEBUG [selectTotalAmountData] - ==>  Preparing: SELECT '총 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT UNION ALL SELECT '2024년 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) UNION ALL SELECT '전년도 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 UNION ALL SELECT '전년 대비 증감률' AS period, NULL AS total_sales, CASE WHEN SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) = 0 THEN 0 ELSE ROUND( (SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) THEN PAY_AMOUNT ELSE 0 END) - SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END)) / SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) * 100, 2 ) END AS percentage_change FROM TBL_PAYMENT;
+2024-12-18 15:42:12 DEBUG [selectTotalAmountData] - ==> Parameters: 
+2024-12-18 15:42:12 DEBUG [selectTotalAmountData] - <==      Total: 4
+2024-12-18 15:42:13 DEBUG [selectFaq] - ==>  Preparing: SELECT * FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:42:13 DEBUG [selectFaq] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:13 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:42:13 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:42:13 DEBUG [selectFaq] - <==      Total: 5
+2024-12-18 15:42:13 DEBUG [selectFaqCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:42:13 DEBUG [selectFaqCount] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:13 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:42:13 DEBUG [selectFaqCount] - <==      Total: 1
+2024-12-18 15:42:14 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:42:14 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:42:14 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:42:14 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:14 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:42:14 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:42:14 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:42:14 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:42:14 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:42:14 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:14 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:42:14 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:42:14 DEBUG [selectInquiriesListCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_CUSTOMER_INQUIRIES
+2024-12-18 15:42:14 DEBUG [selectInquiriesListCount] - ==> Parameters: 
+2024-12-18 15:42:14 DEBUG [selectInquiriesListByOffset] - ==>  Preparing: SELECT * FROM TBL_CUSTOMER_INQUIRIES LIMIT ? OFFSET ?
+2024-12-18 15:42:14 DEBUG [selectInquiriesListByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:14 DEBUG [selectInquiriesListCount] - <==      Total: 1
+2024-12-18 15:42:14 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:42:14 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:42:14 DEBUG [selectInquiriesListByOffset] - <==      Total: 4
+2024-12-18 15:42:14 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:42:18 DEBUG [selectInquiriesByCsiNo] - ==>  Preparing: SELECT * FROM TBL_CUSTOMER_INQUIRIES WHERE CSI_NO = ?
+2024-12-18 15:42:18 DEBUG [selectInquiriesByCsiNo] - ==> Parameters: 4(Integer)
+2024-12-18 15:42:18 DEBUG [selectInquiriesByCsiNo] - <==      Total: 1
+2024-12-18 15:42:20 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:42:20 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:20 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:42:20 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:42:20 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:42:20 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:42:20 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:42:20 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:42:20 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:42:20 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:20 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:42:20 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:42:21 DEBUG [selectAdTime] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT
+2024-12-18 15:42:21 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-18 15:42:21 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-18 15:42:22 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:42:22 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:42:22 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:42:22 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:22 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:42:22 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:42:22 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:42:22 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:42:22 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:42:22 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:42:22 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:22 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:42:22 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:42:22 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:42:22 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:42:23 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:42:23 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:23 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:42:23 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:42:23 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:42:23 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:42:25 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:42:25 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:42:25 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:42:25 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:25 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:42:25 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:42:25 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:42:25 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:25 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:42:26 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:42:26 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:42:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:42:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:26 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:42:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:42:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:42:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:42:28 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:42:28 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:42:28 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:42:28 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:42:28 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:42:28 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 15:42:28 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 15:42:28 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:28 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:42:28 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:42:28 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 15:42:28 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:42:28 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:42:28 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:28 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:42:28 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:42:28 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:42:28 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:42:28 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:42:28 DEBUG [selectAdminsByApproval] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_APPROVAL = 0 LIMIT ? OFFSET ?;
+2024-12-18 15:42:28 DEBUG [selectAdminsByApproval] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:28 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:42:28 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:42:28 DEBUG [selectAdminsByApproval] - <==      Total: 1
+2024-12-18 15:42:29 DEBUG [selectAdminPartCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_PART
+2024-12-18 15:42:29 DEBUG [selectAdminPartCount] - ==> Parameters: 
+2024-12-18 15:42:29 DEBUG [selectAdminPartByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART LIMIT ? OFFSET ?
+2024-12-18 15:42:29 DEBUG [selectAdminPartByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:29 DEBUG [selectAdminPartCount] - <==      Total: 1
+2024-12-18 15:42:29 DEBUG [selectAdminPartByOffset] - <==      Total: 8
+2024-12-18 15:42:30 DEBUG [selectAdminPositionCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_POSITION
+2024-12-18 15:42:30 DEBUG [selectAdminPositionCount] - ==> Parameters: 
+2024-12-18 15:42:30 DEBUG [selectAdminPositionByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION LIMIT ? OFFSET ?
+2024-12-18 15:42:30 DEBUG [selectAdminPositionByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:42:30 DEBUG [selectAdminPositionCount] - <==      Total: 1
+2024-12-18 15:42:30 DEBUG [selectAdminPositionByOffset] - <==      Total: 9
+2024-12-18 15:43:08 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:43:08 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:43:08 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:43:08 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:08 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:43:08 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:43:10 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:43:10 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:43:10 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:43:10 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:10 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:43:10 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:43:10 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:43:10 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:10 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:43:15 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:43:15 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:43:15 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 15:43:15 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:43:15 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 15:43:15 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:15 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:43:15 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:43:15 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 15:43:15 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:43:15 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:43:15 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:43:15 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:43:15 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:15 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:43:16 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:43:16 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:43:16 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:43:16 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:43:16 DEBUG [selectAdminsByApproval] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_APPROVAL = 0 LIMIT ? OFFSET ?;
+2024-12-18 15:43:16 DEBUG [selectAdminsByApproval] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:16 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:43:16 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:43:16 DEBUG [selectAdminsByApproval] - <==      Total: 1
+2024-12-18 15:43:16 DEBUG [selectAdminPartByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART LIMIT ? OFFSET ?
+2024-12-18 15:43:16 DEBUG [selectAdminPartByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:16 DEBUG [selectAdminPartCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_PART
+2024-12-18 15:43:16 DEBUG [selectAdminPartCount] - ==> Parameters: 
+2024-12-18 15:43:16 DEBUG [selectAdminPartCount] - <==      Total: 1
+2024-12-18 15:43:16 DEBUG [selectAdminPartByOffset] - <==      Total: 8
+2024-12-18 15:43:16 DEBUG [selectAdminPositionByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION LIMIT ? OFFSET ?
+2024-12-18 15:43:16 DEBUG [selectAdminPositionByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:16 DEBUG [selectAdminPositionCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_POSITION
+2024-12-18 15:43:16 DEBUG [selectAdminPositionCount] - ==> Parameters: 
+2024-12-18 15:43:16 DEBUG [selectAdminPositionCount] - <==      Total: 1
+2024-12-18 15:43:16 DEBUG [selectAdminPositionByOffset] - <==      Total: 9
+2024-12-18 15:43:17 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:43:17 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:43:17 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:43:17 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:17 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:43:17 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:43:17 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:43:17 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:17 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:43:19 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:43:19 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:19 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:43:19 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:43:19 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:43:19 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:43:20 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:43:20 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:43:20 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:43:20 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:20 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:43:20 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:43:20 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:43:20 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:43:20 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:43:20 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:43:20 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:43:20 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:43:20 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:20 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:43:20 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:43:20 DEBUG [selectAdTime] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT
+2024-12-18 15:43:20 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-18 15:43:20 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-18 15:43:22 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:43:22 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:43:22 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:43:22 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:22 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:43:22 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:43:22 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:43:22 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:43:22 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:43:22 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:43:22 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:22 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:43:22 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:43:22 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:43:22 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:43:23 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:43:23 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:43:23 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:43:23 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:23 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:43:23 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:43:23 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 15:43:23 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 15:43:23 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 15:43:23 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:23 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 15:43:23 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 15:43:25 DEBUG [selectInquiriesListCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_CUSTOMER_INQUIRIES
+2024-12-18 15:43:25 DEBUG [selectInquiriesListCount] - ==> Parameters: 
+2024-12-18 15:43:25 DEBUG [selectInquiriesListByOffset] - ==>  Preparing: SELECT * FROM TBL_CUSTOMER_INQUIRIES LIMIT ? OFFSET ?
+2024-12-18 15:43:25 DEBUG [selectInquiriesListByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:25 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:43:25 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:43:25 DEBUG [selectInquiriesListCount] - <==      Total: 1
+2024-12-18 15:43:25 DEBUG [selectInquiriesListByOffset] - <==      Total: 4
+2024-12-18 15:43:25 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:43:25 DEBUG [selectFaq] - ==>  Preparing: SELECT * FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:43:25 DEBUG [selectFaq] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:25 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 15:43:25 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 15:43:25 DEBUG [selectFaqCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 15:43:25 DEBUG [selectFaqCount] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:43:25 DEBUG [selectFaqCount] - <==      Total: 1
+2024-12-18 15:43:25 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 15:43:25 DEBUG [selectFaq] - <==      Total: 5
+2024-12-18 15:43:26 DEBUG [selectGenderCount] - ==>  Preparing: SELECT M_GENDER AS gender, COUNT(*) AS count FROM TBL_MEMBER GROUP BY M_GENDER
+2024-12-18 15:43:26 DEBUG [selectGenderCount] - ==> Parameters: 
+2024-12-18 15:43:26 DEBUG [selectGenderCount] - <==      Total: 2
+2024-12-18 15:43:26 DEBUG [selectTotalAmountData] - ==>  Preparing: SELECT '총 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT UNION ALL SELECT '2024년 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) UNION ALL SELECT '전년도 매출' AS period, SUM(PAY_AMOUNT) AS total_sales, NULL AS percentage_change FROM TBL_PAYMENT WHERE YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 UNION ALL SELECT '전년 대비 증감률' AS period, NULL AS total_sales, CASE WHEN SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) = 0 THEN 0 ELSE ROUND( (SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) THEN PAY_AMOUNT ELSE 0 END) - SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END)) / SUM(CASE WHEN YEAR(PAY_REG_DATE) = YEAR(CURRENT_DATE) - 1 THEN PAY_AMOUNT ELSE 0 END) * 100, 2 ) END AS percentage_change FROM TBL_PAYMENT;
+2024-12-18 15:43:26 DEBUG [selectTotalAmountData] - ==> Parameters: 
+2024-12-18 15:43:26 DEBUG [selectTotalAmountData] - <==      Total: 4
+2024-12-18 15:43:27 DEBUG [selectGroupCategoryCount] - ==>  Preparing: SELECT G_CATEGORY, COUNT(*) AS count FROM TBL_GROUP WHERE G_CATEGORY IN ('운동', '사진', '게임', '여행', '음악', '요리') GROUP BY G_CATEGORY ORDER BY count DESC;
+2024-12-18 15:43:27 DEBUG [selectGroupCategoryCount] - ==> Parameters: 
+2024-12-18 15:43:27 DEBUG [selectGroupCategoryCount] - <==      Total: 6
+2024-12-18 15:44:09 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:44:09 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:44:09 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:44:09 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:09 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:44:09 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:44:09 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:44:09 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:44:09 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:44:09 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:44:09 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:09 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:44:09 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:44:09 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:44:09 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:44:15 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 15:44:15 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 15:44:15 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 15:44:15 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:15 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 15:44:15 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 15:44:18 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:44:18 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:44:18 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:44:18 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:18 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:44:18 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:44:18 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:44:18 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:18 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:44:20 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:44:20 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:44:20 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:44:20 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:44:20 DEBUG [selectAdminsByApproval] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_APPROVAL = 0 LIMIT ? OFFSET ?;
+2024-12-18 15:44:20 DEBUG [selectAdminsByApproval] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:20 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:44:20 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:44:20 DEBUG [selectAdminsByApproval] - <==      Total: 1
+2024-12-18 15:44:21 DEBUG [selectAdminPartByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART LIMIT ? OFFSET ?
+2024-12-18 15:44:21 DEBUG [selectAdminPartByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:21 DEBUG [selectAdminPartCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_PART
+2024-12-18 15:44:21 DEBUG [selectAdminPartCount] - ==> Parameters: 
+2024-12-18 15:44:21 DEBUG [selectAdminPartByOffset] - <==      Total: 8
+2024-12-18 15:44:21 DEBUG [selectAdminPartCount] - <==      Total: 1
+2024-12-18 15:44:22 DEBUG [selectAdminPositionByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION LIMIT ? OFFSET ?
+2024-12-18 15:44:22 DEBUG [selectAdminPositionByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:22 DEBUG [selectAdminPositionCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_POSITION
+2024-12-18 15:44:22 DEBUG [selectAdminPositionCount] - ==> Parameters: 
+2024-12-18 15:44:22 DEBUG [selectAdminPositionCount] - <==      Total: 1
+2024-12-18 15:44:22 DEBUG [selectAdminPositionByOffset] - <==      Total: 9
+2024-12-18 15:44:23 DEBUG [selectAdminPartByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART LIMIT ? OFFSET ?
+2024-12-18 15:44:23 DEBUG [selectAdminPartByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:23 DEBUG [selectAdminPartCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_PART
+2024-12-18 15:44:23 DEBUG [selectAdminPartCount] - ==> Parameters: 
+2024-12-18 15:44:23 DEBUG [selectAdminPartCount] - <==      Total: 1
+2024-12-18 15:44:23 DEBUG [selectAdminPartByOffset] - <==      Total: 8
+2024-12-18 15:44:24 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:44:24 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:44:24 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:44:24 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:44:24 DEBUG [selectAdminsByApproval] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_APPROVAL = 0 LIMIT ? OFFSET ?;
+2024-12-18 15:44:24 DEBUG [selectAdminsByApproval] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:24 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:44:24 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:44:24 DEBUG [selectAdminsByApproval] - <==      Total: 1
+2024-12-18 15:44:24 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:44:24 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:44:24 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:44:24 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:44:24 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:44:24 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:24 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:44:24 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:44:24 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 15:44:24 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 15:44:24 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:44:24 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 15:44:24 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:44:24 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:44:24 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:52:52 DEBUG [selectRefreshTokenByAid] - ==>  Preparing: SELECT * FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+2024-12-18 15:52:52 DEBUG [selectRefreshTokenByAid] - ==>  Preparing: SELECT * FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+2024-12-18 15:52:52 DEBUG [selectRefreshTokenByAid] - ==> Parameters: admin(String)
+2024-12-18 15:52:52 DEBUG [selectRefreshTokenByAid] - ==> Parameters: admin(String)
+2024-12-18 15:52:52 DEBUG [selectRefreshTokenByAid] - <==      Total: 1
+2024-12-18 15:52:52 DEBUG [selectRefreshTokenByAid] - <==      Total: 1
+2024-12-18 15:52:52 DEBUG [updateRefreshTokenByAid] - ==>  Preparing: UPDATE TBL_ADMIN_REFRESH_TOKENS SET REFRESH_TOKEN = ?, EXPIRES_AT = ?, CREATED_AT = NOW() WHERE A_ID = ?
+2024-12-18 15:52:52 DEBUG [updateRefreshTokenByAid] - ==> Parameters: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDQ3NzIsImV4cCI6MTczNTEwOTU3Mn0.PX2zQfuDRDsUbStuSINhc5u7uZFf46kWLj0AK4Nz_00(String), 2024-12-25T06:52:52.440(LocalDateTime), admin(String)
+2024-12-18 15:52:52 DEBUG [updateRefreshTokenByAid] - ==>  Preparing: UPDATE TBL_ADMIN_REFRESH_TOKENS SET REFRESH_TOKEN = ?, EXPIRES_AT = ?, CREATED_AT = NOW() WHERE A_ID = ?
+2024-12-18 15:52:52 DEBUG [updateRefreshTokenByAid] - ==> Parameters: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDQ3NzIsImV4cCI6MTczNTEwOTU3Mn0.PX2zQfuDRDsUbStuSINhc5u7uZFf46kWLj0AK4Nz_00(String), 2024-12-25T06:52:52.442(LocalDateTime), admin(String)
+2024-12-18 15:52:52 DEBUG [updateRefreshTokenByAid] - <==    Updates: 1
+2024-12-18 15:52:52 DEBUG [updateRefreshTokenByAid] - <==    Updates: 1
+2024-12-18 15:52:52 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:52:52 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:52:52 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:52:52 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:52:52 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:52:52 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:52:52 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:52:52 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:52:52 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:53:25 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 15:53:25 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 15:53:25 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:53:25 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 15:53:25 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 15:53:25 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:53:25 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 15:53:25 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 15:53:25 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 15:53:25 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:53:25 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 15:53:25 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 15:53:25 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 15:53:25 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:53:25 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 15:53:26 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:53:26 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:53:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:53:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:53:26 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:53:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:53:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:53:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:53:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:55:50 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:55:50 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:55:50 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:55:50 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:55:50 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:55:50 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:55:50 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:55:50 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:55:50 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:57:30 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:57:30 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:57:30 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:57:30 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:57:30 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:57:30 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:57:35 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:57:35 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:57:35 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:58:43 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:58:43 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:58:43 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:58:43 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:58:43 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:58:43 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:58:44 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:58:44 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:58:44 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:58:45 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:58:45 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:58:45 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:20 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:59:20 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:59:20 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:59:20 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:59:20 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:59:20 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:59:26 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:26 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:59:26 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:26 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:59:26 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:59:26 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:59:27 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:27 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: ㅌ(String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: 텟(String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 15:59:28 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==> Parameters: 테슽(String)
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:59:29 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==> Parameters: ㅌ(String)
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - ==> Parameters: 텟(String)
+2024-12-18 15:59:30 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==> Parameters: 테슽(String)
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==> Parameters: 테스ㅌ(String)
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:31 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:32 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:32 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:32 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:32 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:34 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:34 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:34 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==> Parameters: ㅌ(String)
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==> Parameters: 텟(String)
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - ==> Parameters: 테슽(String)
+2024-12-18 15:59:35 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==> Parameters: 테스ㅌ(String)
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:36 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:37 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 15:59:37 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 15:59:37 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 15:59:52 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:59:52 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:59:52 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 15:59:52 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 15:59:52 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 15:59:52 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 15:59:52 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 15:59:52 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:59:52 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:02:01 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:02:01 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:02:01 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:02:01 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:02:01 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:02:01 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:03:53 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:03:53 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:03:53 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:03:53 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:03:53 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:03:53 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:04:28 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:04:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:04:28 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:04:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:04:28 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:04:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:04:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:04:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:04:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:04:28 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:28 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:04:28 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:04:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:04:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:04:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:04:32 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:32 DEBUG [selectMemberByMname] - ==> Parameters: 아(String)
+2024-12-18 16:04:32 DEBUG [selectMemberByMname] - <==      Total: 1
+2024-12-18 16:04:34 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:34 DEBUG [selectMemberByMname] - ==> Parameters: 테(String)
+2024-12-18 16:04:34 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:04:36 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:36 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:04:36 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:04:36 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:36 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:04:36 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:04:38 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:38 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 16:04:38 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:04:39 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:39 DEBUG [selectMemberByMname] - ==> Parameters: 에(String)
+2024-12-18 16:04:39 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 16:04:41 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:04:41 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:04:41 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:04:41 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:04:41 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:04:41 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:04:41 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:04:41 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:04:41 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:04:44 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:44 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:04:44 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:04:44 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:04:44 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:04:44 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:04:53 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:53 DEBUG [selectMemberByMname] - ==> Parameters: 권익현(String)
+2024-12-18 16:04:53 DEBUG [selectMemberByMname] - <==      Total: 1
+2024-12-18 16:04:55 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:04:55 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 16:04:55 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 16:05:06 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:06 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:06 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:08 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:08 DEBUG [selectMemberByMname] - ==> Parameters: 아니(String)
+2024-12-18 16:05:08 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 16:05:09 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:09 DEBUG [selectMemberByMname] - ==> Parameters: 엥(String)
+2024-12-18 16:05:09 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 16:05:10 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:05:10 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:05:10 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:10 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:10 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:05:10 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:10 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:10 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:10 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:12 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:12 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:13 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:13 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:13 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:13 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:14 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:14 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:14 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:15 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:15 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:15 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:16 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:16 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:16 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:17 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:05:17 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:05:17 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:17 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:17 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:05:17 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:17 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:17 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:17 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:20 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:20 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:20 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:20 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:20 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:20 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:20 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:20 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:20 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:22 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:05:22 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:05:22 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:22 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:22 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:05:22 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:22 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:22 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:22 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:27 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:27 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 16:05:27 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:33 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:33 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 16:05:33 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:34 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:34 DEBUG [selectMemberByMname] - ==> Parameters: 테스(String)
+2024-12-18 16:05:34 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:35 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:05:35 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:05:35 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:35 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:35 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:05:35 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:35 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:35 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:36 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:38 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:38 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:38 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:38 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:38 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:38 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:39 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:39 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:39 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:42 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:42 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:42 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:45 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:05:45 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:05:45 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:45 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:45 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:05:45 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:45 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:45 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:45 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:47 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:47 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:47 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:05:47 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:05:47 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:05:47 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:05:48 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:05:48 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:05:48 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:06:08 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:06:08 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:06:08 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:08 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:08 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:06:08 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:08 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:08 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:08 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:17 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:06:17 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:06:17 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:06:17 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:17 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:17 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:22 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:06:22 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:06:22 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:06:28 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:06:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:28 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:06:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:28 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:06:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:28 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:28 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:28 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:31 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:06:31 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:06:31 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:06:31 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:31 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:31 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:37 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:37 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:37 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:06:37 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:06:37 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:06:37 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:37 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:37 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:37 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:38 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:06:38 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:06:38 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:06:40 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:40 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 16:06:40 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:42 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:06:42 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:06:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:42 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:06:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:42 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:42 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:06:42 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:43 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:06:43 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:06:43 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:06:52 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:06:52 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 16:06:52 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:06:54 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:06:54 DEBUG [selectMemberByMname] - ==> Parameters: 테스트(String)
+2024-12-18 16:06:54 DEBUG [selectMemberByMname] - <==      Total: 2
+2024-12-18 16:09:49 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:09:49 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:09:49 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:09:49 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 16:09:49 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:09:49 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:13:46 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 16:13:47 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 16:13:47 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 16:13:47 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 16:13:47 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 16:13:47 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 16:13:47 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 16:13:51 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 16:13:52 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 16:13:52 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 16:13:52 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 16:13:52 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 16:13:52 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 16:13:52 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 16:13:57 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:13:57 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:13:57 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:13:57 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 10(Integer)
+2024-12-18 16:13:57 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:13:57 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:14:05 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 16:14:05 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 16:14:05 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 16:14:05 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 16:14:05 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 16:14:05 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 16:14:05 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 16:14:05 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:14:05 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 16:14:05 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 16:14:05 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 16:14:05 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 16:14:05 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 16:14:05 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:14:05 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 16:15:50 DEBUG [selectAdminByAname] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_NAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:15:50 DEBUG [selectAdminByAname] - ==> Parameters: 홍길동(String)
+2024-12-18 16:15:50 DEBUG [selectAdminByAname] - <==      Total: 2
+2024-12-18 16:15:52 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 16:15:52 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 16:15:52 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 16:15:52 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 16:15:52 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 16:15:52 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 16:15:52 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 16:15:52 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 16:15:52 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:15:52 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 16:15:52 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 16:15:52 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 16:15:52 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 16:15:52 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:15:52 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 16:15:56 DEBUG [selectAdminByAname] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_NAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:15:56 DEBUG [selectAdminByAname] - ==> Parameters: 홍길동(String)
+2024-12-18 16:15:56 DEBUG [selectAdminByAname] - <==      Total: 2
+2024-12-18 16:16:03 DEBUG [selectAdminByAname] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_NAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:16:03 DEBUG [selectAdminByAname] - ==> Parameters: (String)
+2024-12-18 16:16:03 DEBUG [selectAdminByAname] - <==      Total: 3
+2024-12-18 16:16:05 DEBUG [selectAdminByAname] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_NAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:16:05 DEBUG [selectAdminByAname] - ==> Parameters: 박찬(String)
+2024-12-18 16:16:05 DEBUG [selectAdminByAname] - <==      Total: 1
+2024-12-18 16:16:09 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 16:16:09 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:09 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 16:16:09 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 16:16:09 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 16:16:09 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 16:16:09 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 16:16:09 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 16:16:09 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 16:16:09 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:09 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 16:16:09 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 16:16:10 DEBUG [selectFaq] - ==>  Preparing: SELECT * FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 16:16:10 DEBUG [selectFaq] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:10 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 16:16:10 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 16:16:10 DEBUG [selectFaq] - <==      Total: 5
+2024-12-18 16:16:10 DEBUG [selectFaqCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 16:16:10 DEBUG [selectFaqCount] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:10 DEBUG [selectFaqCount] - <==      Total: 1
+2024-12-18 16:16:10 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 16:16:11 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 16:16:11 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 16:16:11 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 16:16:11 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:11 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 16:16:11 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 16:16:11 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 16:16:11 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:11 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 16:16:11 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 16:16:11 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 16:16:11 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 16:16:11 DEBUG [selectInquiriesListCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_CUSTOMER_INQUIRIES
+2024-12-18 16:16:11 DEBUG [selectInquiriesListCount] - ==> Parameters: 
+2024-12-18 16:16:11 DEBUG [selectInquiriesListByOffset] - ==>  Preparing: SELECT * FROM TBL_CUSTOMER_INQUIRIES LIMIT ? OFFSET ?
+2024-12-18 16:16:11 DEBUG [selectInquiriesListByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:11 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 16:16:11 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 16:16:11 DEBUG [selectInquiriesListCount] - <==      Total: 1
+2024-12-18 16:16:11 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 16:16:11 DEBUG [selectInquiriesListByOffset] - <==      Total: 4
+2024-12-18 16:16:13 DEBUG [selectFaq] - ==>  Preparing: SELECT * FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 16:16:13 DEBUG [selectFaq] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:13 DEBUG [selectFaqCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 16:16:13 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 16:16:13 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 16:16:13 DEBUG [selectFaqCount] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:13 DEBUG [selectFaq] - <==      Total: 5
+2024-12-18 16:16:13 DEBUG [selectFaqCount] - <==      Total: 1
+2024-12-18 16:16:13 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 16:16:17 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 16:16:17 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:17 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 16:16:17 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 16:16:17 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 16:16:17 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 16:16:21 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:16:21 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:16:21 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:16:21 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:21 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:16:21 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:16:21 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:16:21 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:21 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:16:23 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 16:16:23 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:16:23 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 16:16:23 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 16:16:23 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 16:16:23 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 16:23:08 DEBUG [selectRefreshTokenByAid] - ==>  Preparing: SELECT * FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+2024-12-18 16:23:08 DEBUG [selectRefreshTokenByAid] - ==>  Preparing: SELECT * FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+2024-12-18 16:23:08 DEBUG [selectRefreshTokenByAid] - ==> Parameters: admin(String)
+2024-12-18 16:23:08 DEBUG [selectRefreshTokenByAid] - ==> Parameters: admin(String)
+2024-12-18 16:23:08 DEBUG [selectRefreshTokenByAid] - <==      Total: 1
+2024-12-18 16:23:08 DEBUG [selectRefreshTokenByAid] - <==      Total: 1
+2024-12-18 16:23:08 DEBUG [updateRefreshTokenByAid] - ==>  Preparing: UPDATE TBL_ADMIN_REFRESH_TOKENS SET REFRESH_TOKEN = ?, EXPIRES_AT = ?, CREATED_AT = NOW() WHERE A_ID = ?
+2024-12-18 16:23:08 DEBUG [updateRefreshTokenByAid] - ==> Parameters: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDY1ODgsImV4cCI6MTczNTExMTM4OH0.AFyaAa7bOhSPTqssEU0u3DUuYCq_Qf_mmWTbKfR3EEE(String), 2024-12-25T07:23:08.053(LocalDateTime), admin(String)
+2024-12-18 16:23:08 DEBUG [updateRefreshTokenByAid] - ==>  Preparing: UPDATE TBL_ADMIN_REFRESH_TOKENS SET REFRESH_TOKEN = ?, EXPIRES_AT = ?, CREATED_AT = NOW() WHERE A_ID = ?
+2024-12-18 16:23:08 DEBUG [updateRefreshTokenByAid] - ==> Parameters: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDY1ODgsImV4cCI6MTczNTExMTM4OH0.AFyaAa7bOhSPTqssEU0u3DUuYCq_Qf_mmWTbKfR3EEE(String), 2024-12-25T07:23:08.056(LocalDateTime), admin(String)
+2024-12-18 16:23:08 DEBUG [updateRefreshTokenByAid] - <==    Updates: 1
+2024-12-18 16:23:08 DEBUG [updateRefreshTokenByAid] - <==    Updates: 1
+2024-12-18 16:23:08 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:23:08 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:23:08 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:23:08 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:23:08 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:23:08 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:23:08 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:23:08 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:23:08 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:23:11 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 16:23:11 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 16:23:11 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 16:23:11 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 16:23:11 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 16:23:11 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 16:23:11 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:23:11 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 16:23:11 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 16:23:11 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 16:23:11 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 16:23:11 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 16:23:11 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 16:23:11 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:23:11 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 16:23:14 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:23:14 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:23:14 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:23:14 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:23:14 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:23:14 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:23:14 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:23:14 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:23:14 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:23:19 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 16:23:19 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:23:19 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 16:23:19 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 16:23:19 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 16:23:19 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 16:24:00 DEBUG [selectAllGroup] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO
+2024-12-18 16:24:00 DEBUG [selectAllGroup] - ==> Parameters: 
+2024-12-18 16:24:00 DEBUG [selectAllGroup] - <==      Total: 14
+2024-12-18 16:30:26 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 16:30:26 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 16:30:26 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 16:30:26 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:30:26 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 16:30:26 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 16:31:17 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 16:31:17 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:17 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 16:31:17 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 16:31:17 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 16:31:17 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 16:31:20 DEBUG [selectGroupBySearchKeyword] - ==>  Preparing: SELECT * FROM TBL_GROUP WHERE G_NAME LIKE CONCAT('%', ?, '%')
+2024-12-18 16:31:20 DEBUG [selectGroupBySearchKeyword] - ==> Parameters: 어서오(String)
+2024-12-18 16:31:20 DEBUG [selectGroupBySearchKeyword] - <==      Total: 1
+2024-12-18 16:31:24 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 16:31:24 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:24 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 16:31:24 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 16:31:24 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 16:31:24 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 16:31:27 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:31:27 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:31:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:31:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:27 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:31:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:31:27 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:31:27 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:27 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:31:29 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 16:31:29 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:29 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 16:31:29 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 16:31:29 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 16:31:29 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 16:31:31 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 16:31:31 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 16:31:31 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 16:31:31 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:31 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 16:31:31 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 16:31:31 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 16:31:31 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 16:31:31 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 16:31:31 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 16:31:31 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:31 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 16:31:31 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 16:31:31 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 16:31:31 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 16:31:32 DEBUG [selectAdTime] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT
+2024-12-18 16:31:32 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-18 16:31:32 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-18 16:31:33 DEBUG [selectUserCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_MEMBER
+2024-12-18 16:31:33 DEBUG [selectUserCount] - ==> Parameters: 
+2024-12-18 16:31:33 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:31:33 DEBUG [selectUserCount] - <==      Total: 1
+2024-12-18 16:31:33 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:33 DEBUG [selectUsers] - <==      Total: 10
+2024-12-18 16:31:33 DEBUG [selectUsers] - ==>  Preparing: SELECT * FROM TBL_MEMBER LIMIT ? OFFSET ?
+2024-12-18 16:31:33 DEBUG [selectUsers] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 16:31:33 DEBUG [selectUsers] - <==      Total: 10
