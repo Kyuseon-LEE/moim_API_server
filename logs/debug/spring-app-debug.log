@@ -141,3 +141,252 @@
 2024-12-18 11:36:30 DEBUG [findAllGroups] - <==      Total: 14
 2024-12-18 11:36:30 DEBUG [findGroupsByUserId] - <==      Total: 3
 >>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f
+2024-12-18 14:46:21 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 14:46:24 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 14:46:24 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 14:46:24 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 14:46:24 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 14:46:24 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 14:46:24 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 14:52:50 DEBUG [selectAdminByAId] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_ID = ?
+2024-12-18 14:52:50 DEBUG [selectAdminByAId] - ==> Parameters: admin(String)
+2024-12-18 14:52:50 DEBUG [selectAdminByAId] - <==      Total: 1
+2024-12-18 14:52:51 DEBUG [deleteRefreshTokenByAid] - ==>  Preparing: DELETE FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+2024-12-18 14:52:51 DEBUG [deleteRefreshTokenByAid] - ==> Parameters: admin(String)
+2024-12-18 14:52:51 DEBUG [deleteRefreshTokenByAid] - <==    Updates: 1
+2024-12-18 14:52:51 DEBUG [insertNewRefreshToken] - ==>  Preparing: INSERT INTO TBL_ADMIN_REFRESH_TOKENS( A_ID, REFRESH_TOKEN, EXPIRES_AT ) VALUES ( ?, ?, ? )
+2024-12-18 14:52:51 DEBUG [insertNewRefreshToken] - ==> Parameters: admin(String), eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDExNzEsImV4cCI6MTczNTEwNTk3MX0.bNCmieBVc2YD-VTcDwgcxElxQucl1IhbKTJwCnokYGQ(String), 2024-12-25T05:52:51.279(LocalDateTime)
+2024-12-18 14:52:51 DEBUG [insertNewRefreshToken] - <==    Updates: 1
+2024-12-18 14:53:05 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 14:53:05 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 14:53:05 DEBUG [selectAdminByAid] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_ID = ?
+2024-12-18 14:53:05 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 14:53:05 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 14:53:05 DEBUG [selectAdminByAid] - ==> Parameters: admin(String)
+2024-12-18 14:53:05 DEBUG [selectAdminByAid] - <==      Total: 1
+2024-12-18 14:53:05 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 14:53:05 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 14:53:06 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 14:53:06 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 14:53:06 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 14:53:06 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 14:53:06 DEBUG [selectAdminCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN
+2024-12-18 14:53:06 DEBUG [selectAdminCount] - ==> Parameters: 
+2024-12-18 14:53:06 DEBUG [selectAdminCount] - <==      Total: 1
+2024-12-18 14:53:06 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 14:53:06 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 14:53:06 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 14:53:06 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:53:06 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 14:53:06 DEBUG [selectAdmins] - ==>  Preparing: SELECT * FROM TBL_ADMIN LIMIT ? OFFSET ?
+2024-12-18 14:53:06 DEBUG [selectAdmins] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:53:06 DEBUG [selectAdmins] - <==      Total: 3
+2024-12-18 14:53:06 DEBUG [selectAdminsByApproval] - ==>  Preparing: SELECT * FROM TBL_ADMIN WHERE A_APPROVAL = 0 LIMIT ? OFFSET ?;
+2024-12-18 14:53:06 DEBUG [selectAdminsByApproval] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:53:06 DEBUG [selectAdminsByApproval] - <==      Total: 1
+2024-12-18 14:53:07 DEBUG [selectAdminPosition] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION
+2024-12-18 14:53:07 DEBUG [selectAdminPart] - ==>  Preparing: SELECT * FROM TBL_ADMIN_PART
+2024-12-18 14:53:07 DEBUG [selectAdminPosition] - ==> Parameters: 
+2024-12-18 14:53:07 DEBUG [selectAdminPart] - ==> Parameters: 
+2024-12-18 14:53:07 DEBUG [selectAdminPosition] - <==      Total: 9
+2024-12-18 14:53:07 DEBUG [selectAdminPart] - <==      Total: 8
+2024-12-18 14:53:07 DEBUG [selectAdminPositionByOffset] - ==>  Preparing: SELECT * FROM TBL_ADMIN_POSITION LIMIT ? OFFSET ?
+2024-12-18 14:53:07 DEBUG [selectAdminPositionCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADMIN_POSITION
+2024-12-18 14:53:07 DEBUG [selectAdminPositionByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:53:07 DEBUG [selectAdminPositionCount] - ==> Parameters: 
+2024-12-18 14:53:07 DEBUG [selectAdminPositionCount] - <==      Total: 1
+2024-12-18 14:53:07 DEBUG [selectAdminPositionByOffset] - <==      Total: 9
+2024-12-18 14:53:33 DEBUG [selectAllGroupByOffset] - ==>  Preparing: SELECT g.*, m.M_NAME, m.M_NICKNAME FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO LIMIT ? OFFSET ?
+2024-12-18 14:53:33 DEBUG [selectGroupCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_GROUP
+2024-12-18 14:53:33 DEBUG [selectGroupCount] - ==> Parameters: 
+2024-12-18 14:53:33 DEBUG [selectAllGroupByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:53:33 DEBUG [selectGroupCount] - <==      Total: 1
+2024-12-18 14:53:33 DEBUG [selectAllGroupByOffset] - <==      Total: 10
+2024-12-18 14:54:59 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 14:54:59 DEBUG [selectMemberByMname] - ==> Parameters: d(String)
+2024-12-18 14:54:59 DEBUG [selectMemberByMname] - <==      Total: 0
+2024-12-18 14:55:00 DEBUG [selectMemberByMname] - ==>  Preparing: SELECT * FROM TBL_MEMBER WHERE M_NICKNAME LIKE CONCAT('%', ?, '%')
+2024-12-18 14:55:00 DEBUG [selectMemberByMname] - ==> Parameters: (String)
+2024-12-18 14:55:00 DEBUG [selectMemberByMname] - <==      Total: 470
+2024-12-18 14:55:01 DEBUG [selectUserGroupPostByMno] - ==>  Preparing: SELECT p.P_NO, p.G_NO, p.P_TEXT, p.P_IMG, p.P_REG_DATE, p.P_MOD_DATE FROM TBL_POST p WHERE p.G_NO IN ( SELECT gm.G_NO FROM TBL_GROUP_MEMBER gm WHERE gm.M_NO = ? )
+2024-12-18 14:55:01 DEBUG [selectUserGroupPostByMno] - ==> Parameters: 1(Integer)
+2024-12-18 14:55:01 DEBUG [selectUserGroupByMno] - ==>  Preparing: SELECT gm.G_NO, gm.G_REG_DATE, gm.G_M_ROLE, g.G_CATEGORY, g.G_LOCATION, g.G_NAME FROM TBL_GROUP_MEMBER gm JOIN TBL_GROUP g ON gm.G_NO = g.G_NO WHERE gm.M_NO = ?
+2024-12-18 14:55:01 DEBUG [selectUserGroupByMno] - ==> Parameters: 1(Integer)
+2024-12-18 14:55:01 DEBUG [selectUserGroupPostByMno] - <==      Total: 1
+2024-12-18 14:55:01 DEBUG [selectUserGroupByMno] - <==      Total: 4
+2024-12-18 14:56:02 DEBUG [selectGroupBySearchKeyword] - ==>  Preparing: SELECT * FROM TBL_GROUP WHERE G_NAME LIKE CONCAT('%', ?, '%')
+2024-12-18 14:56:02 DEBUG [selectGroupBySearchKeyword] - ==> Parameters: (String)
+2024-12-18 14:56:02 DEBUG [selectGroupBySearchKeyword] - <==      Total: 14
+2024-12-18 14:57:33 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 14:57:35 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 14:57:35 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 14:57:35 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 14:57:35 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 14:57:35 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 14:57:35 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 14:58:17 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 14:58:17 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 14:58:17 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 14:58:17 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 14:58:17 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 14:58:17 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 14:58:17 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:17 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:17 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 14:58:17 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:17 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:17 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 14:58:17 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 14:58:17 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 14:58:17 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 14:58:17 DEBUG [selectAdTime] - ==>  Preparing: SELECT AD_START_DATE, AD_END_DATE FROM TBL_ADVERTISEMENT
+2024-12-18 14:58:17 DEBUG [selectAdTime] - ==> Parameters: 
+2024-12-18 14:58:17 DEBUG [selectAdTime] - <==      Total: 3
+2024-12-18 14:58:19 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 14:58:19 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 14:58:19 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:19 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:19 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 14:58:19 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 14:58:19 DEBUG [selectAnnouncementCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ANNOUNCEMENT
+2024-12-18 14:58:19 DEBUG [selectAnnouncementCount] - ==> Parameters: 
+2024-12-18 14:58:19 DEBUG [selectAllAnnouncement] - ==>  Preparing: SELECT * FROM TBL_ANNOUNCEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:19 DEBUG [selectAllAnnouncement] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:19 DEBUG [selectAnnouncementCount] - <==      Total: 1
+2024-12-18 14:58:19 DEBUG [selectAllAnnouncement] - <==      Total: 10
+2024-12-18 14:58:19 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 14:58:19 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 14:58:19 DEBUG [selectInquiriesListCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_CUSTOMER_INQUIRIES
+2024-12-18 14:58:19 DEBUG [selectInquiriesListCount] - ==> Parameters: 
+2024-12-18 14:58:19 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 14:58:19 DEBUG [selectInquiriesListCount] - <==      Total: 1
+2024-12-18 14:58:19 DEBUG [selectInquiriesListByOffset] - ==>  Preparing: SELECT * FROM TBL_CUSTOMER_INQUIRIES LIMIT ? OFFSET ?
+2024-12-18 14:58:19 DEBUG [selectInquiriesListByOffset] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:19 DEBUG [selectInquiriesListByOffset] - <==      Total: 4
+2024-12-18 14:58:19 DEBUG [selectFaq] - ==>  Preparing: SELECT * FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 14:58:19 DEBUG [selectFaq] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:19 DEBUG [selectFaqCategory] - ==>  Preparing: SELECT * FROM TBL_FAQ_CATEGORY
+2024-12-18 14:58:19 DEBUG [selectFaqCategory] - ==> Parameters: 
+2024-12-18 14:58:19 DEBUG [selectFaqCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_FAQ LIMIT ? OFFSET ?
+2024-12-18 14:58:19 DEBUG [selectFaqCount] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:19 DEBUG [selectFaq] - <==      Total: 5
+2024-12-18 14:58:19 DEBUG [selectFaqCategory] - <==      Total: 4
+2024-12-18 14:58:19 DEBUG [selectFaqCount] - <==      Total: 1
+2024-12-18 14:58:20 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 14:58:20 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 14:58:20 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:20 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:20 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 14:58:20 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 14:58:20 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 14:58:20 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 14:58:20 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 14:58:20 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:20 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:20 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 14:58:20 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 14:58:20 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 14:58:20 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 14:58:31 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 14:58:31 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 2(Integer), 12(Integer)
+2024-12-18 14:58:31 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 14:58:32 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:32 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:32 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 14:58:33 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 14:58:33 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 3(Integer), 12(Integer)
+2024-12-18 14:58:33 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 14:58:34 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:58:34 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:58:34 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 14:59:03 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 14:59:03 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 2(Integer), 11(Integer)
+2024-12-18 14:59:04 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 14:59:04 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:59:04 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:59:04 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 14:59:24 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 14:59:24 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 1(Integer), 11(Integer)
+2024-12-18 14:59:24 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 14:59:25 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 14:59:25 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 14:59:25 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:08:45 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 15:08:47 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 15:08:47 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 15:08:47 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 15:08:47 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 15:08:47 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 15:08:47 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 15:08:52 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 15:08:52 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 2(Integer), 7(Integer)
+2024-12-18 15:08:52 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 15:08:52 DEBUG [selectAdByAdNo] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_NO = ?
+2024-12-18 15:08:52 DEBUG [selectAdByAdNo] - ==> Parameters: 7(Integer)
+2024-12-18 15:08:52 DEBUG [selectAdByAdNo] - <==      Total: 1
+2024-12-18 15:08:52 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 15:08:52 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 7(Integer)
+2024-12-18 15:08:52 DEBUG [updateAdvertisementEndStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 4 WHERE AD_NO = ?
+2024-12-18 15:08:52 DEBUG [updateAdvertisementEndStatus] - ==> Parameters: 7(Integer)
+2024-12-18 15:08:52 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 15:08:53 DEBUG [updateAdvertisementEndStatus] - <==    Updates: 1
+2024-12-18 15:08:54 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:08:54 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:08:54 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:08:57 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:08:57 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:08:57 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:08:57 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:08:57 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:08:57 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:08:57 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:08:57 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:08:57 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:08:57 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:08:57 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:08:57 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:08:57 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:08:57 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:08:57 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:09:07 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 15:09:07 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 1(Integer), 7(Integer)
+2024-12-18 15:09:07 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 15:09:07 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:09:07 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:09:07 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:09:09 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 15:09:09 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 4(Integer), 7(Integer)
+2024-12-18 15:09:10 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 15:09:10 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:09:10 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:09:10 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:09:15 DEBUG [updateAdStatusByAdNo] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = ?, AD_MOD_DATE= NOW() WHERE AD_NO = ?
+2024-12-18 15:09:15 DEBUG [updateAdStatusByAdNo] - ==> Parameters: 2(Integer), 7(Integer)
+2024-12-18 15:09:16 DEBUG [updateAdStatusByAdNo] - <==    Updates: 1
+2024-12-18 15:09:16 DEBUG [selectAdByAdNo] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_NO = ?
+2024-12-18 15:09:16 DEBUG [selectAdByAdNo] - ==> Parameters: 7(Integer)
+2024-12-18 15:09:16 DEBUG [selectAdByAdNo] - <==      Total: 1
+2024-12-18 15:09:16 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 15:09:16 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 7(Integer)
+2024-12-18 15:09:16 DEBUG [updateAdvertisementEndStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 4 WHERE AD_NO = ?
+2024-12-18 15:09:16 DEBUG [updateAdvertisementEndStatus] - ==> Parameters: 7(Integer)
+2024-12-18 15:09:16 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+2024-12-18 15:09:16 DEBUG [updateAdvertisementEndStatus] - <==    Updates: 1
+2024-12-18 15:09:16 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:09:16 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:09:16 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:09:18 DEBUG [selectAdCount] - ==>  Preparing: SELECT COUNT(*) FROM TBL_ADVERTISEMENT
+2024-12-18 15:09:18 DEBUG [selectAdCount] - ==> Parameters: 
+2024-12-18 15:09:18 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:09:18 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:09:18 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:09:18 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:09:18 DEBUG [selectAdCount] - <==      Total: 1
+2024-12-18 15:09:18 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:09:18 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:09:18 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 15:09:18 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 15:09:18 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+2024-12-18 15:09:18 DEBUG [selectAdStatus] - ==> Parameters: 
+2024-12-18 15:09:18 DEBUG [selectAds] - <==      Total: 3
+2024-12-18 15:09:18 DEBUG [selectAdStatus] - <==      Total: 6

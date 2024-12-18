@@ -143,4 +143,12 @@
         FROM
             TBL_ADVERTISEMENT
     </select>
+
+    <select id="selectAdByAdNo" parameterType="int" resultType="com.moim.moimapiserver.dto.AdvertisementDto">
+        SELECT
+            *
+        FROM
+            TBL_ADVERTISEMENT
+        WHERE AD_NO = #{ad_no}
+    </select>
 </mapper>

@@ -36,5 +36,6 @@ public interface AdvertisementMapper {
 
     List<AdvertisementDto> findActiveAdvertisements();
 
+    AdvertisementDto selectAdByAdNo(int ad_no);
 }
 

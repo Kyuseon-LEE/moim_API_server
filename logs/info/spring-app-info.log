@@ -86,3 +86,232 @@
 2024-12-18 11:36:30 INFO  [MemberService] - [MemberService] getMemberInfo successful
 2024-12-18 11:36:30 INFO  [GroupController] - Fetching groups for user with ID: kwon
 >>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f
+2024-12-18 14:46:21 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 3680 (D:\sdh\last_pjt\1217\moim-api-server\build\classes\java\main started by manic-066g in D:\sdh\last_pjt\1217\moim-api-server)
+2024-12-18 14:46:21 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 14:46:24 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 14:46:25 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 14:46:25 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 4.504 seconds (process running for 5.353)
+2024-12-18 14:52:50 INFO  [AdminController] - ADMIN ID: admin
+2024-12-18 14:52:50 INFO  [AdminService] - getAdminDetailsById()
+2024-12-18 14:52:51 INFO  [AuthController] - deleteRefreshToken()
+2024-12-18 14:52:51 INFO  [AuthController] - refreshTokenRequest: RefreshTokenDto(rt_no=0, a_id=admin, refresh_token=null, expires_at=null, created_at=null)
+2024-12-18 14:52:51 INFO  [AuthService] - confirmRefreshTokenDelete()
+2024-12-18 14:52:51 INFO  [AuthController] - response: ResponseWrapper(data=null, status=SUCCESS, message=DELETE SUCCESS)
+2024-12-18 14:52:51 INFO  [AuthController] - saveRefreshToken()
+2024-12-18 14:52:51 INFO  [AuthController] - refreshTokenRequest: RefreshTokenDto(rt_no=0, a_id=admin, refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhX2lkIjoiYWRtaW4iLCJpYXQiOjE3MzQ1MDExNzEsImV4cCI6MTczNTEwNTk3MX0.bNCmieBVc2YD-VTcDwgcxElxQucl1IhbKTJwCnokYGQ, expires_at=2024-12-25T05:52:51.279, created_at=null)
+2024-12-18 14:52:51 INFO  [AuthService] - confirmSaveRefreshToken()
+2024-12-18 14:53:05 INFO  [AdminController] - fetchAdminPartData()
+2024-12-18 14:53:05 INFO  [AdminService] - getAdminPartData()
+2024-12-18 14:53:05 INFO  [AdminController] - fetchAdminPosition()
+2024-12-18 14:53:05 INFO  [AdminService] - getAdminPositionData()
+2024-12-18 14:53:05 INFO  [AdminController] - deleteRefreshToken()
+2024-12-18 14:53:05 INFO  [AdminService] - getLoginedAdminData()
+2024-12-18 14:53:05 INFO  [AdminService] - ADMIN PART DATA FETCH SUCCESS
+2024-12-18 14:53:05 INFO  [AdminService] - ADMIN POSITION DATA FETCH SUCCESS
+2024-12-18 14:53:06 INFO  [AdminController] - fetchAdminPartData()
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminPartData()
+2024-12-18 14:53:06 INFO  [AdminController] - fetchAdminPosition()
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminPositionData()
+2024-12-18 14:53:06 INFO  [AdminController] - getAdminListCount()
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminCount()
+2024-12-18 14:53:06 INFO  [AdminService] - ADMIN LIST COUNT GET SUCCESS
+2024-12-18 14:53:06 INFO  [AdminService] - ADMIN PART DATA FETCH SUCCESS
+2024-12-18 14:53:06 INFO  [AdminController] - getAdminList()
+2024-12-18 14:53:06 INFO  [AdminService] - ADMIN POSITION DATA FETCH SUCCESS
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminList()
+2024-12-18 14:53:06 INFO  [AdminService] - ADMIN LIST GET SUCCESS
+2024-12-18 14:53:06 INFO  [AdminController] - getAdminList()
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminList()
+2024-12-18 14:53:06 INFO  [AdminService] - ADMIN LIST GET SUCCESS
+2024-12-18 14:53:06 INFO  [AdminController] - fetchAdminPartData()
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminPartData()
+2024-12-18 14:53:06 INFO  [AdminController] - fetchAdminPosition()
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminPositionData()
+2024-12-18 14:53:06 INFO  [AdminController] - fetchAdminApprovalList()
+2024-12-18 14:53:06 INFO  [AdminService] - getAdminApprovalList()
+2024-12-18 14:53:06 INFO  [AdminService] - ADMIN APPROVAL LIST GET SUCCESS
+2024-12-18 14:53:07 INFO  [AdminService] - ADMIN POSITION DATA FETCH SUCCESS
+2024-12-18 14:53:07 INFO  [AdminService] - ADMIN PART DATA FETCH SUCCESS
+2024-12-18 14:53:07 INFO  [AdminController] - fetchAdminPositionByOffset()
+2024-12-18 14:53:07 INFO  [AdminService] - getAdminPositionByOffset()
+2024-12-18 14:53:07 INFO  [AdminController] - fetchAdminPositionCount()
+2024-12-18 14:53:33 INFO  [AdminGroupController] - fetchGroupList()
+2024-12-18 14:53:33 INFO  [AdminGroupController] - fetchGroupListCount()
+2024-12-18 14:53:33 INFO  [AdminGroupService] - getGroupListCount()
+2024-12-18 14:53:33 INFO  [AdminGroupService] - getGroupListCount()
+2024-12-18 14:53:33 INFO  [AdminGroupService] - GROUP LIST COUNT GET SUCCESS
+2024-12-18 14:53:33 INFO  [AdminGroupService] - groupDtos: [GroupDto(g_no=1, g_name=어서오세요, g_info=안녕하세요, g_category=운동, g_master_id=1, g_img_name=http://moimservice.ddns.net/groups/5/5fc0018e-be9e-41bd-92ea-f821e474824a.png, m_nickname=테스트김, g_max_number=30, g_location=경기 의정부시, g_good=0, g_public=1, g_confirm=2, g_regist=1, g_reg_date=2024-01-28 15:30:56, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=테스트용유저, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=1, m_social_id=null, members=null), GroupDto(g_no=2, g_name=랄로, g_info=ㅇㅇ, g_category=사진, g_master_id=1, g_img_name=http://moimservice.ddns.net/groups/5/a4923b24-5b88-4fd9-bd23-286e4740fc5e.jpg, m_nickname=테스트김, g_max_number=10, g_location=경기 포천시, g_good=0, g_public=0, g_confirm=1, g_regist=1, g_reg_date=2024-01-28 16:02:18, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=테스트용유저, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=1, m_social_id=null, members=null), GroupDto(g_no=3, g_name=게임 모임, g_info=게임 친목 도모 모임입니다, g_category=게임, g_master_id=4, g_img_name=http://moimservice.ddns.net/groups/5/a7583639-2351-4163-8866-4f6a26ba862c.jpg, m_nickname=돈절래, g_max_number=15, g_location=경남 김해시, g_good=0, g_public=1, g_confirm=2, g_regist=1, g_reg_date=2024-04-29 14:42:34, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=김찬호, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=0, m_social_id=null, members=null), GroupDto(g_no=4, g_name=그냥 모임, g_info=ㅇㅇ, g_category=여행, g_master_id=4, g_img_name=http://moimservice.ddns.net/groups/5/c8d7db68-ca9e-4dce-917d-c09b423690f7.jpg, m_nickname=돈절래, g_max_number=10, g_location=제주 제주시, g_good=0, g_public=1, g_confirm=1, g_regist=1, g_reg_date=2024-05-02 12:30:45, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=김찬호, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=0, m_social_id=null, members=null), GroupDto(g_no=5, g_name=안녕하세요, g_info=반갑습니다 안녕 모임입니다., g_category=운동, g_master_id=1, g_img_name=http://moimservice.ddns.net/groups/5/df0a2833-3109-4c2c-ae72-316f27aa892a.jpg, m_nickname=테스트김, g_max_number=10, g_location=서울 성동구, g_good=0, g_public=0, g_confirm=2, g_regist=1, g_reg_date=2024-06-05 11:44:02, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=테스트용유저, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=0, m_social_id=null, members=null), GroupDto(g_no=7, g_name=운동 건강 헬스 , g_info=다같이 모여서 운동하면서 건강 챙깁시다 짱짱, g_category=운동, g_master_id=5, g_img_name=http://moimservice.ddns.net/groups/5/d1a26d86-c8b2-48d2-a567-f24bfb8f2ed5.jpg, m_nickname=길동이, g_max_number=10, g_location=경기 의정부시, g_good=0, g_public=0, g_confirm=1, g_regist=1, g_reg_date=2024-07-09 15:56:15, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=길동이, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=0, m_social_id=null, members=null), GroupDto(g_no=8, g_name=롤할사람, g_info=게임할사람@@@@@@@@@@@, g_category=게임, g_master_id=14, g_img_name=http://moimservice.ddns.net/groups/5/9777fa24-503d-4caa-9f50-8a7ee98260f7.jpg, m_nickname=하하호호맨, g_max_number=10, g_location=경남 김해시, g_good=0, g_public=1, g_confirm=1, g_regist=1, g_reg_date=2024-08-10 12:23:04, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=강재준, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=1, m_social_id=null, members=null), GroupDto(g_no=9, g_name=스타할사람@@@@, g_info=@@@@@@@@@@2, g_category=게임, g_master_id=14, g_img_name=http://moimservice.ddns.net/groups/5/49879c38-696f-4374-b03b-47f167cbcac9.jpg, m_nickname=하하호호맨, g_max_number=10, g_location=경북 울릉군, g_good=0, g_public=1, g_confirm=1, g_regist=1, g_reg_date=2024-09-10 14:39:39, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=강재준, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=1, m_social_id=null, members=null), GroupDto(g_no=10, g_name=메이플할사람@@@@, g_info=@@!!, g_category=게임, g_master_id=2, g_img_name=http://moimservice.ddns.net/groups/5/b42dea5f-d102-421d-bfeb-7da32061c328.jpg, m_nickname=권익현1, g_max_number=10, g_location=경남 창원시, g_good=0, g_public=1, g_confirm=1, g_regist=1, g_reg_date=2024-10-10 16:36:08, g_mod_date=2024-12-17 14:11:22, m_id=null, m_name=권익현, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=1, m_social_id=null, members=null), GroupDto(g_no=11, g_name=음악 감상, g_info=음악 감상 및 품평회 하는 모임입니다 많이들 오세요 , g_category=음악, g_master_id=5, g_img_name=http://moimservice.ddns.net/groups/5/5cabd1f2-b7c1-4488-9b0b-7038269dbc3d.jpg, m_nickname=길동이, g_max_number=12, g_location=서울 동대문구, g_good=0, g_public=1, g_confirm=1, g_regist=1, g_reg_date=2024-12-10 16:59:31, g_mod_date=2024-12-10 16:59:31, m_id=null, m_name=길동이, g_master_nickname=null, memberCount=0, g_m_role=0, g_status=0, m_social_id=null, members=null)]
+2024-12-18 14:53:33 INFO  [AdminGroupService] - GROUP LIST GET SUCCESS
+2024-12-18 14:54:59 INFO  [AdminController] - searchUsers()
+2024-12-18 14:54:59 INFO  [AdminService] - searchUsers()
+2024-12-18 14:55:00 INFO  [AdminController] - searchUsers()
+2024-12-18 14:55:00 INFO  [AdminService] - searchUsers()
+2024-12-18 14:55:01 INFO  [AdminController] - fetchUserDetailGroupInfo()
+2024-12-18 14:55:01 INFO  [AdminController] - fetchUserDetailPostInfo()
+2024-12-18 14:55:01 INFO  [AdminService] - getUserDetailPostInfo()
+2024-12-18 14:55:01 INFO  [AdminController] - meberDto: MemberDto(m_no=1, m_social_id=null, m_profile_img=null, m_id=null, m_pw=null, m_name=null, m_nickname=null, m_phone=null, m_gender=null, m_age=null, m_address=null, m_mail=null, m_category=null, m_grade=0, m_status=0, m_reg_date=null, m_mod_date=null, m_start_membership=null, m_end_membership=null)
+2024-12-18 14:55:01 INFO  [AdminService] - getUserDetailGroupInfo()
+2024-12-18 14:56:02 INFO  [AdminGroupController] - searchMoim()
+2024-12-18 14:56:02 INFO  [AdminGroupService] - getSearchGroup()
+2024-12-18 14:56:02 INFO  [AdminGroupService] - SEARCH GROUP LIST GET SUCCESS
+2024-12-18 14:57:33 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 15688 (D:\sdh\last_pjt\1217\moim-api-server\build\classes\java\main started by manic-066g in D:\sdh\last_pjt\1217\moim-api-server)
+2024-12-18 14:57:33 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 14:57:35 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 14:57:35 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 14:57:35 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 2.802 seconds (process running for 3.699)
+2024-12-18 14:58:17 INFO  [AdvertisementController] - fetchAdCount()
+2024-12-18 14:58:17 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - getAdCount()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 14:58:17 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - AD LIST COUNT GET SUCCESS
+2024-12-18 14:58:17 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 14:58:17 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 14:58:17 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:58:17 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 14:58:17 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 14:58:17 INFO  [AdvertisementController] - fetchAdTimeList()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - getAdTimeList()
+2024-12-18 14:58:17 INFO  [AdvertisementService] - AD TIME DTO GET SUCCESS
+2024-12-18 14:58:19 INFO  [AnnouncementController] - fetchAnnouncementCount()
+2024-12-18 14:58:19 INFO  [AnnouncementService] - getAnnouncementCount()
+2024-12-18 14:58:19 INFO  [AnnouncementController] - fetchAnnouncementList()
+2024-12-18 14:58:19 INFO  [AnnouncementService] - getAnnouncementList()
+2024-12-18 14:58:19 INFO  [AnnouncementService] - result :154
+2024-12-18 14:58:19 INFO  [AnnouncementService] - ANNOUNCEMENT COUNT GET SUCCESS
+2024-12-18 14:58:19 INFO  [AnnouncementController] - result : ResponseWrapper(data=154, status=SUCCESS, message=DATA GET SUCCESS)
+2024-12-18 14:58:19 INFO  [AnnouncementService] - ANNOUNCEMENT LIST GET SUCCESS
+2024-12-18 14:58:19 INFO  [AnnouncementController] - fetchAnnouncementCount()
+2024-12-18 14:58:19 INFO  [AnnouncementService] - getAnnouncementCount()
+2024-12-18 14:58:19 INFO  [AnnouncementController] - fetchAnnouncementList()
+2024-12-18 14:58:19 INFO  [AnnouncementService] - getAnnouncementList()
+2024-12-18 14:58:19 INFO  [AnnouncementService] - result :154
+2024-12-18 14:58:19 INFO  [AnnouncementService] - ANNOUNCEMENT COUNT GET SUCCESS
+2024-12-18 14:58:19 INFO  [AnnouncementController] - result : ResponseWrapper(data=154, status=SUCCESS, message=DATA GET SUCCESS)
+2024-12-18 14:58:19 INFO  [AnnouncementService] - ANNOUNCEMENT LIST GET SUCCESS
+2024-12-18 14:58:19 INFO  [CustomerService] - getInquiriesListCount()
+2024-12-18 14:58:19 INFO  [CustomerService] - getInquiriesList()
+2024-12-18 14:58:19 INFO  [CustomerController] - fetchFaqCategoryList()
+2024-12-18 14:58:19 INFO  [CustomerService] - getFaqCategoryList()
+2024-12-18 14:58:19 INFO  [CustomerService] - FAQ CATEGORY LIST GET SUCCESS
+2024-12-18 14:58:19 INFO  [CustomerService] - INQUIRIES LIST COUNT GET SUCCESS
+2024-12-18 14:58:19 INFO  [CustomerService] - INQUIRIES LIST GET SUCCESS
+2024-12-18 14:58:19 INFO  [CustomerController] - fetchFaqList()
+2024-12-18 14:58:19 INFO  [CustomerService] - getFaqList()
+2024-12-18 14:58:19 INFO  [CustomerController] - fetchFaqCategoryList()
+2024-12-18 14:58:19 INFO  [CustomerService] - getFaqCategoryList()
+2024-12-18 14:58:19 INFO  [CustomerController] - fetchFaqCount()
+2024-12-18 14:58:19 INFO  [CustomerService] - getFaqListCount()
+2024-12-18 14:58:19 INFO  [CustomerService] - FAQ LIST GET SUCCESS
+2024-12-18 14:58:19 INFO  [CustomerService] - FAQ CATEGORY LIST GET SUCCESS
+2024-12-18 14:58:19 INFO  [CustomerService] - FAQ LIST COUNT GET SUCCESS
+2024-12-18 14:58:20 INFO  [AdvertisementController] - fetchAdCount()
+2024-12-18 14:58:20 INFO  [AdvertisementService] - getAdCount()
+2024-12-18 14:58:20 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:58:20 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:58:20 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 14:58:20 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 14:58:20 INFO  [AdvertisementService] - AD LIST COUNT GET SUCCESS
+2024-12-18 14:58:20 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 14:58:20 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 14:58:20 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:58:20 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:58:20 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 14:58:20 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 14:58:20 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 14:58:20 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 14:58:31 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 14:58:31 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=12, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=2)
+2024-12-18 14:58:31 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 14:58:31 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 14:58:32 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:58:32 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:58:32 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 14:58:33 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 14:58:33 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=12, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=3)
+2024-12-18 14:58:33 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 14:58:33 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 14:58:34 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:58:34 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:58:34 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 14:59:03 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 14:59:03 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=11, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=2)
+2024-12-18 14:59:03 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 14:59:04 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 14:59:04 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:59:04 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:59:04 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 14:59:24 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 14:59:24 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=11, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=1)
+2024-12-18 14:59:24 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 14:59:24 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 14:59:25 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 14:59:25 INFO  [AdvertisementService] - getAdList()
+2024-12-18 14:59:25 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:08:45 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 15352 (D:\sdh\last_pjt\1217\moim-api-server\build\classes\java\main started by manic-066g in D:\sdh\last_pjt\1217\moim-api-server)
+2024-12-18 15:08:45 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 15:08:47 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 15:08:47 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 15:08:48 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 2.77 seconds (process running for 3.385)
+2024-12-18 15:08:52 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 15:08:52 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=7, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=2)
+2024-12-18 15:08:52 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 15:08:52 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 15:08:54 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:08:54 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:08:54 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:08:57 INFO  [AdvertisementController] - fetchAdCount()
+2024-12-18 15:08:57 INFO  [AdvertisementService] - getAdCount()
+2024-12-18 15:08:57 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 15:08:57 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:08:57 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 15:08:57 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:08:57 INFO  [AdvertisementService] - AD LIST COUNT GET SUCCESS
+2024-12-18 15:08:57 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:08:57 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 15:08:57 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:08:57 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:08:57 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 15:08:57 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 15:08:57 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:08:57 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 15:09:07 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 15:09:07 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=7, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=1)
+2024-12-18 15:09:07 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 15:09:07 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 15:09:07 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:09:07 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:09:07 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:09:09 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 15:09:09 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=7, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=4)
+2024-12-18 15:09:09 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 15:09:10 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 15:09:10 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:09:10 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:09:10 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:09:15 INFO  [AdvertisementController] - changeAdStatus()
+2024-12-18 15:09:15 INFO  [AdvertisementController] - advertisementDto: AdvertisementDto(ad_no=7, ad_name=null, ad_img=null, ad_type=null, ad_owner=null, ad_advertiser=null, ad_link=null, ad_reg_date=null, ad_mod_date=null, ad_start_date=null, ad_end_date=null, ad_approval_date=null, ad_status=2)
+2024-12-18 15:09:15 INFO  [AdvertisementService] - updateStatusByAdNo()
+2024-12-18 15:09:16 INFO  [AdvertisementService] - AD UPDATE SUCCESS
+2024-12-18 15:09:16 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:09:16 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:09:16 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:09:18 INFO  [AdvertisementController] - fetchAdCount()
+2024-12-18 15:09:18 INFO  [AdvertisementService] - getAdCount()
+2024-12-18 15:09:18 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 15:09:18 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 15:09:18 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:09:18 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:09:18 INFO  [AdvertisementService] - AD LIST COUNT GET SUCCESS
+2024-12-18 15:09:18 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:09:18 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 15:09:18 INFO  [AdvertisementController] - fetchAdList()
+2024-12-18 15:09:18 INFO  [AdvertisementService] - getAdList()
+2024-12-18 15:09:18 INFO  [AdvertisementController] - fetchAdStatus()
+2024-12-18 15:09:18 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 15:09:18 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+2024-12-18 15:09:18 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS

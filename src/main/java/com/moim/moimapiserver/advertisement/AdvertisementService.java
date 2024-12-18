@@ -94,9 +94,6 @@ public class AdvertisementService {
             if (result > 0) {
                 log.info("AD INSERT SUCCESS");
 
-                // 새로운 스케줄 등록
-                scheduleAdvertisementTasks(advertisementDto);
-
                 return responseWrapper(AdminStatusConfig.SUCCESS_STATUS, "INSERT SUCCESS", null);
             } else {
                 log.info("AD INSERT FAIL");
@@ -226,11 +223,13 @@ public class AdvertisementService {
                 log.info("AD UPDATE SUCCESS");
                 if (advertisementDto.getAd_status() == 2) {
                     // 광고 대기로 변경시 시작 스케줄 등록
-                    scheduleAdvertisementTasks(advertisementDto);
+                    AdvertisementDto changedAdvertisementDto = advertisementMapper.selectAdByAdNo(advertisementDto.getAd_no());
+                    scheduleAdvertisementTasks(changedAdvertisementDto);
 
                 } else if (advertisementDto.getAd_status() == 3) {
                     // 광고 시작으로 변경시 종료 스케줄 등록
-                    scheduleAdvertisementTasks(advertisementDto);
+                    AdvertisementDto changedAdvertisementDto = advertisementMapper.selectAdByAdNo(advertisementDto.getAd_no());
+                    scheduleAdvertisementTasks(changedAdvertisementDto);
 
                 } else if (advertisementDto.getAd_status() == 4) {
                     // 광고 종료로 변경시 스케줄 캔슬
