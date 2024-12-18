@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 2024-12-17 17:07:22 INFO  [AdvertisementService] - getAdTimeList()
 2024-12-17 17:07:22 INFO  [AdvertisementService] - AD TIME DTO GET SUCCESS
+=======
+2024-12-17 20:09:02 INFO  [AdminController] - fetchUserList()
+2024-12-17 20:09:02 INFO  [AdminService] - getUserList()
+2024-12-17 20:09:02 INFO  [AdminService] - USER LIST GET SUCCESS
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

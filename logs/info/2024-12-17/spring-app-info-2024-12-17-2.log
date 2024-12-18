@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 2024-12-17 17:10:20 INFO  [AuthController] - deleteRefreshToken()
 2024-12-17 17:10:20 INFO  [AuthController] - refreshTokenRequest: RefreshTokenDto(rt_no=0, a_id=admin, refresh_token=null, expires_at=null, created_at=null)
+=======
+2024-12-17 23:57:54 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 7440 (C:\kwon\3차 프로젝트\moim-api-server\build\classes\java\main started by Kwonikhyeon in C:\kwon\3차 프로젝트\moim-api-server)
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

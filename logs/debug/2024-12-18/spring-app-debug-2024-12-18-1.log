@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 2024-12-18 14:36:41 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+=======
+2024-12-18 10:47:28 DEBUG [selectAds] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT LIMIT ? OFFSET ?
+2024-12-18 10:47:28 DEBUG [selectAdStatus] - ==>  Preparing: SELECT AST_NO, AST_NAME FROM TBL_AD_STATUS
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

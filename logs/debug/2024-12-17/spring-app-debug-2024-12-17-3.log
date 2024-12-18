@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 2024-12-17 17:40:03 DEBUG [getExpiredMembers] - ==>  Preparing: SELECT m_no FROM TBL_PAYMENT WHERE DATE(pay_expired_date) = CURRENT_DATE()
+=======
+2024-12-17 23:57:58 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-17 23:57:58 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

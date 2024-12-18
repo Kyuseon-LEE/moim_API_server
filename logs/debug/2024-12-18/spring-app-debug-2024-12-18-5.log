@@ -1,0 +1,2 @@
+2024-12-18 10:53:22 DEBUG [selectAllAd] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT
+2024-12-18 10:53:22 DEBUG [selectAllAd] - ==> Parameters: 

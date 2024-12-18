@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 2024-12-17 17:10:20 DEBUG [deleteRefreshTokenByAid] - ==> Parameters: admin(String)
 2024-12-17 17:10:20 DEBUG [deleteRefreshTokenByAid] - <==    Updates: 0
+=======
+2024-12-17 23:57:58 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 2024-12-17 17:10:20 INFO  [AuthService] - confirmRefreshTokenDelete()
 2024-12-17 17:10:20 INFO  [AuthController] - response: ResponseWrapper(data=null, status=SUCCESS, message=DELETE SUCCESS)
+=======
+2024-12-17 23:57:54 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-17 23:57:58 INFO  [SecurityConfig] - passwordEncoder()
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

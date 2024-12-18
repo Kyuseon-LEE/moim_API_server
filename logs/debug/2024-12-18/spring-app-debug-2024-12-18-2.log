@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 2024-12-18 14:36:42 DEBUG [findActiveAdvertisements] - ==> Parameters: 
 2024-12-18 14:36:42 DEBUG [findActiveAdvertisements] - <==      Total: 1
+=======
+2024-12-18 10:47:28 DEBUG [selectAds] - ==> Parameters: 10(Integer), 0(Integer)
+2024-12-18 10:47:28 DEBUG [selectAdStatus] - ==> Parameters: 
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

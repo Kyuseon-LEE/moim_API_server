@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+2024-12-16 23:51:42 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-16 23:52:00 INFO  [AdvertisementScheduler] - Advertisement statuses update
+=======
 2024-12-16 22:17:59 INFO  [AdminController] - fetchAgeData()
 2024-12-16 22:17:59 INFO  [AdminService] - getAgeData
 2024-12-16 22:17:59 INFO  [AdminService] - USER GENDER DATA GET SUCCESS
+>>>>>>> 37e10f9ad97fc53cebef68c8a0c6307481adc53d

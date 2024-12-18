@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 2024-12-17 17:07:22 DEBUG [selectAdTime] - ==> Parameters: 
 2024-12-17 17:07:22 DEBUG [selectAdTime] - <==      Total: 3
 2024-12-17 17:10:20 DEBUG [deleteRefreshTokenByAid] - ==>  Preparing: DELETE FROM TBL_ADMIN_REFRESH_TOKENS WHERE A_ID = ?
+=======
+2024-12-17 23:57:58 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-17 23:57:58 DEBUG [findActiveAdvertisements] - <==      Total: 1
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

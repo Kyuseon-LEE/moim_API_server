@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 2024-12-18 14:36:39 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 7552 (D:\sdh\last_pjt\1217\moim-api-server\build\classes\java\main started by manic-066g in D:\sdh\last_pjt\1217\moim-api-server)
+=======
+2024-12-18 10:47:28 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 10:47:28 INFO  [AdvertisementService] - AD LIST GET SUCCESS
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

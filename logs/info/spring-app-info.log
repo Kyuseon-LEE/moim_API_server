@@ -1,2 +1,88 @@
+<<<<<<< HEAD
 2024-12-18 14:36:42 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
 2024-12-18 14:36:42 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 3.856 seconds (process running for 4.628)
+=======
+2024-12-18 10:53:22 INFO  [AdvertisementService] - AD DTO GET SUCCESS
+2024-12-18 11:12:26 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 19684 (C:\kwon\3차 프로젝트\moim-api-server\build\classes\java\main started by Kwonikhyeon in C:\kwon\3차 프로젝트\moim-api-server)
+2024-12-18 11:12:26 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 11:12:26 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 11:12:26 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 11:12:26 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 0.85 seconds (process running for 2233.62)
+2024-12-18 11:15:52 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 19684 (C:\kwon\3차 프로젝트\moim-api-server\build\classes\java\main started by Kwonikhyeon in C:\kwon\3차 프로젝트\moim-api-server)
+2024-12-18 11:15:52 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 11:15:53 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 11:15:53 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 11:15:53 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 1.042 seconds (process running for 2440.646)
+2024-12-18 11:16:14 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 16040 (C:\kwon\3차 프로젝트\moim-api-server\build\classes\java\main started by Kwonikhyeon in C:\kwon\3차 프로젝트\moim-api-server)
+2024-12-18 11:16:14 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 11:16:16 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 11:16:16 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 11:16:17 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 2.71 seconds (process running for 3.432)
+2024-12-18 11:18:49 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 16040 (C:\kwon\3차 프로젝트\moim-api-server\build\classes\java\main started by Kwonikhyeon in C:\kwon\3차 프로젝트\moim-api-server)
+2024-12-18 11:18:49 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 11:18:50 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 11:18:50 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 11:18:50 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 0.849 seconds (process running for 156.482)
+2024-12-18 11:27:20 INFO  [GroupController] - [GroupController] getPremiumGroup
+2024-12-18 11:27:20 INFO  [AdvertisementController] - fetchCurrentAd()
+2024-12-18 11:27:20 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 11:27:20 INFO  [AdvertisementService] - AD GET SUCCESS
+2024-12-18 11:27:29 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 16800 (C:\kwon\3차 프로젝트\moim-api-server\build\classes\java\main started by Kwonikhyeon in C:\kwon\3차 프로젝트\moim-api-server)
+2024-12-18 11:27:29 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 11:27:31 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 11:27:31 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 11:27:31 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 2.836 seconds (process running for 3.497)
+2024-12-18 11:30:31 INFO  [MemberDetailService] - MemberDto(m_no=2, m_social_id=null, m_social_type=null, m_profile_img=http://moimservice.ddns.net/profiles/kwon/f62bd4b8-60bc-443f-84df-555941b8c5bc.jpg, m_id=kwon, m_pw=$2a$10$tI5.ASV5tcrHOfgrNXEhHOdB/v8LSTpgveVrDSk.X8OIxEwci5K0S, m_name=권익현, m_nickname=권익현1, m_phone=01072343252, m_gender=M, m_age=10대, m_address= 11662 경기 의정부시 가능로 70  , m_mail=kehyeon3252@gmail.com, m_category=게임, m_grade=0, m_status=1, m_reg_date=2024-11-28 15:23:54, m_mod_date=2024-12-18 00:19:10, m_start_membership=null, m_end_membership=null)
+2024-12-18 11:30:31 INFO  [SecurityConfig] - [security] login failure: 자격 증명에 실패하였습니다.
+2024-12-18 11:30:31 INFO  [SecurityConfig] - request---->
+2024-12-18 11:30:44 INFO  [MemberDetailService] - MemberDto(m_no=2, m_social_id=null, m_social_type=null, m_profile_img=http://moimservice.ddns.net/profiles/kwon/f62bd4b8-60bc-443f-84df-555941b8c5bc.jpg, m_id=kwon, m_pw=$2a$10$tI5.ASV5tcrHOfgrNXEhHOdB/v8LSTpgveVrDSk.X8OIxEwci5K0S, m_name=권익현, m_nickname=권익현1, m_phone=01072343252, m_gender=M, m_age=10대, m_address= 11662 경기 의정부시 가능로 70  , m_mail=kehyeon3252@gmail.com, m_category=게임, m_grade=0, m_status=1, m_reg_date=2024-11-28 15:23:54, m_mod_date=2024-12-18 00:19:10, m_start_membership=null, m_end_membership=null)
+2024-12-18 11:30:44 INFO  [CustomAuthenticationSuccessHandler] - [security] login success - Member Info: MemberDto(m_no=2, m_social_id=null, m_social_type=null, m_profile_img=http://moimservice.ddns.net/profiles/kwon/f62bd4b8-60bc-443f-84df-555941b8c5bc.jpg, m_id=kwon, m_pw=$2a$10$tI5.ASV5tcrHOfgrNXEhHOdB/v8LSTpgveVrDSk.X8OIxEwci5K0S, m_name=권익현, m_nickname=권익현1, m_phone=01072343252, m_gender=M, m_age=10대, m_address= 11662 경기 의정부시 가능로 70  , m_mail=kehyeon3252@gmail.com, m_category=게임, m_grade=0, m_status=1, m_reg_date=2024-11-28 15:23:54, m_mod_date=2024-12-18 00:19:10, m_start_membership=null, m_end_membership=null)
+2024-12-18 11:30:44 INFO  [AdvertisementController] - fetchCurrentAd()
+2024-12-18 11:30:44 INFO  [GroupController] - [GroupController] getPremiumGroup
+2024-12-18 11:30:44 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 11:30:44 INFO  [GroupController] - Fetching groups for user with ID: undefined
+2024-12-18 11:30:44 INFO  [AdvertisementService] - AD GET SUCCESS
+2024-12-18 11:30:44 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:30:44 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:30:44 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:30:44 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:30:44 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:30:44 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:30:44 INFO  [GroupController] - Fetching groups for user with ID: kwon
+2024-12-18 11:31:37 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:31:37 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:31:37 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:31:37 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:31:37 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:31:37 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:31:41 INFO  [MemberController] - updateMemberInfo()
+2024-12-18 11:31:41 INFO  [MemberController] - Received MemberDto: MemberDto(m_no=0, m_social_id=null, m_social_type=null, m_profile_img=null, m_id=kwon, m_pw=null, m_name=null, m_nickname=권익현, m_phone=01072343252, m_gender=M, m_age=null, m_address=  11662 경기 의정부시 가능로 70   , m_mail=null, m_category=게임, m_grade=0, m_status=0, m_reg_date=null, m_mod_date=null, m_start_membership=null, m_end_membership=null)
+2024-12-18 11:31:41 INFO  [MemberService] - [MemberService] updateMemberInfo successful
+2024-12-18 11:36:25 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:36:25 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:36:25 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:36:25 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:36:25 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:36:25 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:36:27 INFO  [MemberController] - updateMemberInfo()
+2024-12-18 11:36:27 INFO  [MemberController] - Received MemberDto: MemberDto(m_no=0, m_social_id=null, m_social_type=null, m_profile_img=null, m_id=kwon, m_pw=null, m_name=null, m_nickname=권익현1, m_phone=01072343252, m_gender=M, m_age=null, m_address=   11662 경기 의정부시 가능로 70    , m_mail=null, m_category=게임, m_grade=0, m_status=0, m_reg_date=null, m_mod_date=null, m_start_membership=null, m_end_membership=null)
+2024-12-18 11:36:27 INFO  [MemberService] - [MemberService] updateMemberInfo successful
+2024-12-18 11:36:29 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:36:29 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:36:29 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:36:29 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:36:29 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:36:29 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:36:30 INFO  [AdvertisementController] - fetchCurrentAd()
+2024-12-18 11:36:30 INFO  [AdvertisementService] - getAdStatus()
+2024-12-18 11:36:30 INFO  [AdvertisementService] - AD GET SUCCESS
+2024-12-18 11:36:30 INFO  [GroupController] - [GroupController] getPremiumGroup
+2024-12-18 11:36:30 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:36:30 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:36:30 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:36:30 INFO  [MemberController] - getMemberInfo()
+2024-12-18 11:36:30 INFO  [MemberService] - [MemberService] getMemberInfo
+2024-12-18 11:36:30 INFO  [GroupController] - Fetching groups for user with ID: undefined
+2024-12-18 11:36:30 INFO  [MemberService] - [MemberService] getMemberInfo successful
+2024-12-18 11:36:30 INFO  [GroupController] - Fetching groups for user with ID: kwon
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

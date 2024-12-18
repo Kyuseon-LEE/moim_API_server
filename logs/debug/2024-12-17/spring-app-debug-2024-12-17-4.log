@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 2024-12-17 17:40:03 DEBUG [getExpiredMembers] - ==> Parameters: 
 2024-12-17 17:40:03 DEBUG [getExpiredMembers] - <==      Total: 0
+=======
+2024-12-18 00:14:46 DEBUG [findAllGroups] - ==>  Preparing: SELECT g.G_NO AS g_no, g.G_NAME AS g_name, g.G_INFO AS g_info, g.G_CATEGORY AS g_category, g.G_LOCATION AS g_location, g.G_IMG_NAME AS g_img_name, g.G_CONFIRM AS g_confirm, g.G_MAX_NUMBER AS g_max_number, g.G_PUBLIC AS g_public, g.G_REG_DATE AS g_reg_date, g.G_MASTER_ID AS g_master_id, g.G_STATUS AS g_status, m.M_NICKNAME AS g_master_nickname, ( SELECT COUNT(*) FROM TBL_GROUP_MEMBER gm WHERE gm.G_NO = g.G_NO AND gm.G_M_ROLE != 0 ) AS memberCount FROM TBL_GROUP g LEFT JOIN TBL_MEMBER m ON g.G_MASTER_ID = m.M_NO ORDER BY memberCount DESC, g.G_REG_DATE DESC
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f

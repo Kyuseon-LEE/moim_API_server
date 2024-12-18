@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 2024-12-18 14:36:39 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
 2024-12-18 14:36:42 INFO  [SecurityConfig] - passwordEncoder()
+=======
+2024-12-18 10:47:28 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 10:51:34 INFO  [AdvertisementController] - fetchFilteredAdTimeList()
+>>>>>>> 21e8bc35a90083f4f1a3e77bb7a402a1cb2e505f
