@@ -56,7 +56,7 @@ public class AdvertisementService {
         if (ad.getAd_start_date() != null) {
             Runnable startTask = () -> {
                 advertisementMapper.updateAdvertisementStartStatus(ad.getAd_no());
-                System.out.println("광고 시작 상태 업데이트: 광고 ID " + ad.getAd_no());
+                log.info("광고 시작 상태 업데이트: 광고 ID {}", ad.getAd_no());
             };
             ScheduledFuture<?> startFuture = taskScheduler.schedule(startTask, ad.getAd_start_date());
             scheduledFutures.add(startFuture);
@@ -65,7 +65,8 @@ public class AdvertisementService {
         if (ad.getAd_end_date() != null) {
             Runnable endTask = () -> {
                 advertisementMapper.updateAdvertisementEndStatus(ad.getAd_no());
-                System.out.println("광고 종료 상태 업데이트: 광고 ID " + ad.getAd_no());
+                log.info("광고 종료 상태 업데이트: 광고 ID {}", ad.getAd_no());
+
             };
             ScheduledFuture<?> endFuture = taskScheduler.schedule(endTask, ad.getAd_end_date());
             scheduledFutures.add(endFuture);

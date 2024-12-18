@@ -390,3 +390,10 @@
 2024-12-18 15:09:18 DEBUG [selectAdStatus] - ==> Parameters: 
 2024-12-18 15:09:18 DEBUG [selectAds] - <==      Total: 3
 2024-12-18 15:09:18 DEBUG [selectAdStatus] - <==      Total: 6
+2024-12-18 15:10:27 DEBUG [MoimApiServerApplication] - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-18 15:10:29 DEBUG [findActiveAdvertisements] - ==>  Preparing: SELECT * FROM TBL_ADVERTISEMENT WHERE AD_STATUS IN (2, 3)
+2024-12-18 15:10:29 DEBUG [findActiveAdvertisements] - ==> Parameters: 
+2024-12-18 15:10:29 DEBUG [findActiveAdvertisements] - <==      Total: 1
+2024-12-18 15:10:29 DEBUG [updateAdvertisementStartStatus] - ==>  Preparing: UPDATE TBL_ADVERTISEMENT SET AD_STATUS = 3 WHERE AD_NO = ?
+2024-12-18 15:10:29 DEBUG [updateAdvertisementStartStatus] - ==> Parameters: 12(Integer)
+2024-12-18 15:10:29 DEBUG [updateAdvertisementStartStatus] - <==    Updates: 1

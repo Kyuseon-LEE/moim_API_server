@@ -315,3 +315,8 @@
 2024-12-18 15:09:18 INFO  [AdvertisementService] - getAdStatus()
 2024-12-18 15:09:18 INFO  [AdvertisementService] - AD LIST GET SUCCESS
 2024-12-18 15:09:18 INFO  [AdvertisementService] - AD STATUS LIST GET SUCCESS
+2024-12-18 15:10:27 INFO  [MoimApiServerApplication] - Starting MoimApiServerApplication using Java 17.0.12 with PID 17824 (D:\sdh\last_pjt\1217\moim-api-server\build\classes\java\main started by manic-066g in D:\sdh\last_pjt\1217\moim-api-server)
+2024-12-18 15:10:27 INFO  [MoimApiServerApplication] - The following 1 profile is active: "dev"
+2024-12-18 15:10:29 INFO  [SecurityConfig] - passwordEncoder()
+2024-12-18 15:10:29 INFO  [SecurityConfig] - Configuring userSecurityFilterChain
+2024-12-18 15:10:30 INFO  [MoimApiServerApplication] - Started MoimApiServerApplication in 2.863 seconds (process running for 3.449)
